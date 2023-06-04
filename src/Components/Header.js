@@ -32,7 +32,7 @@ const Item = styled.li`
   color: var(--fontColor);
   :hover {
     opacity: 0.6;
-    transition: ease-in-out 0.5s;
+    transition: ease-in-out 0.3s;
   }
 `;
 function Header() {

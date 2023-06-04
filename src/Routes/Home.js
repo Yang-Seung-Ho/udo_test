@@ -35,10 +35,14 @@ const Img = styled(motion.img)`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   width: 100%;
   transition: transform 0.3s ease-in;
-
   :hover {
     transform: scale(1.15);
   }
+`;
+const MoveImgBtn = styled.i`
+  font-size: 14px;
+  padding: 12px;
+  cursor: pointer;
 `;
 
 function Home() {
@@ -56,7 +60,7 @@ function Home() {
     };
 
     preloadImages();
-  }, []);
+  }, index);
   const toggleLeaving = () => setLeaving((prev) => !prev);
   console.log(leaving);
   const increaseIndex = () => {
@@ -67,7 +71,7 @@ function Home() {
     setBack(false);
     setTimeout(() => {
       setIndex((prev) => (prev === maxIndex ? 0 : prev + 1));
-    }, 100);
+    }, 300);
   };
 
   const decreaseIndex = () => {
@@ -78,13 +82,16 @@ function Home() {
     setBack(true);
     setTimeout(() => {
       setIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
-    }, 100);
+    }, 300);
   };
 
   return (
     <>
       <ImgBox>
-        <span onClick={decreaseIndex}>-</span>
+        <MoveImgBtn
+          className="fa-solid fa-chevron-left"
+          onClick={decreaseIndex}
+        ></MoveImgBtn>
         <ImgItems>
           <AnimatePresence initial={false} custom={back}>
             {mainimages
@@ -100,7 +107,7 @@ function Home() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0, display: "none" }}
                         transition={{
-                          duration: 0.5,
+                          duration: 0.7,
                           ease: "easeInOut",
                         }}
                       />
@@ -110,7 +117,10 @@ function Home() {
               ))}
           </AnimatePresence>
         </ImgItems>
-        <span onClick={increaseIndex}>+</span>
+        <MoveImgBtn
+          className="fa-solid fa-chevron-right"
+          onClick={increaseIndex}
+        ></MoveImgBtn>
       </ImgBox>
     </>
   );
