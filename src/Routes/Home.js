@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
-import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "../Images/logo.png";
+
 import img1 from "../Images/main1.jpeg";
 import img2 from "../Images/main2.jpeg";
 import img3 from "../Images/main3.jpeg";
@@ -60,7 +59,7 @@ function Home() {
     };
 
     preloadImages();
-  }, index);
+  }, []);
   const toggleLeaving = () => setLeaving((prev) => !prev);
   console.log(leaving);
   const increaseIndex = () => {
