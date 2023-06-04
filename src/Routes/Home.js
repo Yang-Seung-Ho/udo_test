@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "../Images/logo.png";
