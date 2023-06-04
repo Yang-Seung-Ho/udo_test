@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import bgImg from "../Images/prologue.jpeg";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const ImgBox = styled(motion.div)`
   width: 70%;
@@ -67,10 +67,6 @@ const ImgP = styled.p`
   width: 100%;
 `;
 
-const ImgBoxVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
-};
 function Prologue() {
   return (
     <ImgBox>

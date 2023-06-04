@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 // https://www.instagram.com/stay_udo.gihang/
 const TotalFooterBox = styled.div`

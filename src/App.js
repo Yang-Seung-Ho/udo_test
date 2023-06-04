@@ -1,6 +1,4 @@
-import styled from "styled-components";
-
-import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Routes/Home";
 import Prologue from "./Routes/Prologue";
 import Reservation from "./Routes/Reservation";
