@@ -15,6 +15,25 @@ import { useState, useEffect } from "react";
 const mainimages = [img1, img2, img3, img4, img5, img6, img7, img8, img9];
 
 const ImgBox = styled.div`
+  animation: fadein 0.7s;
+  -webkit-animation: fadein 0.7s; /* Safari and Chrome */
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes fadein {
+    /* Safari and Chrome */
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,6 +68,7 @@ function Home() {
   const [index, setIndex] = useState(0);
   const [back, setBack] = useState(false);
   const [leaving, setLeaving] = useState(false);
+
   useEffect(() => {
     // 이미지를 미리 로딩
     const preloadImages = () => {

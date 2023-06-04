@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import bgImg from "../Images/prologue.jpeg";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 
 const ImgBox = styled(motion.div)`
@@ -68,6 +69,10 @@ const ImgP = styled.p`
 `;
 
 function Prologue() {
+  useEffect(() => {
+    const prologueImg = new Image();
+    prologueImg.src = bgImg;
+  }, []);
   return (
     <ImgBox>
       <Img>
