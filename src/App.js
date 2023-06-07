@@ -6,29 +6,21 @@ import Room from "./Routes/Room";
 import Gallery from "./Routes/Gallery";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-
+import Main from "./Routes/Main";
+import MenuBar from "./Components/MenuBar";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <MenuBar />
       <Switch>
-        <Route path="/gallery">
-          <Gallery />
+        <Route path="/main">
+          <Main />
         </Route>
         <Route path="/prologue">
           <Prologue />
         </Route>
-        <Route path="/reservation">
-          <Reservation />
-        </Route>
-        <Route path="/room">
-          <Room />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }

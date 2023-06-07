@@ -32,9 +32,11 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+	
 	line-height: 1;
-	background: linear-gradient(to bottom, var(--backgroundColor) 30%, #dcdcdc);
+	background: var(--backgroundColor);
 	font-family: 'Nanum Myeongjo', serif;
+	
 }
 ol, ul {
 	list-style: none;

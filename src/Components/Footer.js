@@ -1,10 +1,10 @@
 import styled from "styled-components";
 // https://www.instagram.com/stay_udo.gihang/
+const pageHeight = document.documentElement.scrollHeight;
 const TotalFooterBox = styled.div`
   position: relative;
-  width: 100%;
-  bottom: 0px;
 `;
+
 const InstaBox = styled.div`
   margin-top: 48px;
   display: flex;

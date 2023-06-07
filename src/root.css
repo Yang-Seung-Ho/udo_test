@@ -1,5 +1,5 @@
 :root {
-  --backgroundColor: #f5f3e6;
-  --fontColor: #444444;
+  --backgroundColor: rgba(245, 241, 232, 255);
+  --fontColor: rgba(94, 87, 66, 255);
   --font-size: 16px;
 }
