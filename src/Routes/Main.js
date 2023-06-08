@@ -1,4 +1,4 @@
 function Main() {
-  return null;
+  return <div>Main</div>;
 }
 export default Main;
