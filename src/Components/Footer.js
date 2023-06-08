@@ -65,7 +65,7 @@ function Footer() {
     return () => {
       window.removeEventListener("resize", updatePageHeight);
     };
-  }, []);
+  }, [pageHeight]);
 
   const handleButtonClick = () => {
     window.open("https://www.instagram.com/stay_udo.gihang/", "_blank");
