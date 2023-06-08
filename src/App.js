@@ -11,6 +11,7 @@ import Tour from "./Routes/Tour";
 import Restaurants from "./Routes/Restaurants";
 import Places from "./Routes/Places";
 import MenuBar from "./Components/MenuBar";
+import Footer from "./Components/Footer";
 function App() {
   return (
     <BrowserRouter>
@@ -50,6 +51,7 @@ function App() {
           <Home />
         </Route>
       </Switch>
+      <Footer></Footer>
     </BrowserRouter>
   );
 }

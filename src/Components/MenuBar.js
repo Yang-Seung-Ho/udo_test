@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Footer from "./Footer";
+
 const MenuBarBox = styled.div`
   position: fixed;
 `;

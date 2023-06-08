@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import PrologueImg from "../Images/3.jpg";
-import Footer from "../Components/Footer";
+import { useState, useEffect } from "react";
+
 const TotalBox = styled.div`
   position: absolute;
   z-index: -1;
@@ -41,8 +42,18 @@ const PresentImgBox = styled.div`
 `;
 const PresentImg = styled.img`
   width: 100%;
+  opacity: ${({ loaded }) => (loaded ? 1 : 0)};
+  transition: opacity 0.5s ease-in-out;
 `;
 function Prologue() {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  useEffect(() => {
+    const img = new Image();
+    img.src = PrologueImg;
+    img.onload = () => {
+      setImageLoaded(true);
+    };
+  }, []);
   return (
     <>
       <TotalBox>
@@ -62,7 +73,7 @@ function Prologue() {
             좋습니다.
           </TitleP>
           <PresentImgBox>
-            <PresentImg src={PrologueImg} />
+            <PresentImg src={PrologueImg} loaded={imageLoaded} />
           </PresentImgBox>
         </HeaderBox>
       </TotalBox>
