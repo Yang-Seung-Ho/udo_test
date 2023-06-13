@@ -123,7 +123,6 @@ function Reservation() {
   const [firstBox, setFirstBox] = useState(false);
   const [secondBox, setSecondBox] = useState(false);
   const [thirdBox, setThirdBox] = useState(false);
-  const [initialRender, setInitialRender] = useState(true);
   const [isChecked, setIsChecked] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const FirstOnClick = () => {
