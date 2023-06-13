@@ -11,7 +11,7 @@ import Tour from "./Routes/Tour";
 import Restaurants from "./Routes/Restaurants";
 import Places from "./Routes/Places";
 import MenuBar from "./Components/MenuBar";
-import Footer from "./Components/Footer";
+
 import ScrollToTop from "./Components/ScrollToTop";
 function App() {
   return (

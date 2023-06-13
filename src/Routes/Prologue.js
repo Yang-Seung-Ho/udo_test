@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import PrologueImg from "../Images/3.jpg";
-import Footer from "../Components/Footer";
+
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+
 const TotalBox = styled.div`
   position: absolute;
   z-index: -1;

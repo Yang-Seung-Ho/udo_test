@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import Footer from "../Components/Footer";
+import React from "react";
+
 import styled from "styled-components";
 const TotalFooterBox = styled.div`
   position: absolute;

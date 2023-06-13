@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 
 const Title = styled.h1`
   font-size: 18px;
@@ -175,9 +174,6 @@ function Reservation() {
     setIsChecked((prevChecked) => !prevChecked);
   };
 
-  useEffect(() => {
-    setInitialRender(false); // 초기 렌더링이 완료되면 초기 렌더링 여부 상태 변경
-  }, []);
   const handleButtonClick = () => {
     if (!isChecked) {
     } else {

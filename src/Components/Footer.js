@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+// import { useState, useEffect } from "react";
+// import { useLocation } from "react-router-dom";
 const TotalFooterBox = styled.div`
   width: 100%;
   display: flex;
@@ -54,28 +54,28 @@ const RawSpan = styled.span`
   opacity: 0.8;
 `;
 function Footer() {
-  const [pageHeight, setPageHeight] = useState(0);
-  const [scrollHeight, setScrollHeight] = useState(0);
-  const location = useLocation();
-  useEffect(() => {
-    const handleResize = () => {
-      setPageHeight(window.innerHeight);
-      setScrollHeight(document.documentElement.scrollHeight);
-    };
+  // const [pageHeight, setPageHeight] = useState(0);
+  // const [scrollHeight, setScrollHeight] = useState(0);
+  // const location = useLocation();
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setPageHeight(window.innerHeight);
+  //     setScrollHeight(document.documentElement.scrollHeight);
+  //   };
 
-    const handleInitialLoad = () => {
-      setPageHeight(window.innerHeight);
-      setScrollHeight(document.documentElement.scrollHeight);
-    };
+  //   const handleInitialLoad = () => {
+  //     setPageHeight(window.innerHeight);
+  //     setScrollHeight(document.documentElement.scrollHeight);
+  //   };
 
-    handleInitialLoad(); // 초기 로드 시에 한 번 실행
+  //   handleInitialLoad(); // 초기 로드 시에 한 번 실행
 
-    window.addEventListener("resize", handleResize);
+  //   window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [location.pathname]);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, [location.pathname]);
 
   const handleButtonClick = () => {
     window.open("https://www.instagram.com/stay_udo.gihang/", "_blank");
