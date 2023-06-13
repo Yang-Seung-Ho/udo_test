@@ -12,14 +12,16 @@ import Restaurants from "./Routes/Restaurants";
 import Places from "./Routes/Places";
 import MenuBar from "./Components/MenuBar";
 import Footer from "./Components/Footer";
+import ScrollToTop from "./Components/ScrollToTop";
 function App() {
   return (
     <BrowserRouter>
-      <Route path="/main">
-        <Main />
-      </Route>
       <MenuBar />
+      <ScrollToTop />
       <Switch>
+        <Route path="/main">
+          <Main />
+        </Route>
         <Route path="/prologue">
           <Prologue />
         </Route>
@@ -51,7 +53,6 @@ function App() {
           <Home />
         </Route>
       </Switch>
-      <Footer></Footer>
     </BrowserRouter>
   );
 }

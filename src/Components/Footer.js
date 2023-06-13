@@ -1,18 +1,20 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 const TotalFooterBox = styled.div`
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   position: absolute;
-  bottom: 0;
-  /* transform: translateY(calc(100vh - ${(props) => props.pageHeight}px)); */
 `;
 
 const InstaBox = styled.div`
-  margin-top: 48px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 12px;
 `;
 const InstaLogo = styled.p`
   cursor: pointer;
@@ -23,56 +25,64 @@ const InstaId = styled.span`
   cursor: pointer;
   font-size: 14px;
 `;
-const FooterBox = styled.div`
+const FooterUnderBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+const FooterUnderSpan = styled.span`
+  font-size: 13px;
+  opacity: 0.6;
+  border-right: 1px solid rgb(0, 0, 0, 0.8);
+  padding: 0 6px;
+`;
+const FooterUnderDiv = styled.div`
+  margin: 2px 0;
+  ${FooterUnderSpan}:last-child {
+    border: none;
+  }
+`;
+const RawBox = styled.div`
+  margin: 12px 0;
   width: 100%;
-  padding-top: 48px;
-  padding-bottom: 16px;
   display: flex;
-
-  justify-content: space-evenly;
+  justify-content: center;
 `;
-const FootBankBox = styled.div`
-  display: flex;
-  flex-direction: column;
+const RawSpan = styled.span`
+  margin: 0 24px;
+  font-size: 13.5px;
+  opacity: 0.8;
 `;
-const FootLocationBox = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-const FootReservationBox = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-const FootH1 = styled.h1`
-  font-size: 18px;
-`;
-const FootSpan = styled.span`
-  margin-top: 6px;
-  font-size: 14px;
-  opacity: 0.7;
-`;
-
 function Footer() {
-  const [pageHeight, setPageHeight] = useState(window.innerHeight);
-
+  const [pageHeight, setPageHeight] = useState(0);
+  const [scrollHeight, setScrollHeight] = useState(0);
+  const location = useLocation();
   useEffect(() => {
-    const updatePageHeight = () => {
+    const handleResize = () => {
       setPageHeight(window.innerHeight);
+      setScrollHeight(document.documentElement.scrollHeight);
     };
 
-    window.addEventListener("resize", updatePageHeight);
-    console.log(pageHeight);
-    return () => {
-      window.removeEventListener("resize", updatePageHeight);
+    const handleInitialLoad = () => {
+      setPageHeight(window.innerHeight);
+      setScrollHeight(document.documentElement.scrollHeight);
     };
-  }, [pageHeight]);
+
+    handleInitialLoad(); // 초기 로드 시에 한 번 실행
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [location.pathname]);
 
   const handleButtonClick = () => {
     window.open("https://www.instagram.com/stay_udo.gihang/", "_blank");
   };
   return (
     // 푸터바 위치를 전체 스크롤 길이에 1.3배 아래 위치
-    <TotalFooterBox pageHeight={pageHeight} style={{ top: pageHeight * 1.3 }}>
+    <TotalFooterBox>
       <InstaBox>
         <InstaLogo
           onClick={handleButtonClick}
@@ -80,21 +90,30 @@ function Footer() {
         ></InstaLogo>
         <InstaId onClick={handleButtonClick}>@stay_udo.gihang</InstaId>
       </InstaBox>
-      <FooterBox>
-        <FootBankBox>
-          <FootH1>Bank</FootH1>
-          <FootSpan>농협 11-1111-1111</FootSpan>
-        </FootBankBox>
-        <FootLocationBox>
-          <FootH1>Location</FootH1>
-          <FootSpan>제주 제주시 우도면 우도해안길 816 뒷집 2층</FootSpan>
-        </FootLocationBox>
-        <FootReservationBox>
-          <FootH1>Reservation</FootH1>
-          <FootSpan>예약문의 010-0000-0000</FootSpan>
-          <FootSpan>문의시간 10:00~21:00</FootSpan>
-        </FootReservationBox>
-      </FooterBox>
+      <FooterUnderBox>
+        <FooterUnderDiv>
+          <FooterUnderSpan>우도 기행</FooterUnderSpan>
+          <FooterUnderSpan>대표: 윤경환</FooterUnderSpan>
+          <FooterUnderSpan>
+            주소: 제주 제주시 우도면 우도해안길 816 뒷집 2층
+          </FooterUnderSpan>
+        </FooterUnderDiv>
+        <FooterUnderDiv>
+          <FooterUnderSpan>계좌번호: 농협은행 111-111-1111-11</FooterUnderSpan>
+          <FooterUnderSpan>예금주: 우도기행</FooterUnderSpan>
+        </FooterUnderDiv>
+        <FooterUnderDiv>
+          <FooterUnderSpan>사업자번호: 111-11-1111</FooterUnderSpan>
+          <FooterUnderSpan>통신판매신고번호: 2023-23-23</FooterUnderSpan>
+          <FooterUnderSpan>Tel. 111-1111-1111</FooterUnderSpan>
+          <FooterUnderSpan>문의시간: 10:00 - 18:00</FooterUnderSpan>
+        </FooterUnderDiv>
+        <RawBox>
+          <RawSpan>이용약관</RawSpan>
+          <RawSpan>개인정보처리방침</RawSpan>
+        </RawBox>
+        <RawSpan>Copyright ⓒ 2023 CHWIHOGA All rights reserved.</RawSpan>
+      </FooterUnderBox>
     </TotalFooterBox>
   );
 }

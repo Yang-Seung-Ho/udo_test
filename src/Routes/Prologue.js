@@ -1,13 +1,17 @@
 import styled from "styled-components";
 import PrologueImg from "../Images/3.jpg";
+import Footer from "../Components/Footer";
 import { useState, useEffect } from "react";
-
+import { useLocation } from "react-router-dom";
 const TotalBox = styled.div`
   position: absolute;
   z-index: -1;
   margin-top: 175px;
   margin-left: 40%;
   margin-right: 16%;
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 200px;
   /* background-color: wheat; */
 `;
 const HeaderBox = styled.div`
@@ -47,6 +51,7 @@ const PresentImg = styled.img`
 `;
 function Prologue() {
   const [imageLoaded, setImageLoaded] = useState(false);
+
   useEffect(() => {
     const img = new Image();
     img.src = PrologueImg;
@@ -54,6 +59,7 @@ function Prologue() {
       setImageLoaded(true);
     };
   }, []);
+
   return (
     <>
       <TotalBox>

@@ -132,17 +132,17 @@ function MenuBar() {
         location.pathname === "/tour"
       ? "tour"
       : null;
-  console.log(isActive);
   return (
     <>
       <MenuBarBox>
         <MenuHeader>
-          <Link to="/">
-            <MenuHeaderInBox>
+          <MenuHeaderInBox>
+            {" "}
+            <Link to="/">
               <MenuHeaderInBoxSpan>기행</MenuHeaderInBoxSpan>
-              <MenuHeaderInBoxSpan>紀行</MenuHeaderInBoxSpan>
-            </MenuHeaderInBox>
-          </Link>
+              <MenuHeaderInBoxSpan>紀行</MenuHeaderInBoxSpan>{" "}
+            </Link>
+          </MenuHeaderInBox>
         </MenuHeader>
         <SideMenuHeaderBox>
           <SideMenuUl>
