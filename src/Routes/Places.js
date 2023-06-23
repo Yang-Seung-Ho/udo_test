@@ -81,9 +81,9 @@ const offset = 3; //한번에 보여주고싶은 이미지 수
 function Places() {
   const imageUrls = [img1, img2, img3, img2, img2, img2, img3, img3, img3];
   const [index, setIndex] = useState(0);
-  const [leaving, setLeaving] = useState(false);
+  // const [leaving, setLeaving] = useState(false);
   const [back, setBack] = useState(false);
-  const toggleLeaving = () => setLeaving((prev) => !prev);
+  // const toggleLeaving = () => setLeaving((prev) => !prev);
 
   // const increaseIndex = () => {
   //   if (leaving) return;
@@ -154,8 +154,8 @@ function Places() {
             </a>
           </MapBox>
         </PlaceFlexBox>
-
-        <AnimatePresence onExitComplete={toggleLeaving} custom={back}>
+        <AnimatePresence custom={back}>
+          {/* <AnimatePresence onExitComplete={toggleLeaving} custom={back}> */}
           <SlideImgBox
             custom={back}
             key={index}
