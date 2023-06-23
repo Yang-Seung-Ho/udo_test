@@ -23,7 +23,7 @@ const MenuHeaderInBox = styled.div`
   width: 143px;
   height: 143px;
   margin-top: 30px;
-  margin-left: 18%;
+  margin-left: 10%;
 `;
 const MenuHeaderInBoxSpan = styled.span`
   display: block;
@@ -41,7 +41,7 @@ const MenuHeaderInBoxSpan = styled.span`
 const SideMenuHeaderBox = styled.div`
   position: fixed;
   padding-top: 225px;
-  margin-left: 30%;
+  margin-left: 25%;
 `;
 const SideMenuUl = styled.ul``;
 const SideMenuOuterDiv = styled.div`

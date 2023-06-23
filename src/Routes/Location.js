@@ -5,8 +5,8 @@ const TotalBox = styled.div`
   position: absolute;
   z-index: -1;
   margin-top: 175px;
-  margin-left: 40%;
-  margin-right: 16%;
+  margin-left: 38%;
+  margin-right: 12%;
   height: auto;
   min-height: 100%;
   padding-bottom: 200px;
@@ -42,7 +42,7 @@ function Location() {
     const script = document.createElement("script");
     script.async = true;
     script.src =
-      "https://dapi.kakao.com/v2/maps/sdk.js?appkey=13dd7f28636b0033979c81efcb30c719&autoload=false";
+      "https://dapi.kakao.com/v2/maps/sdk.js?appkey=8cf69e5c83fc723e16ef4ecd1f9d241f&autoload=false";
     document.head.appendChild(script);
 
     // 스크립트 로드 완료 시 카카오 지도 초기화

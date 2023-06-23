@@ -13,8 +13,8 @@ const TotalBox = styled.div`
   position: absolute;
   z-index: -1;
   margin-top: 175px;
-  margin-left: 40%;
-  margin-right: 10%;
+  margin-left: 38%;
+  margin-right: 12%;
   height: auto;
   min-height: 100%;
   padding-bottom: 200px;
