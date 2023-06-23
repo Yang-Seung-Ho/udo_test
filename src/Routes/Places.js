@@ -84,35 +84,34 @@ function Places() {
   const [leaving, setLeaving] = useState(false);
   const [back, setBack] = useState(false);
   const toggleLeaving = () => setLeaving((prev) => !prev);
-  console.log(leaving);
-  const increaseIndex = () => {
-    if (leaving) return;
-    toggleLeaving();
-    const totalMovies = imageUrls.length;
-    const maxIndex = Math.floor(totalMovies / offset) - 1;
-    setBack(false);
-    setIndex((prev) => (maxIndex === prev ? 0 : prev + 1));
-    // 3초마다 index 자동 증가
-  };
+
+  // const increaseIndex = () => {
+  //   if (leaving) return;
+  //   toggleLeaving();
+  //   const totalMovies = imageUrls.length;
+  //   const maxIndex = Math.floor(totalMovies / offset) - 1;
+  //   setBack(false);
+  //   setIndex((prev) => (maxIndex === prev ? 0 : prev + 1));
+  // };
   useEffect(() => {
     const totalMovies = imageUrls.length;
     const maxIndex = Math.floor(totalMovies / offset) - 1;
     const timer = setInterval(() => {
       setBack(false);
       setIndex((prev) => (maxIndex === prev ? 0 : prev + 1));
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(timer);
-  }, []);
-  const decreaseIndex = () => {
-    if (leaving) return;
-    toggleLeaving();
-    const totalMovies = imageUrls.length;
-    const maxIndex = Math.floor(totalMovies / offset) - 1;
-    setBack(true);
-    setIndex((prev) => (0 === prev ? maxIndex : prev - 1));
-  };
-  console.log(index);
+  }, [imageUrls.length]);
+  // const decreaseIndex = () => {
+  //   if (leaving) return;
+  //   toggleLeaving();
+  //   const totalMovies = imageUrls.length;
+  //   const maxIndex = Math.floor(totalMovies / offset) - 1;
+  //   setBack(true);
+  //   setIndex((prev) => (0 === prev ? maxIndex : prev - 1));
+  // };
+
   const BoxVar = {
     invisible: (back) => ({
       opacity: 0,
@@ -143,6 +142,7 @@ function Places() {
             <a
               href="https://map.kakao.com/?urlX=492310&urlY=977&urlLevel=3&map_type=TYPE_MAP&map_hybrid=false"
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 width="350"

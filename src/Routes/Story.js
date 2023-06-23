@@ -66,10 +66,6 @@ const Box = styled.div`
   width: 45%;
   height: 300px;
 `;
-const NarrativeImg = styled.img``;
-const Indicators = styled.div`
-  margin-bottom: 18%;
-`;
 const LeftArrow = styled.i`
   width: 24px;
   height: 24px;
