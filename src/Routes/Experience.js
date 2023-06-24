@@ -80,7 +80,7 @@ const InfoDetail = styled.p`
 `;
 
 function Experience() {
-  const FirstimageUrls = [img1, img2, img3];
+  const FirstimageUrls = useMemo(() => [img1, img2, img3], []);
   const [imageLoaded, setImageLoaded] = useState(false);
   useEffect(() => {
     const loadImages = async () => {

@@ -97,19 +97,18 @@ const PlaceTotalBox = styled.div`
 // `;
 const offset = 3; //한번에 보여주고싶은 이미지 수
 function Places() {
-  const FirstimageUrls = [img1, img1, img1, img1, img1, img1, img1, img1, img1];
-  const SecondimageUrls = [
-    img2,
-    img2,
-    img2,
-    img2,
-    img2,
-    img2,
-    img2,
-    img2,
-    img2,
-  ];
-  const ThirdimageUrls = [img3, img3, img3, img3, img3, img3, img3, img3, img3];
+  const FirstimageUrls = useMemo(
+    () => [img1, img1, img1, img1, img1, img1, img1, img1, img1],
+    []
+  );
+  const SecondimageUrls = useMemo(
+    () => [img2, img2, img2, img2, img2, img2, img2, img2, img2],
+    []
+  );
+  const ThirdimageUrls = useMemo(
+    () => [img3, img3, img3, img3, img3, img3, img3, img3, img3],
+    []
+  );
   const [imageLoaded, setImageLoaded] = useState(false);
   useEffect(() => {
     const loadImages = async () => {
