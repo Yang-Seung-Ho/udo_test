@@ -111,6 +111,9 @@ function Places() {
     []
   );
   const [imageLoaded, setImageLoaded] = useState(false);
+  if (imageLoaded) {
+    // 아무런 동작 없음
+  }
   useEffect(() => {
     const loadImages = async () => {
       try {

@@ -83,6 +83,9 @@ const InfoDetail = styled.p`
 function Experience() {
   const FirstimageUrls = useMemo(() => [img1, img2, img3], []);
   const [imageLoaded, setImageLoaded] = useState(false);
+  if (imageLoaded) {
+    // 아무런 동작 없음
+  }
   useEffect(() => {
     const loadImages = async () => {
       try {
@@ -101,7 +104,6 @@ function Experience() {
         console.error("Failed to load images:", error);
       }
     };
-
     loadImages();
   }, [FirstimageUrls]);
 
