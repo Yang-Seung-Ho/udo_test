@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import img1 from "../Images/main4.jpeg";
 import img2 from "../Images/main5.jpeg";
 import img3 from "../Images/main6.jpeg";
