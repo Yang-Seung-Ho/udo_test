@@ -2,9 +2,20 @@ import React from "react";
 import img1 from "../Images/3.jpg";
 import img2 from "../Images/4.jpg";
 import img3 from "../Images/img1.jpg";
-import styled from "styled-components";
+
 import { useState, useEffect } from "react";
+import styled, { keyframes } from "styled-components";
+const fadeInAnimation = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
 const TotalBox = styled.div`
+  animation: ${fadeInAnimation} 0.5s ease-in;
   position: absolute;
   z-index: -1;
   margin-top: 175px;

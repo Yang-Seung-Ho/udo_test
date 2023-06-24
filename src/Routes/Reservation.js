@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
 
 const Title = styled.h1`
@@ -9,7 +9,18 @@ const Title = styled.h1`
 const HeadTitle = styled.div`
   display: flex;
 `;
+
+const fadeInAnimation = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
 const TotalBox = styled.div`
+  animation: ${fadeInAnimation} 0.5s ease-in;
   position: absolute;
   z-index: -1;
   margin-top: 175px;

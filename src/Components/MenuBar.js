@@ -9,7 +9,7 @@ const MenuHeader = styled.div`
   position: fixed;
   width: 100%;
   height: 175px;
-  background-color: var(--backgroundColor);
+  background-color: rgba(245, 241, 232, 255, 0.9);
 `;
 const MenuHeaderInBox = styled.div`
   cursor: pointer;
@@ -23,7 +23,7 @@ const MenuHeaderInBox = styled.div`
   width: 143px;
   height: 143px;
   margin-top: 30px;
-  margin-left: 10%;
+  margin-left: 8%;
 `;
 const MenuHeaderInBoxSpan = styled.span`
   display: block;
@@ -41,7 +41,7 @@ const MenuHeaderInBoxSpan = styled.span`
 const SideMenuHeaderBox = styled.div`
   position: fixed;
   padding-top: 225px;
-  margin-left: 25%;
+  margin-left: 20%;
 `;
 const SideMenuUl = styled.ul``;
 const SideMenuOuterDiv = styled.div`

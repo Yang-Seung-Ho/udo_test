@@ -1,9 +1,18 @@
-import styled from "styled-components";
 import PrologueImg from "../Images/3.jpg";
 
 import { useState, useEffect } from "react";
+import styled, { keyframes } from "styled-components";
+const fadeInAnimation = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 const TotalBox = styled.div`
+  animation: ${fadeInAnimation} 0.5s ease-in;
   position: absolute;
   z-index: -1;
   margin-top: 175px;
