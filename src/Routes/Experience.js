@@ -68,11 +68,6 @@ const LeftImgBox = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
 `;
-const RightImg = styled.img`
-  margin-bottom: 36px;
-  width: 100%;
-  height: 400px;
-`;
 const InfoBox = styled.div`
   width: 90%;
   text-align: justify;
