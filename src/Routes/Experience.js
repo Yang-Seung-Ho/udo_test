@@ -86,7 +86,7 @@ const InfoTitle = styled.p`
 const InfoDetail = styled.p`
   opacity: 0.8;
   font-size: 14px;
-  line-height: 48px;
+  line-height: 32px;
 `;
 const CarouselTotalBox = styled.div`
   width: 100%;
@@ -126,11 +126,11 @@ function Experience() {
         <ExperienceOuterBox>
           <OrderList>
             <InfoNumber>#01</InfoNumber>
-            <InfoTitle>자쿠지</InfoTitle>
           </OrderList>
           <ExperienceTotalBox>
             <LeftImgBox>
               <InfoBox>
+                <InfoTitle>자쿠지</InfoTitle>
                 <InfoDetail>
                   우도기행에서 제공하는 자쿠지는 몸과 마음을 휴식시킬 수 있는
                   특별한 공간입니다. 따뜻한 물에 몸을 담그며 스트레스와 피로를
@@ -190,7 +190,6 @@ function Experience() {
         <ExperienceOuterBox>
           <OrderList style={{ textAlign: "right" }}>
             <InfoNumber>#02</InfoNumber>
-            <InfoTitle>턴테이블</InfoTitle>
           </OrderList>
           <ExperienceTotalBox>
             <RightImgBox>
@@ -238,6 +237,7 @@ function Experience() {
             </RightImgBox>
             <LeftImgBox style={{ justifyContent: "flex-end" }}>
               <InfoBox>
+                <InfoTitle style={{ textAlign: "right" }}>턴테이블</InfoTitle>
                 <InfoDetail>
                   우도기행의 턴테이블은 LP판과 함께 음악을 즐길 수 있습니다..
                   오래된 팝송과 재즈의 따뜻한 음색을 품은 LP판들은 특별한 음악을
@@ -254,11 +254,11 @@ function Experience() {
         <ExperienceOuterBox>
           <OrderList>
             <InfoNumber>#03</InfoNumber>
-            <InfoTitle>빔 프로젝트</InfoTitle>
           </OrderList>
           <ExperienceTotalBox>
             <LeftImgBox>
               <InfoBox>
+                <InfoTitle>빔 프로젝트</InfoTitle>
                 <InfoDetail>
                   빔 프로젝터를 통해 영화를 즐기실 수 있습니다.{" "}
                 </InfoDetail>
@@ -316,7 +316,6 @@ function Experience() {
         <ExperienceOuterBox>
           <OrderList style={{ textAlign: "right" }}>
             <InfoNumber>#04</InfoNumber>
-            <InfoTitle>바베큐</InfoTitle>
           </OrderList>
           <ExperienceTotalBox>
             <RightImgBox>
@@ -364,6 +363,7 @@ function Experience() {
             </RightImgBox>
             <LeftImgBox style={{ justifyContent: "flex-end" }}>
               <InfoBox>
+                <InfoTitle style={{ textAlign: "right" }}>바베큐</InfoTitle>
                 <InfoDetail>
                   우도기행의 테라스에서 이용 가능한 바베큐입니다. 시설은 가족,
                   친구와 함께 즐기기에 최적화되어 있습니다.
