@@ -32,6 +32,7 @@ const ExperienceTotalBox = styled.div`
   padding-bottom: 100px;
   margin-bottom: 100px;
   display: flex;
+
   justify-content: space-between;
   align-items: flex-start; /* 추가 */
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -44,26 +45,34 @@ const Title = styled.h1`
 `;
 const LeftImg = styled.img`
   width: 100%;
-  height: 600px;
+  height: 250px;
 `;
 
-const LeftImgBox = styled.div`
-  flex: 1; /* 추가 */
-  margin-right: 24px;
-  width: 100%;
-  position: relative;
-  height: 600px;
-`;
 const RightImgBox = styled.div`
   flex: 1; /* 추가 */
-  margin-left: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  height: 200px;
+`;
+const LeftImgBox = styled.div`
+  flex: 1; /* 추가 */
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 `;
 const RightImg = styled.img`
   margin-bottom: 36px;
   width: 100%;
   height: 400px;
 `;
-const InfoBox = styled.div``;
+const InfoBox = styled.div`
+  width: 80%;
+  text-align: justify;
+`;
 const InfoNumber = styled.span`
   font-size: 12px;
   font-style: italic;
@@ -78,8 +87,11 @@ const InfoTitle = styled.p`
 const InfoDetail = styled.p`
   opacity: 0.8;
   font-size: 14px;
+  line-height: 42px;
 `;
-
+const CarouselTotalBox = styled.div`
+  width: 100%;
+`;
 function Experience() {
   const FirstimageUrls = useMemo(() => [img1, img2, img3], []);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -111,11 +123,24 @@ function Experience() {
     <>
       <TotalBox>
         <Title>스테이에서의 경험들</Title>
+        <InfoNumber>#01</InfoNumber>
+        <InfoTitle>빔 프로젝트</InfoTitle>
         <ExperienceTotalBox>
           <LeftImgBox>
-            <div
+            <InfoBox>
+              <InfoDetail>
+                빔 프로젝터를 통해 영화를 즐기실 수 있습니다.{" "}
+              </InfoDetail>
+              <InfoDetail>
+                뛰어난 화질과 스피커의 풍부한 음향으로 영화관에서와 같은 감동을
+                느낄 수 있습니다.
+              </InfoDetail>
+            </InfoBox>
+          </LeftImgBox>
+          <RightImgBox>
+            <CarouselTotalBox
               id="carouselExampleInterval"
-              class="carousel slide carousel-fade"
+              className="carousel slide carousel-fade"
               data-bs-ride="carousel"
             >
               <div class="carousel-inner">
@@ -153,182 +178,7 @@ function Experience() {
                 ></span>
                 <span class="visually-hidden">Next</span>
               </button>
-            </div>
-          </LeftImgBox>
-          <RightImgBox>
-            <RightImg src={img1}></RightImg>
-            <InfoBox>
-              <InfoNumber>#01</InfoNumber>
-              <InfoTitle>빔 프로젝트</InfoTitle>
-              <InfoDetail>
-                우도기행의 빔프로젝트로 영화 한편 즐겨보세요!
-              </InfoDetail>
-            </InfoBox>
-          </RightImgBox>
-        </ExperienceTotalBox>
-        <ExperienceTotalBox>
-          <LeftImgBox>
-            <div
-              id="carouselExampleInterval"
-              class="carousel slide carousel-fade"
-              data-bs-ride="carousel"
-            >
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="3000">
-                  <LeftImg src={img1} class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                  <LeftImg src={img2} class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                  <LeftImg src={img3} class="d-block w-100" alt="..." />
-                </div>
-              </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleInterval"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleInterval"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          </LeftImgBox>
-          <RightImgBox>
-            <RightImg src={img2}></RightImg>
-            <InfoBox>
-              <InfoNumber>#02</InfoNumber>
-              <InfoTitle>턴 테이블</InfoTitle>
-              <InfoDetail>
-                우도기행의 빔프로젝트로 영화 한편 즐겨보세요!
-              </InfoDetail>
-            </InfoBox>
-          </RightImgBox>
-        </ExperienceTotalBox>
-        <ExperienceTotalBox>
-          <LeftImgBox>
-            <div
-              id="carouselExampleInterval"
-              class="carousel slide carousel-fade"
-              data-bs-ride="carousel"
-            >
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="3000">
-                  <LeftImg src={img1} class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                  <LeftImg src={img2} class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                  <LeftImg src={img3} class="d-block w-100" alt="..." />
-                </div>
-              </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleInterval"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleInterval"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          </LeftImgBox>
-          <RightImgBox>
-            <RightImg src={img3}></RightImg>
-            <InfoBox>
-              <InfoNumber>#03</InfoNumber>
-              <InfoTitle>바베큐</InfoTitle>
-              <InfoDetail>
-                우도기행의 빔프로젝트로 영화 한편 즐겨보세요!
-              </InfoDetail>
-            </InfoBox>
-          </RightImgBox>
-        </ExperienceTotalBox>
-        <ExperienceTotalBox>
-          <LeftImgBox>
-            <div
-              id="carouselExampleInterval"
-              class="carousel slide carousel-fade"
-              data-bs-ride="carousel"
-            >
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="3000">
-                  <LeftImg src={img1} class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                  <LeftImg src={img2} class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                  <LeftImg src={img3} class="d-block w-100" alt="..." />
-                </div>
-              </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleInterval"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleInterval"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          </LeftImgBox>
-          <RightImgBox>
-            <RightImg src={img3}></RightImg>
-            <InfoBox>
-              <InfoNumber>#04</InfoNumber>
-              <InfoTitle>자쿠지와 차</InfoTitle>
-              <InfoDetail>
-                우도기행의 빔프로젝트로 영화 한편 즐겨보세요!
-              </InfoDetail>
-            </InfoBox>
+            </CarouselTotalBox>
           </RightImgBox>
         </ExperienceTotalBox>
       </TotalBox>

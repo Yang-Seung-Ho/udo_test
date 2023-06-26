@@ -1,9 +1,10 @@
 import styled, { css } from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-
+import Logo from "../Images/Logo.png";
 const MenuBarBox = styled.div`
   position: fixed;
+  font-family: "NanumSquareNeoLight";
 `;
 const MenuHeader = styled.div`
   position: fixed;
@@ -11,32 +12,48 @@ const MenuHeader = styled.div`
   height: 175px;
   background-color: rgba(245, 241, 232, 255, 0.9);
 `;
+// const MenuHeaderInBox = styled.div`
+// cursor: pointer;
+// background-color: black;
+// display: flex;
+// flex-direction: column;
+// align-items: flex-end;
+// height: 100vh;
+// justify-content: center;
+// color: whitesmoke;
+// width: 143px;
+// height: 143px;
+// margin-top: 30px;
+// margin-left: 8%;
+// `;
 const MenuHeaderInBox = styled.div`
   cursor: pointer;
-  background-color: black;
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   height: 100vh;
   justify-content: center;
-  color: whitesmoke;
   width: 143px;
   height: 143px;
   margin-top: 30px;
   margin-left: 8%;
 `;
-const MenuHeaderInBoxSpan = styled.span`
-  display: block;
-  margin-right: 24px;
-  padding: 2px 0px;
-  padding-right: 4px;
-  border-right: 1.5px solid whitesmoke;
-  :first-child {
-    padding-top: 6px;
-  }
-  :last-child {
-    padding-bottom: 6px;
-  }
+// const MenuHeaderInBoxSpan = styled.span`
+//   display: block;
+//   margin-right: 24px;
+//   padding: 2px 0px;
+//   padding-right: 4px;
+//   border-right: 1.5px solid whitesmoke;
+//   :first-child {
+//     padding-top: 6px;
+//   }
+//   :last-child {
+//     padding-bottom: 6px;
+//   }
+// `;
+const MenuHeaderInBoxImg = styled.img`
+  width: 100%;
 `;
 const SideMenuHeaderBox = styled.div`
   position: fixed;
@@ -117,7 +134,6 @@ const SideMenuInnerLi = styled.li`
 function MenuBar() {
   const location = useLocation();
   const [isLink, setIsLink] = useState("");
-
   useEffect(() => {
     setIsLink(location.pathname);
   }, [location.pathname]);
@@ -139,8 +155,7 @@ function MenuBar() {
           <MenuHeaderInBox>
             {" "}
             <Link to="/">
-              <MenuHeaderInBoxSpan>기행</MenuHeaderInBoxSpan>
-              <MenuHeaderInBoxSpan>紀行</MenuHeaderInBoxSpan>{" "}
+              <MenuHeaderInBoxImg src={Logo}></MenuHeaderInBoxImg>
             </Link>
           </MenuHeaderInBox>
         </MenuHeader>

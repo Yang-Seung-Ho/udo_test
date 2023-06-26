@@ -58,6 +58,14 @@ const PresentImg = styled.img`
   opacity: ${({ loaded }) => (loaded ? 1 : 0)};
   transition: opacity 0.5s ease-in-out;
 `;
+const TitleBox = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const TitleHanja = styled.span`
+  font-family: sans-serif;
+  font-size: 18px;
+`;
 function Prologue() {
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -73,7 +81,10 @@ function Prologue() {
     <>
       <TotalBox>
         <HeaderBox>
-          <Title>기행 紀行</Title>
+          <TitleBox>
+            <Title>기행</Title>
+            <TitleHanja>紀行</TitleHanja>
+          </TitleBox>
           <TitleSpan>
             "여행하는 동안에 보고, 듣고, 느끼고, 겪은 것을 적은 것""
           </TitleSpan>

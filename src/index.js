@@ -32,10 +32,9 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	
 	line-height: 1;
 	background: var(--backgroundColor);
-	font-family: 'Nanum Myeongjo', serif;
+	font-family: 'MaruBuriExtraLight';
 	
 }
 ol, ul {
