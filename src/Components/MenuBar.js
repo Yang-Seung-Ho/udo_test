@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Logo from "../Images/Logo.png";
+import Logo from "../Images/logo.png";
 const MenuBarBox = styled.div`
   position: fixed;
   font-family: "NanumSquareNeoLight";
