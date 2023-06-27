@@ -73,9 +73,7 @@ const AttachSpan = styled.span`
 
 function Places() {
   const handleButtonClick = () => {
-    {
-      window.open("https://www.instagram.com/jeju.udo/", "_blank");
-    }
+    window.open("https://www.instagram.com/jeju.udo/", "_blank");
   };
   return (
     <>
