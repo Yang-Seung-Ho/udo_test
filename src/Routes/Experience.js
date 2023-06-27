@@ -4,7 +4,7 @@ import img2 from "../Images/main5.jpeg";
 import img3 from "../Images/main6.jpeg";
 import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
-
+import Footer from "../Components/Footer";
 const fadeInAnimation = keyframes`
   from {
     opacity: 0;
@@ -23,7 +23,7 @@ const TotalBox = styled.div`
   margin-right: 12%;
   height: auto;
   min-height: 100%;
-  padding-bottom: 200px;
+
   //마진퍼센트값을 뺀 것을 넓이로함 이번만
   width: 52%;
   /* background-color: wheat; */
@@ -93,32 +93,6 @@ const CarouselTotalBox = styled.div`
 `;
 const ExperienceOuterBox = styled.div``;
 function Experience() {
-  const FirstimageUrls = useMemo(() => [img1, img2, img3], []);
-  const [imageLoaded, setImageLoaded] = useState(false);
-  if (imageLoaded) {
-    // 아무런 동작 없음
-  }
-  useEffect(() => {
-    const loadImages = async () => {
-      try {
-        const promises = FirstimageUrls.map((url) => {
-          return new Promise((resolve, reject) => {
-            const img = new Image();
-            img.src = url;
-            img.onload = resolve;
-            img.onerror = reject;
-          });
-        });
-
-        await Promise.all(promises);
-        setImageLoaded(true);
-      } catch (error) {
-        console.error("Failed to load images:", error);
-      }
-    };
-    loadImages();
-  }, [FirstimageUrls]);
-
   return (
     <>
       <TotalBox>
@@ -166,7 +140,7 @@ function Experience() {
                   data-bs-slide="prev"
                 >
                   <span
-                    class="carousel-control-prev-icon"
+                    class="fa-solid fa-chevron-left"
                     aria-hidden="true"
                   ></span>
                   <span class="visually-hidden">Previous</span>
@@ -178,7 +152,7 @@ function Experience() {
                   data-bs-slide="next"
                 >
                   <span
-                    class="carousel-control-next-icon"
+                    class="fa-solid fa-chevron-right"
                     aria-hidden="true"
                   ></span>
                   <span class="visually-hidden">Next</span>
@@ -216,7 +190,7 @@ function Experience() {
                   data-bs-slide="prev"
                 >
                   <span
-                    class="carousel-control-prev-icon"
+                    class="fa-solid fa-chevron-left"
                     aria-hidden="true"
                   ></span>
                   <span class="visually-hidden">Previous</span>
@@ -228,7 +202,7 @@ function Experience() {
                   data-bs-slide="next"
                 >
                   <span
-                    class="carousel-control-next-icon"
+                    class="fa-solid fa-chevron-right"
                     aria-hidden="true"
                   ></span>
                   <span class="visually-hidden">Next</span>
@@ -292,7 +266,7 @@ function Experience() {
                   data-bs-slide="prev"
                 >
                   <span
-                    class="carousel-control-prev-icon"
+                    class="fa-solid fa-chevron-left"
                     aria-hidden="true"
                   ></span>
                   <span class="visually-hidden">Previous</span>
@@ -304,7 +278,7 @@ function Experience() {
                   data-bs-slide="next"
                 >
                   <span
-                    class="carousel-control-next-icon"
+                    class="fa-solid fa-chevron-right"
                     aria-hidden="true"
                   ></span>
                   <span class="visually-hidden">Next</span>
@@ -342,7 +316,7 @@ function Experience() {
                   data-bs-slide="prev"
                 >
                   <span
-                    class="carousel-control-prev-icon"
+                    class="fa-solid fa-chevron-left"
                     aria-hidden="true"
                   ></span>
                   <span class="visually-hidden">Previous</span>
@@ -354,7 +328,7 @@ function Experience() {
                   data-bs-slide="next"
                 >
                   <span
-                    class="carousel-control-next-icon"
+                    class="fa-solid fa-chevron-right"
                     aria-hidden="true"
                   ></span>
                   <span class="visually-hidden">Next</span>
@@ -377,6 +351,7 @@ function Experience() {
             </LeftImgBox>
           </ExperienceTotalBox>
         </ExperienceOuterBox>
+        <Footer />
       </TotalBox>
     </>
   );

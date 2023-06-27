@@ -5,6 +5,7 @@ import img3 from "../Images/img1.jpg";
 
 import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
+import Footer from "../Components/Footer";
 const fadeInAnimation = keyframes`
   from {
     opacity: 0;
@@ -23,14 +24,8 @@ const TotalBox = styled.div`
   margin-right: 12%;
   height: auto;
   min-height: 100%;
-  padding-bottom: 200px;
+
   /* background-color: wheat; */
-`;
-const Img = styled.img`
-  opacity: ${({ loaded }) => (loaded ? 1 : 0)};
-  transition: opacity 0.5s ease-in-out;
-  width: 100%;
-  height: 100%;
 `;
 const NarrativeBox = styled.div`
   padding-top: 48px;
@@ -72,40 +67,20 @@ const NarrativeInfoMiddle = styled.p`
   opacity: 0.8;
   text-align: justify;
 `;
-
-const Box = styled.div`
-  width: 45%;
-  height: 300px;
+const CarouselTotalBox = styled.div`
+  width: 100%;
 `;
-const LeftArrow = styled.i`
-  width: 24px;
-  height: 24px;
-  text-align: center;
+// 이미지 사이즈 조정
+const LeftImg = styled.img`
+  height: 100%;
+  min-height: 300px;
+  width: 100%;
 `;
-const RightArrow = styled.i`
-  width: 24px;
-  height: 24px;
-  text-align: center;
+const CarouselTotalOuterBox = styled.div`
+  width: 50%;
 `;
 
 function Story() {
-  const [imageLoaded, setImageLoaded] = useState(false);
-
-  useEffect(() => {
-    const img = new Image();
-    img.src = img1;
-    img.onload = () => {
-      setImageLoaded(true);
-    };
-    img.src = img2;
-    img.onload = () => {
-      setImageLoaded(true);
-    };
-    img.src = img3;
-    img.onload = () => {
-      setImageLoaded(true);
-    };
-  }, []);
   return (
     <>
       <TotalBox>
@@ -126,67 +101,49 @@ function Story() {
               존재했습니다. 저는 이런 자연들을 많은 사람들이 봤으면 좋겠다는
               생각으로 저희 스테이를 만들게 되었습니다.
             </NarrativeInfo>
-            <Box
-              id="carouselExampleFade1"
-              className="carousel slide carousel-fade"
-            >
-              <div class="carousel-inner" style={{ height: "100%" }}>
-                <div class="carousel-item active" style={{ height: "100%" }}>
-                  <Img
-                    src={img1}
-                    class="d-block w-100"
-                    alt="..."
-                    loaded={imageLoaded}
-                  />
-                </div>
-                <div
-                  class="carousel-item"
-                  style={{ width: "100%", height: "100%" }}
-                >
-                  <img
-                    src={img2}
-                    class="d-block w-100"
-                    alt="..."
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </div>
-                <div
-                  class="carousel-item"
-                  style={{ width: "100%", height: "100%" }}
-                >
-                  <img
-                    src={img3}
-                    class="d-block w-100"
-                    alt="..."
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </div>
-              </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleFade1"
-                data-bs-slide="prev"
-                style={{ color: "rgba(245, 241, 232, 255)" }}
+            <CarouselTotalOuterBox>
+              <CarouselTotalBox
+                id="carouselExampleInterval1"
+                className="carousel slide carousel-fade"
+                data-bs-ride="carousel"
               >
-                <LeftArrow
-                  className="fa-solid fa-chevron-left"
-                  aria-hidden="true"
-                ></LeftArrow>
-              </button>
-              <button
-                style={{ color: "rgba(245, 241, 232, 255)" }}
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleFade1"
-                data-bs-slide="next"
-              >
-                <RightArrow
-                  className="fa-solid fa-chevron-right"
-                  aria-hidden="true"
-                ></RightArrow>
-              </button>
-            </Box>
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="3000">
+                    <LeftImg src={img1} class="d-block w-100" alt="..." />
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <LeftImg src={img2} class="d-block w-100" alt="..." />
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <LeftImg src={img3} class="d-block w-100" alt="..." />
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleInterval1"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="fa-solid fa-chevron-left"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleInterval1"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="fa-solid fa-chevron-right"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </CarouselTotalBox>
+            </CarouselTotalOuterBox>
           </NarrativeImgInfoBox>
         </NarrativeBox>
 
@@ -202,68 +159,49 @@ function Story() {
               곳입니다. 근처에 편의점도 2개나 있어 접근성이 매우 좋답니다.
               바닷가 앞 스테이에서 편안한 휴식을 취해보세요.
             </NarrativeInfoMiddle>
-            <Box
-              style={{ width: "100%", height: "auto" }}
-              id="carouselExampleFade2"
-              className="carousel slide carousel-fade"
-            >
-              <div class="carousel-inner" style={{ height: "100%" }}>
-                <div class="carousel-item active" style={{ height: "100%" }}>
-                  <Img
-                    src={img1}
-                    class="d-block w-100"
-                    alt="..."
-                    loaded={imageLoaded}
-                  />
-                </div>
-                <div
-                  class="carousel-item"
-                  style={{ width: "100%", height: "100%" }}
-                >
-                  <img
-                    src={img2}
-                    class="d-block w-100"
-                    alt="..."
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </div>
-                <div
-                  class="carousel-item"
-                  style={{ width: "100%", height: "100%" }}
-                >
-                  <img
-                    src={img3}
-                    class="d-block w-100"
-                    alt="..."
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </div>
-              </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleFade2"
-                data-bs-slide="prev"
-                style={{ color: "rgba(245, 241, 232, 255)" }}
+            <CarouselTotalOuterBox style={{ width: "80%" }}>
+              <CarouselTotalBox
+                id="carouselExampleInterval2"
+                className="carousel slide carousel-fade"
+                data-bs-ride="carousel"
               >
-                <LeftArrow
-                  className="fa-solid fa-chevron-left"
-                  aria-hidden="true"
-                ></LeftArrow>
-              </button>
-              <button
-                style={{ color: "rgba(245, 241, 232, 255)" }}
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleFade2"
-                data-bs-slide="next"
-              >
-                <RightArrow
-                  className="fa-solid fa-chevron-right"
-                  aria-hidden="true"
-                ></RightArrow>
-              </button>
-            </Box>
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="3000">
+                    <LeftImg src={img1} class="d-block w-100" alt="..." />
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <LeftImg src={img2} class="d-block w-100" alt="..." />
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <LeftImg src={img3} class="d-block w-100" alt="..." />
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleInterval2"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="fa-solid fa-chevron-left"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleInterval2"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="fa-solid fa-chevron-right"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </CarouselTotalBox>
+            </CarouselTotalOuterBox>
           </NarrativeImgInfoBox>
         </NarrativeBox>
         <NarrativeBox>
@@ -280,70 +218,67 @@ function Story() {
               하루동일 직접 우도를 돌며 찾아다녔답니다. 그 시간이 헛되지 않게
               예쁜 커튼봉이 나와서 너무 만족스럽습니다.
             </NarrativeInfo>
-            <Box
-              style={{ height: "250px" }}
-              id="carouselExampleFade3"
-              className="carousel slide carousel-fade"
-            >
-              <div class="carousel-inner" style={{ height: "100%" }}>
-                <div class="carousel-item active" style={{ height: "100%" }}>
-                  <Img
-                    src={img1}
-                    class="d-block w-100"
-                    alt="..."
-                    loaded={imageLoaded}
-                  />
-                </div>
-                <div
-                  class="carousel-item"
-                  style={{ width: "100%", height: "100%" }}
-                >
-                  <img
-                    src={img2}
-                    class="d-block w-100"
-                    alt="..."
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </div>
-                <div
-                  class="carousel-item"
-                  style={{ width: "100%", height: "100%" }}
-                >
-                  <img
-                    src={img3}
-                    class="d-block w-100"
-                    alt="..."
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </div>
-              </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleFade3"
-                data-bs-slide="prev"
-                style={{ color: "rgba(245, 241, 232, 255)" }}
+            <CarouselTotalOuterBox>
+              <CarouselTotalBox
+                id="carouselExampleInterval3"
+                className="carousel slide carousel-fade"
+                data-bs-ride="carousel"
               >
-                <LeftArrow
-                  className="fa-solid fa-chevron-left"
-                  aria-hidden="true"
-                ></LeftArrow>
-              </button>
-              <button
-                style={{ color: "rgba(245, 241, 232, 255)" }}
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleFade3"
-                data-bs-slide="next"
-              >
-                <RightArrow
-                  className="fa-solid fa-chevron-right"
-                  aria-hidden="true"
-                ></RightArrow>
-              </button>
-            </Box>
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="3000">
+                    <LeftImg
+                      style={{ minHeight: "200px" }}
+                      src={img1}
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <LeftImg
+                      style={{ minHeight: "200px" }}
+                      src={img2}
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                    <LeftImg
+                      style={{ minHeight: "200px" }}
+                      src={img3}
+                      class="d-block w-100"
+                      alt="..."
+                    />
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleInterval3"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="fa-solid fa-chevron-left"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleInterval3"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="fa-solid fa-chevron-right"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </CarouselTotalBox>
+            </CarouselTotalOuterBox>
           </NarrativeImgInfoBox>
         </NarrativeBox>
+        <Footer />
       </TotalBox>
     </>
   );

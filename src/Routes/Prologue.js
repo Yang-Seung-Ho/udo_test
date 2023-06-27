@@ -2,6 +2,7 @@ import PrologueImg from "../Images/3.jpg";
 
 import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
+import Footer from "../Components/Footer";
 const fadeInAnimation = keyframes`
   from {
     opacity: 0;
@@ -102,6 +103,7 @@ function Prologue() {
             <PresentImg src={PrologueImg} loaded={imageLoaded} />
           </PresentImgBox>
         </HeaderBox>
+        <Footer />
       </TotalBox>
     </>
   );

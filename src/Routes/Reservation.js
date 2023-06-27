@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
+import Footer from "../Components/Footer";
 
 const Title = styled.h1`
   font-size: 18px;
@@ -87,7 +88,8 @@ const StyledCheckbox = styled.div`
   align-items: center;
   width: 20px;
   height: 20px;
-  background: ${(props) => (props.checked ? "#F3D6C6" : "papayawhip")};
+  background: "#F3D6C6";
+  /* background: ${(props) => (props.checked ? "#F3D6C6" : "papayawhip")}; */
   border-radius: 3px;
   border: 1px solid gray;
   margin-right: 8px;
@@ -109,13 +111,10 @@ const ReservationBox = styled.div`
 const ReservationBtn = styled.button`
   border: none;
   padding: 12px 6px;
-  background-color: rgba(0, 0, 0, 0.1);
-  color: rgba(0, 0, 0, 1);
-  border-radius: 0px;
-  transition: background-color 0.3s ease-in-out; /* Added transition property */
-
+  background-color: rgba(233, 232, 230, 255);
+  transition: background-color 0.3s ease-in-out;
   &:hover {
-    background-color: rgba(58, 181, 74, 0.7);
+    background-color: rgba(200, 199, 197, 255); /* Removed quotation marks */
   }
 `;
 const ModalContent = styled.div`
@@ -325,7 +324,6 @@ function Reservation() {
           </CheckboxLabel>
         </CheckboxContainer>
         <ReservationBox>
-          {" "}
           {isChecked ? (
             <ReservationBtn onClick={handleButtonClick}>
               네이버 예약
@@ -340,6 +338,7 @@ function Reservation() {
             </ReservationBtn>
           )}
         </ReservationBox>
+        <Footer />
       </TotalBox>
       {/* 모달 박스 */}
       <div

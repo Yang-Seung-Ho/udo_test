@@ -1,11 +1,12 @@
 import styled, { keyframes } from "styled-components";
-import { useMemo } from "react";
+// import { useMemo } from "react";
 import React from "react";
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import img1 from "../Images/main1.jpeg";
-import img2 from "../Images/main2.jpeg";
-import img3 from "../Images/main3.jpeg";
+// import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+// import img1 from "../Images/main1.jpeg";
+// import img2 from "../Images/main2.jpeg";
+// import img3 from "../Images/main3.jpeg";
+import Footer from "../Components/Footer";
 const fadeInAnimation = keyframes`
   from {
     opacity: 0;
@@ -28,12 +29,14 @@ const TotalBox = styled.div`
 `;
 const Title = styled.h1`
   font-size: 18px;
+  margin-bottom: 32px;
 `;
 const PlaceFlexBox = styled.div`
   display: flex;
   margin-bottom: 32px;
 `;
 const MapBox = styled.div`
+  margin-top: 24px;
   width: 80%;
 `;
 const PlaceInfo = styled.p`
@@ -76,8 +79,8 @@ const SlideImg = styled(motion.img)`
 `;
 const PlaceTotalBox = styled.div`
   position: relative;
-  margin-bottom: 50px;
-  padding-bottom: 350px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   &:last-child {
     border: none;
@@ -96,130 +99,130 @@ const PlaceTotalBox = styled.div`
 //     right: 0px; /* 마지막 버튼이 오른쪽에 위치하도록 수정 */
 //   }
 // `;
-const offset = 3; //한번에 보여주고싶은 이미지 수
+// const offset = 3; //한번에 보여주고싶은 이미지 수
 function Places() {
-  const FirstimageUrls = useMemo(
-    () => [img1, img1, img1, img1, img1, img1, img1, img1, img1],
-    []
-  );
-  const SecondimageUrls = useMemo(
-    () => [img2, img2, img2, img2, img2, img2, img2, img2, img2],
-    []
-  );
-  const ThirdimageUrls = useMemo(
-    () => [img3, img3, img3, img3, img3, img3, img3, img3, img3],
-    []
-  );
-  const [imageLoaded, setImageLoaded] = useState(false);
-  if (imageLoaded) {
-    // 아무런 동작 없음
-  }
-  useEffect(() => {
-    const loadImages = async () => {
-      try {
-        const promises = FirstimageUrls.map((url) => {
-          return new Promise((resolve, reject) => {
-            const img = new Image();
-            img.src = url;
-            img.onload = resolve;
-            img.onerror = reject;
-          });
-        });
+  // const FirstimageUrls = useMemo(
+  //   () => [img1, img1, img1, img1, img1, img1, img1, img1, img1],
+  //   []
+  // );
+  // const SecondimageUrls = useMemo(
+  //   () => [img2, img2, img2, img2, img2, img2, img2, img2, img2],
+  //   []
+  // );
+  // const ThirdimageUrls = useMemo(
+  //   () => [img3, img3, img3, img3, img3, img3, img3, img3, img3],
+  //   []
+  // );
+  // const [imageLoaded, setImageLoaded] = useState(false);
+  // if (imageLoaded) {
+  //   // 아무런 동작 없음
+  // }
+  // useEffect(() => {
+  //   const loadImages = async () => {
+  //     try {
+  //       const promises = FirstimageUrls.map((url) => {
+  //         return new Promise((resolve, reject) => {
+  //           const img = new Image();
+  //           img.src = url;
+  //           img.onload = resolve;
+  //           img.onerror = reject;
+  //         });
+  //       });
 
-        await Promise.all(promises);
-        setImageLoaded(true);
-      } catch (error) {
-        console.error("Failed to load images:", error);
-      }
-    };
+  //       await Promise.all(promises);
+  //       setImageLoaded(true);
+  //     } catch (error) {
+  //       console.error("Failed to load images:", error);
+  //     }
+  //   };
 
-    loadImages();
-  }, [FirstimageUrls]);
-  useEffect(() => {
-    const loadImages = async () => {
-      try {
-        const promises = SecondimageUrls.map((url) => {
-          return new Promise((resolve, reject) => {
-            const img = new Image();
-            img.src = url;
-            img.onload = resolve;
-            img.onerror = reject;
-          });
-        });
+  //   loadImages();
+  // }, [FirstimageUrls]);
+  // useEffect(() => {
+  //   const loadImages = async () => {
+  //     try {
+  //       const promises = SecondimageUrls.map((url) => {
+  //         return new Promise((resolve, reject) => {
+  //           const img = new Image();
+  //           img.src = url;
+  //           img.onload = resolve;
+  //           img.onerror = reject;
+  //         });
+  //       });
 
-        await Promise.all(promises);
-        setImageLoaded(true);
-      } catch (error) {
-        console.error("Failed to load images:", error);
-      }
-    };
+  //       await Promise.all(promises);
+  //       setImageLoaded(true);
+  //     } catch (error) {
+  //       console.error("Failed to load images:", error);
+  //     }
+  //   };
 
-    loadImages();
-  }, [SecondimageUrls]);
-  useEffect(() => {
-    const loadImages = async () => {
-      try {
-        const promises = ThirdimageUrls.map((url) => {
-          return new Promise((resolve, reject) => {
-            const img = new Image();
-            img.src = url;
-            img.onload = resolve;
-            img.onerror = reject;
-          });
-        });
+  //   loadImages();
+  // }, [SecondimageUrls]);
+  // useEffect(() => {
+  //   const loadImages = async () => {
+  //     try {
+  //       const promises = ThirdimageUrls.map((url) => {
+  //         return new Promise((resolve, reject) => {
+  //           const img = new Image();
+  //           img.src = url;
+  //           img.onload = resolve;
+  //           img.onerror = reject;
+  //         });
+  //       });
 
-        await Promise.all(promises);
-        setImageLoaded(true);
-      } catch (error) {
-        console.error("Failed to load images:", error);
-      }
-    };
+  //       await Promise.all(promises);
+  //       setImageLoaded(true);
+  //     } catch (error) {
+  //       console.error("Failed to load images:", error);
+  //     }
+  //   };
 
-    loadImages();
-  }, [ThirdimageUrls]);
-  const [index, setIndex] = useState(0);
-  // const [leaving, setLeaving] = useState(false);
-  const [back, setBack] = useState(false);
-  // const toggleLeaving = () => setLeaving((prev) => !prev);
+  //   loadImages();
+  // }, [ThirdimageUrls]);
+  // const [index, setIndex] = useState(0);
+  // // const [leaving, setLeaving] = useState(false);
+  // const [back, setBack] = useState(false);
+  // // const toggleLeaving = () => setLeaving((prev) => !prev);
 
-  // const increaseIndex = () => {
-  //   if (leaving) return;
-  //   toggleLeaving();
-  //   const totalMovies = imageUrls.length;
+  // // const increaseIndex = () => {
+  // //   if (leaving) return;
+  // //   toggleLeaving();
+  // //   const totalMovies = imageUrls.length;
+  // //   const maxIndex = Math.floor(totalMovies / offset) - 1;
+  // //   setBack(false);
+  // //   setIndex((prev) => (maxIndex === prev ? 0 : prev + 1));
+  // // };
+  // useEffect(() => {
+  //   const totalMovies = FirstimageUrls.length;
   //   const maxIndex = Math.floor(totalMovies / offset) - 1;
-  //   setBack(false);
-  //   setIndex((prev) => (maxIndex === prev ? 0 : prev + 1));
-  // };
-  useEffect(() => {
-    const totalMovies = FirstimageUrls.length;
-    const maxIndex = Math.floor(totalMovies / offset) - 1;
-    const timer = setInterval(() => {
-      setBack(false);
-      setIndex((prev) => (maxIndex === prev ? 0 : prev + 1));
-    }, 5000);
+  //   const timer = setInterval(() => {
+  //     setBack(false);
+  //     setIndex((prev) => (maxIndex === prev ? 0 : prev + 1));
+  //   }, 5000);
 
-    return () => clearInterval(timer);
-  }, [FirstimageUrls.length]);
-  // const decreaseIndex = () => {
-  //   if (leaving) return;
-  //   toggleLeaving();
-  //   const totalMovies = imageUrls.length;
-  //   const maxIndex = Math.floor(totalMovies / offset) - 1;
-  //   setBack(true);
-  //   setIndex((prev) => (0 === prev ? maxIndex : prev - 1));
-  // };
+  //   return () => clearInterval(timer);
+  // }, [FirstimageUrls.length]);
+  // // const decreaseIndex = () => {
+  // //   if (leaving) return;
+  // //   toggleLeaving();
+  // //   const totalMovies = imageUrls.length;
+  // //   const maxIndex = Math.floor(totalMovies / offset) - 1;
+  // //   setBack(true);
+  // //   setIndex((prev) => (0 === prev ? maxIndex : prev - 1));
+  // // };
 
-  const BoxVar = {
-    invisible: (back) => ({
-      opacity: 0,
-      transition: { duration: 1 },
-    }),
-    visible: { opacity: 1, x: 0, transition: { duration: 1 } },
-    exit: (back) => ({
-      opacity: 0,
-      transition: { duration: 1 },
-    }),
-  };
+  // const BoxVar = {
+  //   invisible: (back) => ({
+  //     opacity: 0,
+  //     transition: { duration: 1 },
+  //   }),
+  //   visible: { opacity: 1, x: 0, transition: { duration: 1 } },
+  //   exit: (back) => ({
+  //     opacity: 0,
+  //     transition: { duration: 1 },
+  //   }),
+  // };
   return (
     <>
       <TotalBox>
@@ -252,8 +255,7 @@ function Places() {
               </a>
             </MapBox>
           </PlaceFlexBox>
-          <AnimatePresence custom={back}>
-            {/* <AnimatePresence onExitComplete={toggleLeaving} custom={back}> */}
+          {/* <AnimatePresence custom={back}>
             <SlideImgBox
               custom={back}
               key={index}
@@ -274,10 +276,8 @@ function Places() {
                   style={{ zIndex: offset - subIndex }}
                 />
               ))}
-              {/* <PageBtn onClick={decreaseIndex}>Prev</PageBtn>
-            <PageBtn onClick={increaseIndex}>Next</PageBtn> */}
             </SlideImgBox>
-          </AnimatePresence>
+          </AnimatePresence> */}
         </PlaceTotalBox>
         <PlaceTotalBox>
           <PlaceFlexBox>
@@ -308,8 +308,7 @@ function Places() {
               </a>
             </MapBox>
           </PlaceFlexBox>
-          <AnimatePresence custom={back}>
-            {/* <AnimatePresence onExitComplete={toggleLeaving} custom={back}> */}
+          {/* <AnimatePresence custom={back}>
             <SlideImgBox
               custom={back}
               key={index}
@@ -330,10 +329,8 @@ function Places() {
                   style={{ zIndex: offset - subIndex }}
                 />
               ))}
-              {/* <PageBtn onClick={decreaseIndex}>Prev</PageBtn>
-            <PageBtn onClick={increaseIndex}>Next</PageBtn> */}
             </SlideImgBox>
-          </AnimatePresence>
+          </AnimatePresence> */}
         </PlaceTotalBox>
         <PlaceTotalBox>
           <PlaceFlexBox>
@@ -343,7 +340,7 @@ function Places() {
               <PlaceInfo>
                 홍조단괴로 이루어진 해변입니다. 이 곳은 비양도와 다르게 일몰
                 명소입니다! 저희 스테이에서 정반대에 위치해 있지만 해 질 때 쯤
-                가셔서
+                가셔서 일몰을 즐겨봐도 좋을 것 같습니다.
               </PlaceInfo>
             </PlaceInfoBox>
             <MapBox>
@@ -362,8 +359,7 @@ function Places() {
               </a>
             </MapBox>
           </PlaceFlexBox>
-          <AnimatePresence custom={back}>
-            {/* <AnimatePresence onExitComplete={toggleLeaving} custom={back}> */}
+          {/* <AnimatePresence custom={back}>
             <SlideImgBox
               custom={back}
               key={index}
@@ -384,11 +380,113 @@ function Places() {
                   style={{ zIndex: offset - subIndex }}
                 />
               ))}
-              {/* <PageBtn onClick={decreaseIndex}>Prev</PageBtn>
-            <PageBtn onClick={increaseIndex}>Next</PageBtn> */}
             </SlideImgBox>
-          </AnimatePresence>
+          </AnimatePresence> */}
         </PlaceTotalBox>
+        <PlaceTotalBox>
+          <PlaceFlexBox>
+            <PlaceInfoBox>
+              <PlaceTitle>하고수동 해수욕장</PlaceTitle>
+              <PlaceDistance>도보 3분</PlaceDistance>
+              <PlaceInfo>
+                저희 스테이 바로 앞에 위치한 해수욕정입니다. 산호해변과는 다르게
+                모래가 곱고 수심이 완만하게 낮아지기 때문에 아이들이 놀기에도
+                적합한 해수욕장입니다. 여름에 오셔서 해수욕을 즐겨보시길
+                추천드리는 곳입니다.
+              </PlaceInfo>
+            </PlaceInfoBox>
+            <MapBox>
+              <a
+                href="https://map.kakao.com/?urlX=490137&urlY=5572&urlLevel=2&map_type=TYPE_MAP&map_hybrid=false"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  width="350"
+                  height="220"
+                  src="https://map2.daum.net/map/mapservice?FORMAT=PNG&SCALE=1.25&MX=490137&MY=5572&S=0&IW=504&IH=310&LANG=0&COORDSTM=WCONGNAMUL&logo=kakao_logo"
+                  style={{ border: "1px solid #ccc" }}
+                  alt="카카오맵"
+                />
+              </a>
+            </MapBox>
+          </PlaceFlexBox>
+          {/* <AnimatePresence custom={back}>
+            <SlideImgBox
+              custom={back}
+              key={index}
+              variants={BoxVar}
+              initial="invisible"
+              animate="visible"
+              exit="exit"
+            >
+              {ThirdimageUrls.slice(
+                index * offset,
+                index * offset + offset
+              ).map((imageUrl, subIndex) => (
+                <SlideImg
+                  key={index * offset + subIndex}
+                  src={imageUrl}
+                  alt={`Image ${index * offset + subIndex}`}
+                  variants={BoxVar}
+                  style={{ zIndex: offset - subIndex }}
+                />
+              ))}
+            </SlideImgBox>
+          </AnimatePresence> */}
+        </PlaceTotalBox>
+        <PlaceTotalBox>
+          <PlaceFlexBox>
+            <PlaceInfoBox>
+              <PlaceTitle>톨칸이</PlaceTitle>
+              <PlaceDistance>도보 40~50분, 차량 10분 가량</PlaceDistance>
+              <PlaceInfo>
+                톨칸이는 검멀레의 반대편입니다. 톨칸이의 절벽은 개인적으로
+                제주도에서도 손에 꼽는 자연이라고 생각됩니다. 비가 많이 오는
+                날에는 비와사라는 폭도 생기는 매력적인 곳입니다.
+              </PlaceInfo>
+            </PlaceInfoBox>
+            <MapBox>
+              <a
+                href="https://map.kakao.com/?urlX=490171&urlY=-357&urlLevel=3&map_type=TYPE_MAP&map_hybrid=false"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  width="350"
+                  height="220"
+                  src="https://map2.daum.net/map/mapservice?FORMAT=PNG&SCALE=2.5&MX=490171&MY=-357&S=0&IW=504&IH=310&LANG=0&COORDSTM=WCONGNAMUL&logo=kakao_logo"
+                  style={{ border: "1px solid #ccc" }}
+                  alt="카카오맵"
+                />
+              </a>
+            </MapBox>
+          </PlaceFlexBox>
+          {/* <AnimatePresence custom={back}>
+            <SlideImgBox
+              custom={back}
+              key={index}
+              variants={BoxVar}
+              initial="invisible"
+              animate="visible"
+              exit="exit"
+            >
+              {ThirdimageUrls.slice(
+                index * offset,
+                index * offset + offset
+              ).map((imageUrl, subIndex) => (
+                <SlideImg
+                  key={index * offset + subIndex}
+                  src={imageUrl}
+                  alt={`Image ${index * offset + subIndex}`}
+                  variants={BoxVar}
+                  style={{ zIndex: offset - subIndex }}
+                />
+              ))}
+            </SlideImgBox>
+          </AnimatePresence> */}
+        </PlaceTotalBox>
+        <Footer />
       </TotalBox>
     </>
   );

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
+import Footer from "../Components/Footer";
 const fadeInAnimation = keyframes`
   from {
     opacity: 0;
@@ -41,7 +42,7 @@ const AddressBox = styled.div`
   margin: 24px 0;
 `;
 const MapContainer = styled.div`
-  position: absolute;
+  position: relative;
   height: 400px;
   width: 800px;
 `;
@@ -71,7 +72,7 @@ function Location() {
 
         const infowindow = new window.kakao.maps.InfoWindow({
           content:
-            '<div style="padding:10px; font-size:13px;">제주 제주시 우도면 우도해안길 816 뒷집 2층</div>',
+            '<div style="padding:10px; font-size:13px; white-space: nowrap;">제주 제주시 우도면 우도해안길 816 뒷집 2층</div>',
         });
         infowindow.open(map, marker);
       });
@@ -98,6 +99,7 @@ function Location() {
           </AddressBox>
           <MapContainer id="map"></MapContainer>
         </LocationBox>
+        <Footer styled />
       </TotalBox>
     </>
   );

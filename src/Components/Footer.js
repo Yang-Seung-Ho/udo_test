@@ -2,6 +2,8 @@ import styled from "styled-components";
 // import { useState, useEffect } from "react";
 // import { useLocation } from "react-router-dom";
 const TotalFooterBox = styled.div`
+  padding: 80px 0 60px 0px;
+  right: 20%;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -18,12 +20,12 @@ const InstaBox = styled.div`
 `;
 const InstaLogo = styled.p`
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
   padding-bottom: 4px;
 `;
 const InstaId = styled.span`
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px;
 `;
 const FooterUnderBox = styled.div`
   display: flex;
@@ -31,8 +33,8 @@ const FooterUnderBox = styled.div`
   align-items: center;
 `;
 const FooterUnderSpan = styled.span`
-  font-size: 13px;
-  opacity: 0.6;
+  font-size: 11px;
+  opacity: 0.8;
   border-right: 1px solid rgb(0, 0, 0, 0.8);
   padding: 0 6px;
 `;
@@ -50,7 +52,7 @@ const RawBox = styled.div`
 `;
 const RawSpan = styled.span`
   margin: 0 24px;
-  font-size: 13.5px;
+  font-size: 12px;
   opacity: 0.8;
 `;
 function Footer() {
