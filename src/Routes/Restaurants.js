@@ -111,7 +111,7 @@ function Places() {
             </PlaceInfoBox>
           </PlaceFlexBox>
           <AttachBox>
-            자세한 정보는{" "}
+            자세한 정보는
             <AttachSpan onClick={handleButtonClick}>이곳</AttachSpan>
             에서 확인해주세요!
           </AttachBox>
