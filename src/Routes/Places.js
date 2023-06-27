@@ -24,22 +24,26 @@ const TotalBox = styled.div`
 `;
 const Title = styled.h1`
   font-size: 18px;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 `;
 const PlaceFlexBox = styled.div`
+  width: 130%;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 32px;
 `;
 const MapBox = styled.div`
   margin-top: 24px;
-  width: 80%;
+  width: 100%;
 `;
 const PlaceInfo = styled.p`
   text-align: justify;
-  line-height: 24px;
+  line-height: 30px;
   font-size: 15px;
 `;
 const PlaceInfoBox = styled.div`
+  width: 100%;
   padding-right: 12px;
 `;
 const PlaceTitle = styled.h1`
