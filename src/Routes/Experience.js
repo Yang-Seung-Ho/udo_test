@@ -1,8 +1,6 @@
-import { useMemo } from "react";
 import img1 from "../Images/main4.jpeg";
 import img2 from "../Images/main5.jpeg";
 import img3 from "../Images/main6.jpeg";
-import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import Footer from "../Components/Footer";
 const fadeInAnimation = keyframes`
@@ -26,7 +24,6 @@ const TotalBox = styled.div`
 
   //마진퍼센트값을 뺀 것을 넓이로함 이번만
   width: 52%;
-  /* background-color: wheat; */
 `;
 const OrderList = styled.div`
   text-align: left;

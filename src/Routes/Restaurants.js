@@ -1,11 +1,5 @@
 import styled, { keyframes } from "styled-components";
-// import { useMemo } from "react";
 import React from "react";
-// import { useState, useEffect } from "react";
-// import { motion, AnimatePresence } from "framer-motion";
-// import img1 from "../Images/main1.jpeg";
-// import img2 from "../Images/main2.jpeg";
-// import img3 from "../Images/main3.jpeg";
 import Footer from "../Components/Footer";
 const fadeInAnimation = keyframes`
   from {
@@ -50,25 +44,6 @@ const PlaceTitle = styled.h1`
   text-align: center;
   font-family: "MaruBuri";
 `;
-// const PlaceDistance = styled.span`
-//   padding: 6px 0px 12px 0px;
-//   font-size: 14px;
-//   opacity: 0.8;
-//   display: block;
-// `;
-// const CarouselTotalBox = styled.div`
-//   width: 80%;
-// `;
-// // 이미지 사이즈 조정
-// const LeftImg = styled.img`
-//   width: 100%;
-//   height: 300px;
-// `;
-// const CarouselTotalOuterBox = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   width: 100%;
-// `;
 
 const PlaceTotalBox = styled.div`
   position: relative;
@@ -95,7 +70,7 @@ const AttachSpan = styled.span`
   border-bottom: 1px solid;
   font-family: "MaruBuriSemiBold";
 `;
-// const PlaceInfoLi = styled.li``;
+
 function Places() {
   const handleButtonClick = () => {
     {
@@ -124,7 +99,7 @@ function Places() {
             </PlaceInfoBox>
             <PlaceInfoBox>
               <PlaceTitle>카페</PlaceTitle>
-              {/* <PlaceDistance>도보 30분, 차량 5~10분 가량</PlaceDistance> */}
+
               <PlaceInfo>
                 <PlaceInfoUl>
                   <li>카페살레</li>
@@ -140,49 +115,6 @@ function Places() {
             <AttachSpan onClick={handleButtonClick}>이곳</AttachSpan>
             에서 확인해주세요!
           </AttachBox>
-          {/* <CarouselTotalOuterBox>
-            <CarouselTotalBox
-              id="carouselExampleInterval3"
-              className="carousel slide carousel-fade"
-              data-bs-ride="carousel"
-            >
-              <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="3000">
-                  <LeftImg src={img1} class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                  <LeftImg src={img2} class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                  <LeftImg src={img3} class="d-block w-100" alt="..." />
-                </div>
-              </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleInterval3"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleInterval3"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </CarouselTotalBox>
-          </CarouselTotalOuterBox> */}
         </PlaceTotalBox>
 
         <Footer />

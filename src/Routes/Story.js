@@ -2,8 +2,6 @@ import React from "react";
 import img1 from "../Images/3.jpg";
 import img2 from "../Images/4.jpg";
 import img3 from "../Images/img1.jpg";
-
-import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import Footer from "../Components/Footer";
 const fadeInAnimation = keyframes`
@@ -24,8 +22,6 @@ const TotalBox = styled.div`
   margin-right: 12%;
   height: auto;
   min-height: 100%;
-
-  /* background-color: wheat; */
 `;
 const NarrativeBox = styled.div`
   padding-top: 48px;

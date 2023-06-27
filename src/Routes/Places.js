@@ -1,11 +1,6 @@
 import styled, { keyframes } from "styled-components";
-// import { useMemo } from "react";
 import React from "react";
-// import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-// import img1 from "../Images/main1.jpeg";
-// import img2 from "../Images/main2.jpeg";
-// import img3 from "../Images/main3.jpeg";
+
 import Footer from "../Components/Footer";
 const fadeInAnimation = keyframes`
   from {
@@ -57,26 +52,7 @@ const PlaceDistance = styled.span`
   opacity: 0.8;
   display: block;
 `;
-const SlideImgBox = styled(motion.div)`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  position: relative;
-`;
-const SlideImg = styled(motion.img)`
-  width: calc(100% / 3);
-  padding: 3px;
-  height: 300px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  :nth-child(2) {
-    left: calc(100% / 3);
-  }
-  :nth-child(3) {
-    left: calc(100% / 3 * 2);
-  }
-`;
+
 const PlaceTotalBox = styled.div`
   position: relative;
   margin-bottom: 20px;
@@ -87,142 +63,7 @@ const PlaceTotalBox = styled.div`
     padding-bottom: 150px;
   }
 `;
-// const PageBtn = styled.button`
-//   position: absolute;
-//   z-index: 10;
-//   height: auto;
-
-//   &:first-child {
-//     left: 0px; /* 첫 번째 버튼이 왼쪽에 위치하도록 수정 */
-//   }
-//   &:last-child {
-//     right: 0px; /* 마지막 버튼이 오른쪽에 위치하도록 수정 */
-//   }
-// `;
-// const offset = 3; //한번에 보여주고싶은 이미지 수
 function Places() {
-  // const FirstimageUrls = useMemo(
-  //   () => [img1, img1, img1, img1, img1, img1, img1, img1, img1],
-  //   []
-  // );
-  // const SecondimageUrls = useMemo(
-  //   () => [img2, img2, img2, img2, img2, img2, img2, img2, img2],
-  //   []
-  // );
-  // const ThirdimageUrls = useMemo(
-  //   () => [img3, img3, img3, img3, img3, img3, img3, img3, img3],
-  //   []
-  // );
-  // const [imageLoaded, setImageLoaded] = useState(false);
-  // if (imageLoaded) {
-  //   // 아무런 동작 없음
-  // }
-  // useEffect(() => {
-  //   const loadImages = async () => {
-  //     try {
-  //       const promises = FirstimageUrls.map((url) => {
-  //         return new Promise((resolve, reject) => {
-  //           const img = new Image();
-  //           img.src = url;
-  //           img.onload = resolve;
-  //           img.onerror = reject;
-  //         });
-  //       });
-
-  //       await Promise.all(promises);
-  //       setImageLoaded(true);
-  //     } catch (error) {
-  //       console.error("Failed to load images:", error);
-  //     }
-  //   };
-
-  //   loadImages();
-  // }, [FirstimageUrls]);
-  // useEffect(() => {
-  //   const loadImages = async () => {
-  //     try {
-  //       const promises = SecondimageUrls.map((url) => {
-  //         return new Promise((resolve, reject) => {
-  //           const img = new Image();
-  //           img.src = url;
-  //           img.onload = resolve;
-  //           img.onerror = reject;
-  //         });
-  //       });
-
-  //       await Promise.all(promises);
-  //       setImageLoaded(true);
-  //     } catch (error) {
-  //       console.error("Failed to load images:", error);
-  //     }
-  //   };
-
-  //   loadImages();
-  // }, [SecondimageUrls]);
-  // useEffect(() => {
-  //   const loadImages = async () => {
-  //     try {
-  //       const promises = ThirdimageUrls.map((url) => {
-  //         return new Promise((resolve, reject) => {
-  //           const img = new Image();
-  //           img.src = url;
-  //           img.onload = resolve;
-  //           img.onerror = reject;
-  //         });
-  //       });
-
-  //       await Promise.all(promises);
-  //       setImageLoaded(true);
-  //     } catch (error) {
-  //       console.error("Failed to load images:", error);
-  //     }
-  //   };
-
-  //   loadImages();
-  // }, [ThirdimageUrls]);
-  // const [index, setIndex] = useState(0);
-  // // const [leaving, setLeaving] = useState(false);
-  // const [back, setBack] = useState(false);
-  // // const toggleLeaving = () => setLeaving((prev) => !prev);
-
-  // // const increaseIndex = () => {
-  // //   if (leaving) return;
-  // //   toggleLeaving();
-  // //   const totalMovies = imageUrls.length;
-  // //   const maxIndex = Math.floor(totalMovies / offset) - 1;
-  // //   setBack(false);
-  // //   setIndex((prev) => (maxIndex === prev ? 0 : prev + 1));
-  // // };
-  // useEffect(() => {
-  //   const totalMovies = FirstimageUrls.length;
-  //   const maxIndex = Math.floor(totalMovies / offset) - 1;
-  //   const timer = setInterval(() => {
-  //     setBack(false);
-  //     setIndex((prev) => (maxIndex === prev ? 0 : prev + 1));
-  //   }, 5000);
-
-  //   return () => clearInterval(timer);
-  // }, [FirstimageUrls.length]);
-  // // const decreaseIndex = () => {
-  // //   if (leaving) return;
-  // //   toggleLeaving();
-  // //   const totalMovies = imageUrls.length;
-  // //   const maxIndex = Math.floor(totalMovies / offset) - 1;
-  // //   setBack(true);
-  // //   setIndex((prev) => (0 === prev ? maxIndex : prev - 1));
-  // // };
-
-  // const BoxVar = {
-  //   invisible: (back) => ({
-  //     opacity: 0,
-  //     transition: { duration: 1 },
-  //   }),
-  //   visible: { opacity: 1, x: 0, transition: { duration: 1 } },
-  //   exit: (back) => ({
-  //     opacity: 0,
-  //     transition: { duration: 1 },
-  //   }),
-  // };
   return (
     <>
       <TotalBox>
@@ -255,29 +96,6 @@ function Places() {
               </a>
             </MapBox>
           </PlaceFlexBox>
-          {/* <AnimatePresence custom={back}>
-            <SlideImgBox
-              custom={back}
-              key={index}
-              variants={BoxVar}
-              initial="invisible"
-              animate="visible"
-              exit="exit"
-            >
-              {FirstimageUrls.slice(
-                index * offset,
-                index * offset + offset
-              ).map((imageUrl, subIndex) => (
-                <SlideImg
-                  key={index * offset + subIndex}
-                  src={imageUrl}
-                  alt={`Image ${index * offset + subIndex}`}
-                  variants={BoxVar}
-                  style={{ zIndex: offset - subIndex }}
-                />
-              ))}
-            </SlideImgBox>
-          </AnimatePresence> */}
         </PlaceTotalBox>
         <PlaceTotalBox>
           <PlaceFlexBox>
@@ -308,29 +126,6 @@ function Places() {
               </a>
             </MapBox>
           </PlaceFlexBox>
-          {/* <AnimatePresence custom={back}>
-            <SlideImgBox
-              custom={back}
-              key={index}
-              variants={BoxVar}
-              initial="invisible"
-              animate="visible"
-              exit="exit"
-            >
-              {SecondimageUrls.slice(
-                index * offset,
-                index * offset + offset
-              ).map((imageUrl, subIndex) => (
-                <SlideImg
-                  key={index * offset + subIndex}
-                  src={imageUrl}
-                  alt={`Image ${index * offset + subIndex}`}
-                  variants={BoxVar}
-                  style={{ zIndex: offset - subIndex }}
-                />
-              ))}
-            </SlideImgBox>
-          </AnimatePresence> */}
         </PlaceTotalBox>
         <PlaceTotalBox>
           <PlaceFlexBox>
@@ -359,29 +154,6 @@ function Places() {
               </a>
             </MapBox>
           </PlaceFlexBox>
-          {/* <AnimatePresence custom={back}>
-            <SlideImgBox
-              custom={back}
-              key={index}
-              variants={BoxVar}
-              initial="invisible"
-              animate="visible"
-              exit="exit"
-            >
-              {ThirdimageUrls.slice(
-                index * offset,
-                index * offset + offset
-              ).map((imageUrl, subIndex) => (
-                <SlideImg
-                  key={index * offset + subIndex}
-                  src={imageUrl}
-                  alt={`Image ${index * offset + subIndex}`}
-                  variants={BoxVar}
-                  style={{ zIndex: offset - subIndex }}
-                />
-              ))}
-            </SlideImgBox>
-          </AnimatePresence> */}
         </PlaceTotalBox>
         <PlaceTotalBox>
           <PlaceFlexBox>
@@ -411,29 +183,6 @@ function Places() {
               </a>
             </MapBox>
           </PlaceFlexBox>
-          {/* <AnimatePresence custom={back}>
-            <SlideImgBox
-              custom={back}
-              key={index}
-              variants={BoxVar}
-              initial="invisible"
-              animate="visible"
-              exit="exit"
-            >
-              {ThirdimageUrls.slice(
-                index * offset,
-                index * offset + offset
-              ).map((imageUrl, subIndex) => (
-                <SlideImg
-                  key={index * offset + subIndex}
-                  src={imageUrl}
-                  alt={`Image ${index * offset + subIndex}`}
-                  variants={BoxVar}
-                  style={{ zIndex: offset - subIndex }}
-                />
-              ))}
-            </SlideImgBox>
-          </AnimatePresence> */}
         </PlaceTotalBox>
         <PlaceTotalBox>
           <PlaceFlexBox>
@@ -462,29 +211,6 @@ function Places() {
               </a>
             </MapBox>
           </PlaceFlexBox>
-          {/* <AnimatePresence custom={back}>
-            <SlideImgBox
-              custom={back}
-              key={index}
-              variants={BoxVar}
-              initial="invisible"
-              animate="visible"
-              exit="exit"
-            >
-              {ThirdimageUrls.slice(
-                index * offset,
-                index * offset + offset
-              ).map((imageUrl, subIndex) => (
-                <SlideImg
-                  key={index * offset + subIndex}
-                  src={imageUrl}
-                  alt={`Image ${index * offset + subIndex}`}
-                  variants={BoxVar}
-                  style={{ zIndex: offset - subIndex }}
-                />
-              ))}
-            </SlideImgBox>
-          </AnimatePresence> */}
         </PlaceTotalBox>
         <Footer />
       </TotalBox>
