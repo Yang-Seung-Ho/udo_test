@@ -7,7 +7,7 @@ import Room from "./Routes/Room";
 
 import Story from "./Routes/Story";
 import Location from "./Routes/Location";
-import Tour from "./Routes/Tour";
+// import Tour from "./Routes/Tour";
 import Restaurants from "./Routes/Restaurants";
 import Places from "./Routes/Places";
 import MenuBar from "./Components/MenuBar";
