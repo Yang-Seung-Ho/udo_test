@@ -68,6 +68,7 @@ const AttachBox = styled.div`
 const AttachSpan = styled.span`
   cursor: pointer;
   border-bottom: 1px solid;
+  margin: 0px 4px;
   font-family: "MaruBuriSemiBold";
 `;
 

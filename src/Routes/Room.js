@@ -1,9 +1,9 @@
-import styled, { keyframes } from "styled-components";
 import img1 from "../Images/main4.jpeg";
 import img2 from "../Images/main5.jpeg";
 import img3 from "../Images/main6.jpeg";
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
+import styled, { keyframes } from "styled-components";
 const fadeInAnimation = keyframes`
   from {
     opacity: 0;

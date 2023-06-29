@@ -4,7 +4,7 @@ import Home from "./Routes/Home";
 import Prologue from "./Routes/Prologue";
 import Reservation from "./Routes/Reservation";
 import Room from "./Routes/Room";
-import Main from "./Routes/Main";
+
 import Story from "./Routes/Story";
 import Location from "./Routes/Location";
 import Tour from "./Routes/Tour";
@@ -15,40 +15,54 @@ import ScrollToTop from "./Components/ScrollToTop";
 function App() {
   return (
     <BrowserRouter>
-      <MenuBar />
-      <ScrollToTop />
       <Switch>
-        <Route path="/main">
-          <Main />
-        </Route>
         <Route path="/prologue">
+          <MenuBar />
+          <ScrollToTop />
           <Prologue />
         </Route>
         <Route path="/story">
+          <MenuBar />
+          <ScrollToTop />
           <Story />
         </Route>
         <Route path="/location">
+          <MenuBar />
+          <ScrollToTop />
           <Location />
         </Route>
         <Route path="/experience">
+          <MenuBar />
+          <ScrollToTop />
           <Experience />
         </Route>
         <Route path="/room">
+          <MenuBar />
+          <ScrollToTop />
           <Room />
         </Route>
         <Route path="/reservation">
+          <MenuBar />
+          <ScrollToTop />
           <Reservation />
         </Route>
         <Route path="/tour">
-          <Tour />
+          <MenuBar />
+          <ScrollToTop />
+          <Places />
         </Route>
         <Route path="/places">
+          <MenuBar />
+          <ScrollToTop />
           <Places />
         </Route>
         <Route path="/restaurants">
+          <MenuBar />
+          <ScrollToTop />
           <Restaurants />
-        </Route>{" "}
+        </Route>
         <Route path="/">
+          <ScrollToTop />
           <Home />
         </Route>
       </Switch>

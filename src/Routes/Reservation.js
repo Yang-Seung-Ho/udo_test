@@ -40,10 +40,20 @@ const ToggleBtn = styled.a`
   display: block;
   padding: 12px 0px;
 `;
+const AgreeTitle = styled.span`
+  display: block;
+  margin: 8px 0px 6px 12px;
+  font-size: 15px;
+  opacity: 1;
+  margin-top: 24px;
+`;
 const ToggleCardBox = styled.div`
   background-color: rgba(0, 0, 0, 0);
   padding: 24px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  & ${AgreeTitle}:first-child {
+    margin-top: 6px;
+  }
 `;
 const ToggleTotalBox = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.8);
@@ -57,12 +67,7 @@ const ToggleIcon = styled(motion.i)`
   /* Icon styles */
   transform-origin: center; /* 중심을 기준으로 회전 */
 `;
-const AgreeTitle = styled.span`
-  display: block;
-  margin: 8px 0px 6px 12px;
-  font-size: 15px;
-  opacity: 0.8;
-`;
+
 const AgreeInfo = styled.p`
   margin-left: 16px;
   font-size: 14px;
@@ -125,6 +130,22 @@ const ModalContent = styled.div`
   height: 150px;
 `;
 const ModalBody = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const AgreeTable = styled.table`
+  width: 50%;
+  text-align: center;
+`;
+const AgreeTr = styled.tr``;
+const AgreeTd = styled.td`
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  padding: 4px;
+`;
+const AgreeRefundBox = styled.div`
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -297,7 +318,28 @@ function Reservation() {
           </HeadTitle>
           <div class="collapse" id="collapseExample3">
             <ToggleCardBox class="card card-body">
-              <AgreeTitle>[날짜변경 규정]</AgreeTitle>
+              <AgreeTitle>[환불 규정]</AgreeTitle>
+              <AgreeInfo>
+                -환불 시 아래 기준일에 따른 환불 금액을 드립니다.{" "}
+              </AgreeInfo>
+              <AgreeInfo>
+                -환불액은 입금자와 동일한 명의의 계좌로 이체해 드립니다.
+              </AgreeInfo>
+              <AgreeInfo>
+                -투숙 기준일로부터 이용 5일 전, 예약 변경 및 환불 불가능 합니다.{" "}
+              </AgreeInfo>
+              <AgreeInfo>
+                -개인적인 사정 및 예약 날짜 착오로 인한 노쇼는 환불 불가능
+                합니다.{" "}
+              </AgreeInfo>
+              <AgreeInfo>
+                -예약 입실 당일, 천재지변에 의한 비행기/배 결항 시 전액
+                환불해드립니다.{" "}
+              </AgreeInfo>
+              <AgreeInfo>
+                -기상청 예보로 인한 날짜 변경은 불가하며, 그 외 취소 사유에
+                대해서는 아래 환불 규정에 따라 처리됩니다.{" "}
+              </AgreeInfo>
               <AgreeInfo>
                 - 날짜변경은 여행일정이 30일이 남은 상태에서, 변경요청
                 가능합니다.
@@ -308,6 +350,35 @@ function Reservation() {
               </AgreeInfo>
               <AgreeInfo>
                 -배 결항으로 인해 입실이 불가능할 땐 전액환불 가능합니다.
+              </AgreeInfo>
+              <AgreeTitle>[환불금]</AgreeTitle>
+              <AgreeRefundBox>
+                <AgreeTable>
+                  <AgreeTr>
+                    <AgreeTd> 이용 11일 전</AgreeTd>
+                    <AgreeTd> 100% 환불 </AgreeTd>
+                  </AgreeTr>
+                  <AgreeTr>
+                    <AgreeTd>이용 10-6일 전</AgreeTd>
+                    <AgreeTd>총 결재 금액의 30% 환불</AgreeTd>
+                  </AgreeTr>
+                  <AgreeTr>
+                    <AgreeTd> 이용 5일 전</AgreeTd>
+                    <AgreeTd>예약 변경/환불 불가</AgreeTd>
+                  </AgreeTr>
+                </AgreeTable>
+              </AgreeRefundBox>
+              <AgreeTitle>[수수료]</AgreeTitle>
+              <AgreeInfo>
+                -취소수수료는 예약 시점 24시간이내에는 적용되지 않습니다.
+              </AgreeInfo>{" "}
+              <AgreeInfo>
+                -24시간이후에는 취소수수료가 적용되오니 신중하게 예약해주시면
+                감사하겠습니다.
+              </AgreeInfo>
+              <AgreeInfo>
+                -예약변경을 위한 취소 시에도 취소 수수료가 부과됩니다.
+                참고바라겠습니다.
               </AgreeInfo>
             </ToggleCardBox>
           </div>

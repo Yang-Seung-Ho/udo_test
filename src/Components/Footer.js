@@ -101,20 +101,20 @@ function Footer() {
           </FooterUnderSpan>
         </FooterUnderDiv>
         <FooterUnderDiv>
-          <FooterUnderSpan>계좌번호: 농협은행 111-111-1111-11</FooterUnderSpan>
-          <FooterUnderSpan>예금주: 우도기행</FooterUnderSpan>
+          <FooterUnderSpan>계좌번호: 농협은행 351-1253-9769-63</FooterUnderSpan>
+          <FooterUnderSpan>예금주: 윤경환</FooterUnderSpan>
         </FooterUnderDiv>
         <FooterUnderDiv>
-          <FooterUnderSpan>사업자번호: 111-11-1111</FooterUnderSpan>
+          <FooterUnderSpan>사업자번호: 667-37-01036</FooterUnderSpan>
           <FooterUnderSpan>통신판매신고번호: 2023-23-23</FooterUnderSpan>
-          <FooterUnderSpan>Tel. 111-1111-1111</FooterUnderSpan>
+          <FooterUnderSpan>Tel. 010-6475-8409</FooterUnderSpan>
           <FooterUnderSpan>문의시간: 10:00 - 18:00</FooterUnderSpan>
         </FooterUnderDiv>
         <RawBox>
           <RawSpan>이용약관</RawSpan>
           <RawSpan>개인정보처리방침</RawSpan>
         </RawBox>
-        <RawSpan>Copyright ⓒ 2023 CHWIHOGA All rights reserved.</RawSpan>
+        <RawSpan>Copyright ⓒ 2023 UDOGIHANG All rights reserved.</RawSpan>
       </FooterUnderBox>
     </TotalFooterBox>
   );
