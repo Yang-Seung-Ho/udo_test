@@ -1,5 +1,6 @@
-import img1 from "../Images/우도기행 (13).jpg";
-import img2 from "../Images/우도기행 (14).jpg";
+import img1 from "../Images/home1.jpg";
+import img2 from "../Images/home2.jpg";
+import img3 from "../Images/img1.jpg";
 import React from "react";
 import { Link } from "react-router-dom";
 // import logo from "../Images/logo.png";
@@ -132,7 +133,7 @@ function Home() {
               <CarouselImg src={img2} className="d-block w-100" alt="..." />
             </div>
             <div class="carousel-item">
-              <CarouselImg src={img1} className="d-block w-100" alt="..." />
+              <CarouselImg src={img3} className="d-block w-100" alt="..." />
             </div>
           </div>
         </CarouselExampleIndicators>
