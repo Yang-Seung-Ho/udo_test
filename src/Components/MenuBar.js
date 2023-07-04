@@ -26,10 +26,6 @@ const MenuHeaderInBox = styled.div`
   margin-top: 30px;
   margin-left: 8%;
 `;
-
-const MenuHeaderInBoxImg = styled.img`
-  width: 100%;
-`;
 const SideMenuHeaderBox = styled.div`
   position: fixed;
   padding-top: 225px;
