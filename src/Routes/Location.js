@@ -22,9 +22,7 @@ const TotalBox = styled.div`
   padding-bottom: 200px;
   /* background-color: wheat; */
 `;
-const LocationBox = styled.div`
-  margin-top: 48px;
-`;
+const LocationBox = styled.div``;
 const LocationH1 = styled.h1`
   font-size: 20px;
   font-weight: 600;

@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Logo from "../Images/logo.png";
+// import Logo from "../Images/logo.png";
 const MenuBarBox = styled.div`
   position: fixed;
   font-family: "NanumSquareNeoLight";
@@ -153,9 +153,8 @@ function MenuBar() {
       <MenuBarBox>
         <MenuHeader>
           <MenuHeaderInBox>
-            {" "}
             <Link to="/">
-              <MenuHeaderInBoxImg src={Logo}></MenuHeaderInBoxImg>
+              {/* <MenuHeaderInBoxImg src={Logo}></MenuHeaderInBoxImg> */}
             </Link>
           </MenuHeaderInBox>
         </MenuHeader>
@@ -273,8 +272,12 @@ function MenuBar() {
                 <Link to="/places">
                   <SideMenuInnerLi
                     style={{
-                      opacity: isLink === "/places" ? "1" : "",
-                      borderLeft: isLink === "/places" ? "1px solid black" : "",
+                      opacity:
+                        isLink === "/tour" || isLink === "/places" ? "1" : "",
+                      borderLeft:
+                        isLink === "/tour" || isLink === "/places"
+                          ? "1px solid black"
+                          : "",
                     }}
                   >
                     Places

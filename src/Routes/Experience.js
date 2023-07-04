@@ -1,7 +1,16 @@
-import img1 from "../Images/main4.jpeg";
-import img2 from "../Images/main5.jpeg";
-import img3 from "../Images/main6.jpeg";
+import barbeque1 from "../Image/Experience/barbeque.jpg";
+import barbeque2 from "../Image/Experience/barbeque1.jpg";
+import barbeque3 from "../Image/Experience/barbeque2.jpg";
+import beam1 from "../Image/Experience/beam1.jpg";
+import beam2 from "../Image/Experience/beam2.jpg";
+import beam3 from "../Image/Experience/beam3.jpg";
+import pool1 from "../Image/Experience/pool1.jpg";
+import pool2 from "../Image/Experience/pool2.jpg";
+import turn1 from "../Image/Experience/turntable1.jpg";
+import turn2 from "../Image/Experience/turntable2.jpg";
+import turn3 from "../Image/Experience/turntable3.jpg";
 import styled, { keyframes } from "styled-components";
+import { useEffect } from "react";
 import Footer from "../Components/Footer";
 const fadeInAnimation = keyframes`
   from {
@@ -21,7 +30,6 @@ const TotalBox = styled.div`
   margin-right: 12%;
   height: auto;
   min-height: 100%;
-
   //마진퍼센트값을 뺀 것을 넓이로함 이번만
   width: 52%;
 `;
@@ -33,7 +41,8 @@ const ExperienceTotalBox = styled.div`
   margin-bottom: 30px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* 추가 */
+  align-items: flex-start;
+
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 `;
 const Title = styled.h1`
@@ -44,7 +53,7 @@ const Title = styled.h1`
 `;
 const LeftImg = styled.img`
   width: 100%;
-  height: 300px;
+  height: 100%;
 `;
 
 const RightImgBox = styled.div`
@@ -55,7 +64,15 @@ const RightImgBox = styled.div`
   width: 100%;
   position: relative;
   height: 200px;
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
+`;
+const RightImgBox2 = styled.div`
+  flex: 1; /* 추가 */
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: 100%;
+  position: relative;
+  height: 200px;
 `;
 const LeftImgBox = styled.div`
   flex: 1; /* 추가 */
@@ -86,10 +103,30 @@ const InfoDetail = styled.p`
   line-height: 32px;
 `;
 const CarouselTotalBox = styled.div`
-  width: 100%;
+  width: 80%;
 `;
 const ExperienceOuterBox = styled.div``;
 function Experience() {
+  useEffect(() => {
+    const images = [
+      barbeque1,
+      barbeque2,
+      barbeque3,
+      beam1,
+      beam2,
+      beam3,
+      pool1,
+      pool2,
+      turn1,
+      turn2,
+      turn3,
+    ];
+
+    images.forEach((image) => {
+      const img = new Image();
+      img.src = image;
+    });
+  }, []);
   return (
     <>
       <TotalBox>
@@ -115,25 +152,21 @@ function Experience() {
             </LeftImgBox>
             <RightImgBox>
               <CarouselTotalBox
-                id="carouselExampleInterval1"
+                id="ExperiencePool"
                 className="carousel slide carousel-fade"
-                data-bs-ride="carousel"
               >
                 <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="3000">
-                    <LeftImg src={img1} class="d-block w-100" alt="..." />
+                  <div class="carousel-item active">
+                    <LeftImg src={pool1} class="d-block w-100" alt="..." />
                   </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <LeftImg src={img2} class="d-block w-100" alt="..." />
-                  </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <LeftImg src={img3} class="d-block w-100" alt="..." />
+                  <div class="carousel-item">
+                    <LeftImg src={pool2} class="d-block w-100" alt="..." />
                   </div>
                 </div>
                 <button
                   class="carousel-control-prev"
                   type="button"
-                  data-bs-target="#carouselExampleInterval1"
+                  data-bs-target="#ExperiencePool"
                   data-bs-slide="prev"
                 >
                   <span
@@ -145,7 +178,7 @@ function Experience() {
                 <button
                   class="carousel-control-next"
                   type="button"
-                  data-bs-target="#carouselExampleInterval1"
+                  data-bs-target="#ExperiencePool"
                   data-bs-slide="next"
                 >
                   <span
@@ -163,27 +196,26 @@ function Experience() {
             <InfoNumber>#02</InfoNumber>
           </OrderList>
           <ExperienceTotalBox>
-            <RightImgBox>
+            <RightImgBox2>
               <CarouselTotalBox
-                id="carouselExampleInterval2"
+                id="ExperienceTurn"
                 className="carousel slide carousel-fade"
-                data-bs-ride="carousel"
               >
                 <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="3000">
-                    <LeftImg src={img1} class="d-block w-100" alt="..." />
+                  <div class="carousel-item active">
+                    <LeftImg src={turn1} class="d-block w-100" alt="..." />
                   </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <LeftImg src={img2} class="d-block w-100" alt="..." />
+                  <div class="carousel-item">
+                    <LeftImg src={turn2} class="d-block w-100" alt="..." />
                   </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <LeftImg src={img3} class="d-block w-100" alt="..." />
+                  <div class="carousel-item">
+                    <LeftImg src={turn3} class="d-block w-100" alt="..." />
                   </div>
                 </div>
                 <button
                   class="carousel-control-prev"
                   type="button"
-                  data-bs-target="#carouselExampleInterval2"
+                  data-bs-target="#ExperienceTurn"
                   data-bs-slide="prev"
                 >
                   <span
@@ -195,7 +227,7 @@ function Experience() {
                 <button
                   class="carousel-control-next"
                   type="button"
-                  data-bs-target="#carouselExampleInterval2"
+                  data-bs-target="#ExperienceTurn"
                   data-bs-slide="next"
                 >
                   <span
@@ -205,7 +237,7 @@ function Experience() {
                   <span class="visually-hidden">Next</span>
                 </button>
               </CarouselTotalBox>
-            </RightImgBox>
+            </RightImgBox2>
             <LeftImgBox style={{ justifyContent: "flex-end" }}>
               <InfoBox>
                 <InfoTitle style={{ textAlign: "right" }}>턴테이블</InfoTitle>
@@ -231,7 +263,7 @@ function Experience() {
               <InfoBox>
                 <InfoTitle>빔 프로젝트</InfoTitle>
                 <InfoDetail>
-                  빔 프로젝터를 통해 영화를 즐기실 수 있습니다.{" "}
+                  빔 프로젝터를 통해 영화를 즐기실 수 있습니다.
                 </InfoDetail>
                 <InfoDetail style={{ padding: "12px 0px" }}>
                   뛰어난 화질과 스피커의 풍부한 음향으로 영화관에서와 같은
@@ -241,25 +273,24 @@ function Experience() {
             </LeftImgBox>
             <RightImgBox>
               <CarouselTotalBox
-                id="carouselExampleInterval3"
+                id="ExperienceBeam"
                 className="carousel slide carousel-fade"
-                data-bs-ride="carousel"
               >
                 <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="3000">
-                    <LeftImg src={img1} class="d-block w-100" alt="..." />
+                  <div class="carousel-item active">
+                    <LeftImg src={beam1} class="d-block w-100" alt="..." />
                   </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <LeftImg src={img2} class="d-block w-100" alt="..." />
+                  <div class="carousel-item">
+                    <LeftImg src={beam2} class="d-block w-100" alt="..." />
                   </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <LeftImg src={img3} class="d-block w-100" alt="..." />
+                  <div class="carousel-item">
+                    <LeftImg src={beam3} class="d-block w-100" alt="..." />
                   </div>
                 </div>
                 <button
                   class="carousel-control-prev"
                   type="button"
-                  data-bs-target="#carouselExampleInterval3"
+                  data-bs-target="#ExperienceBeam"
                   data-bs-slide="prev"
                 >
                   <span
@@ -271,7 +302,7 @@ function Experience() {
                 <button
                   class="carousel-control-next"
                   type="button"
-                  data-bs-target="#carouselExampleInterval3"
+                  data-bs-target="#ExperienceBeam"
                   data-bs-slide="next"
                 >
                   <span
@@ -289,27 +320,26 @@ function Experience() {
             <InfoNumber>#04</InfoNumber>
           </OrderList>
           <ExperienceTotalBox>
-            <RightImgBox>
+            <RightImgBox2>
               <CarouselTotalBox
-                id="carouselExampleInterval4"
+                id="ExperienceBarbeque"
                 className="carousel slide carousel-fade"
-                data-bs-ride="carousel"
               >
                 <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="3000">
-                    <LeftImg src={img1} class="d-block w-100" alt="..." />
+                  <div class="carousel-item active">
+                    <LeftImg src={barbeque1} class="d-block w-100" alt="..." />
                   </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <LeftImg src={img2} class="d-block w-100" alt="..." />
+                  <div class="carousel-item">
+                    <LeftImg src={barbeque2} class="d-block w-100" alt="..." />
                   </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <LeftImg src={img3} class="d-block w-100" alt="..." />
+                  <div class="carousel-item">
+                    <LeftImg src={barbeque3} class="d-block w-100" alt="..." />
                   </div>
                 </div>
                 <button
                   class="carousel-control-prev"
                   type="button"
-                  data-bs-target="#carouselExampleInterval4"
+                  data-bs-target="#ExperienceBarbeque"
                   data-bs-slide="prev"
                 >
                   <span
@@ -321,7 +351,7 @@ function Experience() {
                 <button
                   class="carousel-control-next"
                   type="button"
-                  data-bs-target="#carouselExampleInterval4"
+                  data-bs-target="#ExperienceBarbeque"
                   data-bs-slide="next"
                 >
                   <span
@@ -331,7 +361,7 @@ function Experience() {
                   <span class="visually-hidden">Next</span>
                 </button>
               </CarouselTotalBox>
-            </RightImgBox>
+            </RightImgBox2>
             <LeftImgBox style={{ justifyContent: "flex-end" }}>
               <InfoBox>
                 <InfoTitle style={{ textAlign: "right" }}>바베큐</InfoTitle>

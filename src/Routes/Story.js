@@ -1,8 +1,14 @@
 import React from "react";
-import img1 from "../Images/3.jpg";
-import img2 from "../Images/4.jpg";
-import img3 from "../Images/img1.jpg";
+import img1 from "../Image/Create Motivation/create1.jpg";
+import img3 from "../Image/Create Motivation/create3.jpg";
+import img4 from "../Image/Create Motivation/create4.jpg";
+import img5 from "../Image/Create Motivation/create5.jpg";
+import con1 from "../Image/Conv/con1.jpg";
+import con2 from "../Image/Conv/con2.jpg";
+import emb1 from "../Image/Embrace the Unspoiled Beauty/embrace1.jpg";
+import emb2 from "../Image/Embrace the Unspoiled Beauty/embrace2.jpg";
 import styled, { keyframes } from "styled-components";
+import { useEffect } from "react";
 import Footer from "../Components/Footer";
 const fadeInAnimation = keyframes`
   from {
@@ -24,7 +30,6 @@ const TotalBox = styled.div`
   min-height: 100%;
 `;
 const NarrativeBox = styled.div`
-  padding-top: 48px;
   width: 100%;
   border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
 `;
@@ -33,6 +38,7 @@ const NarrativeTitle = styled.h1`
   opacity: 0.8;
   font-weight: 500;
   padding-bottom: 24px;
+  padding-top: 24px;
 `;
 const NarrativeSubTitle = styled.span`
   margin: 12px 0px 24px 0px;
@@ -48,12 +54,13 @@ const NarrativeImgInfoBox = styled.div`
   justify-content: space-between;
 `;
 const NarrativeInfo = styled.p`
-  width: 50%;
+  width: 57%;
   padding-right: 12px;
   font-size: 14px;
   line-height: 24px;
   opacity: 0.8;
   text-align: justify;
+  height: 100%;
 `;
 const NarrativeInfoMiddle = styled.p`
   width: 100%;
@@ -68,15 +75,22 @@ const CarouselTotalBox = styled.div`
 `;
 // 이미지 사이즈 조정
 const LeftImg = styled.img`
-  height: 100%;
-  min-height: 300px;
   width: 100%;
+  height: 100%;
 `;
 const CarouselTotalOuterBox = styled.div`
-  width: 50%;
+  width: 40%;
 `;
 
 function Story() {
+  useEffect(() => {
+    const images = [img1, img3, img4, img5, con1, con2, emb1, emb2];
+
+    images.forEach((image) => {
+      const img = new Image();
+      img.src = image;
+    });
+  }, []);
   return (
     <>
       <TotalBox>
@@ -101,17 +115,20 @@ function Story() {
               <CarouselTotalBox
                 id="carouselExampleInterval1"
                 className="carousel slide carousel-fade"
-                data-bs-ride="carousel"
+                // data-bs-ride="carousel"
               >
                 <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="3000">
+                  <div class="carousel-item active">
                     <LeftImg src={img1} class="d-block w-100" alt="..." />
                   </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <LeftImg src={img2} class="d-block w-100" alt="..." />
-                  </div>
-                  <div class="carousel-item" data-bs-interval="3000">
+                  <div class="carousel-item">
                     <LeftImg src={img3} class="d-block w-100" alt="..." />
+                  </div>
+                  <div class="carousel-item">
+                    <LeftImg src={img4} class="d-block w-100" alt="..." />
+                  </div>
+                  <div class="carousel-item">
+                    <LeftImg src={img5} class="d-block w-100" alt="..." />
                   </div>
                 </div>
                 <button
@@ -142,7 +159,6 @@ function Story() {
             </CarouselTotalOuterBox>
           </NarrativeImgInfoBox>
         </NarrativeBox>
-
         <NarrativeBox>
           <NarrativeTitle>Conveniently Located Near Hahodong</NarrativeTitle>
           <NarrativeSubTitle>해변을 내다보며 편안한 휴식</NarrativeSubTitle>
@@ -155,21 +171,18 @@ function Story() {
               곳입니다. 근처에 편의점도 2개나 있어 접근성이 매우 좋답니다.
               바닷가 앞 스테이에서 편안한 휴식을 취해보세요.
             </NarrativeInfoMiddle>
-            <CarouselTotalOuterBox style={{ width: "80%" }}>
+            <CarouselTotalOuterBox style={{ width: "90%" }}>
               <CarouselTotalBox
                 id="carouselExampleInterval2"
                 className="carousel slide carousel-fade"
-                data-bs-ride="carousel"
+                // data-bs-ride="carousel"
               >
                 <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="3000">
-                    <LeftImg src={img1} class="d-block w-100" alt="..." />
+                  <div class="carousel-item active">
+                    <LeftImg src={con1} class="d-block w-100" alt="..." />
                   </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <LeftImg src={img2} class="d-block w-100" alt="..." />
-                  </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <LeftImg src={img3} class="d-block w-100" alt="..." />
+                  <div class="carousel-item">
+                    <LeftImg src={con2} class="d-block w-100" alt="..." />
                   </div>
                 </div>
                 <button
@@ -200,11 +213,11 @@ function Story() {
             </CarouselTotalOuterBox>
           </NarrativeImgInfoBox>
         </NarrativeBox>
-        <NarrativeBox>
+        <NarrativeBox style={{ borderBottom: "none" }}>
           <NarrativeTitle>Embrace the Unspoiled Beauty</NarrativeTitle>
           <NarrativeSubTitle>우도를 표현하기 위한 노력들</NarrativeSubTitle>
           <NarrativeImgInfoBox>
-            <NarrativeInfo>
+            <NarrativeInfo style={{ width: "55%" }}>
               저희 스테이는 자연 그대로를 가져오기 위해 최대한 노력했습니다.
               테이블 또한 우도슬랩이라는 자재들을 사용해 가공이 많이 되지 않은
               자른 그대로의 형태를 띄는 나무들을 사용하였고 스테이 앞 하고수동의
@@ -214,36 +227,19 @@ function Story() {
               하루동일 직접 우도를 돌며 찾아다녔답니다. 그 시간이 헛되지 않게
               예쁜 커튼봉이 나와서 너무 만족스럽습니다.
             </NarrativeInfo>
-            <CarouselTotalOuterBox>
+            <CarouselTotalOuterBox style={{ width: "40%" }}>
               <CarouselTotalBox
                 id="carouselExampleInterval3"
                 className="carousel slide carousel-fade"
-                data-bs-ride="carousel"
+
+                // data-bs-ride="carousel"
               >
                 <div class="carousel-inner">
-                  <div class="carousel-item active" data-bs-interval="3000">
-                    <LeftImg
-                      style={{ minHeight: "200px" }}
-                      src={img1}
-                      class="d-block w-100"
-                      alt="..."
-                    />
+                  <div class="carousel-item active">
+                    <LeftImg src={emb1} class="d-block w-100" alt="..." />
                   </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <LeftImg
-                      style={{ minHeight: "200px" }}
-                      src={img2}
-                      class="d-block w-100"
-                      alt="..."
-                    />
-                  </div>
-                  <div class="carousel-item" data-bs-interval="3000">
-                    <LeftImg
-                      style={{ minHeight: "200px" }}
-                      src={img3}
-                      class="d-block w-100"
-                      alt="..."
-                    />
+                  <div class="carousel-item">
+                    <LeftImg src={emb2} class="d-block w-100" alt="..." />
                   </div>
                 </div>
                 <button

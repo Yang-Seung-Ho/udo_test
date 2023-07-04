@@ -1,6 +1,19 @@
-import img1 from "../Images/main4.jpeg";
-import img2 from "../Images/main5.jpeg";
-import img3 from "../Images/main6.jpeg";
+import img1 from "../Image/RoomPart1/1.jpg";
+import img2 from "../Image/RoomPart1/2.jpg";
+import img3 from "../Image/RoomPart1/3.jpg";
+import img4 from "../Image/RoomPart1/4.jpg";
+import img5 from "../Image/RoomPart1/5.jpg";
+import img6 from "../Image/RoomPart1/6.jpg";
+import img7 from "../Image/RoomPart1/7.jpg";
+import img8 from "../Image/RoomPart1/8.jpg";
+import img9 from "../Image/RoomPart1/9.jpg";
+import img10 from "../Image/RoomPart1/10.jpg";
+import img11 from "../Image/RoomPart1/11.jpg";
+import img12 from "../Image/RoomPart1/12.jpg";
+import img13 from "../Image/RoomPart1/13.jpg";
+import img14 from "../Image/RoomPart1/14.jpg";
+import img15 from "../Image/RoomPart1/15.jpg";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
 import styled, { keyframes } from "styled-components";
@@ -19,7 +32,7 @@ const TotalBox = styled.div`
   z-index: -1;
   margin-top: 175px;
   margin-left: 36%;
-  margin-right: 12%;
+  margin-right: 8%;
   height: auto;
   min-height: 100%;
   width: 52%;
@@ -33,7 +46,7 @@ const RoomTitleSpan = styled.span`
 `;
 const RoomTotalBox = styled.div`
   display: flex;
-  width: 100%;
+  width: 105%;
 `;
 
 const RoomInfoBox = styled.div`
@@ -45,7 +58,7 @@ const CarouselTotalBox = styled.div`
 // 이미지 사이즈 조정
 const LeftImg = styled.img`
   width: 100%;
-  height: 350px;
+  height: 100%;
 `;
 const CarouselTotalOuterBox = styled.div`
   width: 130%;
@@ -121,6 +134,30 @@ const ReservationBtn = styled.button`
   margin-left: 30%;
 `;
 function Room() {
+  useEffect(() => {
+    const images = [
+      img1,
+      img2,
+      img3,
+      img4,
+      img5,
+      img6,
+      img7,
+      img8,
+      img9,
+      img10,
+      img11,
+      img12,
+      img13,
+      img14,
+      img15,
+    ];
+
+    images.forEach((image) => {
+      const img = new Image();
+      img.src = image;
+    });
+  }, []);
   return (
     <>
       <TotalBox>
@@ -196,17 +233,52 @@ function Room() {
             <CarouselTotalBox
               id="carouselExampleInterval3"
               className="carousel slide carousel-fade"
-              data-bs-ride="carousel"
             >
               <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="3000">
+                <div class="carousel-item active">
                   <LeftImg src={img1} class="d-block w-100" alt="..." />
                 </div>
-                <div class="carousel-item" data-bs-interval="3000">
+                <div class="carousel-item">
                   <LeftImg src={img2} class="d-block w-100" alt="..." />
                 </div>
-                <div class="carousel-item" data-bs-interval="3000">
+                <div class="carousel-item">
                   <LeftImg src={img3} class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <LeftImg src={img4} class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <LeftImg src={img5} class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <LeftImg src={img6} class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <LeftImg src={img7} class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <LeftImg src={img8} class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <LeftImg src={img9} class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <LeftImg src={img10} class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <LeftImg src={img11} class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <LeftImg src={img12} class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <LeftImg src={img13} class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <LeftImg src={img14} class="d-block w-100" alt="..." />
+                </div>
+                <div class="carousel-item">
+                  <LeftImg src={img15} class="d-block w-100" alt="..." />
                 </div>
               </div>
               <button
@@ -214,9 +286,11 @@ function Room() {
                 type="button"
                 data-bs-target="#carouselExampleInterval3"
                 data-bs-slide="prev"
+                style={{ color: "white", opacity: "0.8" }}
               >
                 <span
                   class="fa-solid fa-chevron-left"
+                  style={{ color: "white", opacity: "1" }}
                   aria-hidden="true"
                 ></span>
                 <span class="visually-hidden">Previous</span>
@@ -226,8 +300,10 @@ function Room() {
                 type="button"
                 data-bs-target="#carouselExampleInterval3"
                 data-bs-slide="next"
+                style={{ color: "white", opacity: "0.8" }}
               >
                 <span
+                  style={{ color: "white", opacity: "1" }}
                   class="fa-solid fa-chevron-right"
                   aria-hidden="true"
                 ></span>

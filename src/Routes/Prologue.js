@@ -1,4 +1,4 @@
-import PrologueImg from "../Images/3.jpg";
+import PrologueImg from "../Image/prologue.jpg";
 
 import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
@@ -26,7 +26,6 @@ const TotalBox = styled.div`
 `;
 const HeaderBox = styled.div`
   width: 100%;
-  margin-top: 100px;
   display: flex;
   flex-direction: column;
 `;
@@ -49,7 +48,7 @@ const TitleP = styled.p`
   width: 80%;
 `;
 const PresentImgBox = styled.div`
-  margin-top: 42px;
+  margin-top: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,6 +67,14 @@ const TitleHanja = styled.span`
   font-size: 18px;
 `;
 function Prologue() {
+  useEffect(() => {
+    const images = [PrologueImg];
+
+    images.forEach((image) => {
+      const img = new Image();
+      img.src = image;
+    });
+  }, []);
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
