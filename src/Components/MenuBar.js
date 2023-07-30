@@ -158,7 +158,8 @@ function MenuBar() {
     height: 50px;
   `;
   const MOffCanvasHeader = styled.div`
-    background-color: black;
+    background-color: rgb(126, 125, 124);
+
     color: white;
     display: flex;
     justify-content: space-between;
@@ -382,7 +383,6 @@ function MenuBar() {
           >
             <MOffCanvasHeader>
               <div>우도기행</div>
-
               <div
                 style={{ padding: "18px 26px 18px 18px" }}
                 type="button"
