@@ -136,6 +136,8 @@ function Room() {
   const LeftImg = styled.img`
     width: 100%;
     height: 100%;
+    max-width: 570px;
+    max-height: 371px;
   `;
   const CarouselTotalOuterBox = styled.div`
     width: 130%;

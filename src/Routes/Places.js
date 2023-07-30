@@ -21,6 +21,7 @@ const TotalBox = styled.div`
   height: auto;
   min-height: 100%;
   padding-bottom: 200px;
+  width: 42%;
   ${(props) => props.theme.mobile`
         animation: ${fadeInAnimation} 0.5s ease-in;
         z-index: 1;
@@ -54,8 +55,11 @@ const PlaceFlexBox = styled.div`
 `}
 `;
 const MapBox = styled.div`
-  margin-top: 24px;
+  margin-top: 52px;
   width: 100%;
+  ${(props) => props.theme.mobile`
+  margin-top: 24px;
+`}
 `;
 const PlaceInfo = styled.p`
   text-align: justify;
@@ -103,6 +107,10 @@ const PlaceTotalBox = styled.div`
 `}
 `;
 const KaKaoImg = styled.img`
+  width: 80%;
+  height: 80%;
+  max-width: 450px;
+  max-height: 277px;
   ${(props) => props.theme.mobile`
   width: 100%;
   height: 100%;  

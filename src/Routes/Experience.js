@@ -55,7 +55,7 @@ function Experience() {
     height: auto;
     min-height: 100%;
     //마진퍼센트값을 뺀 것을 넓이로함 이번만
-    width: 52%;
+    width: 46%;
     ${(props) => props.theme.mobile`
         animation: ${fadeInAnimation} 0.5s ease-in;
         z-index: 1;
@@ -71,8 +71,8 @@ function Experience() {
     text-align: left;
   `;
   const ExperienceTotalBox = styled.div`
-    padding-bottom: 30px;
-    margin-bottom: 30px;
+    padding-bottom: 40px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -181,8 +181,11 @@ function Experience() {
   `;
   const CarouselTotalBox = styled.div`
     width: 80%;
+    max-width: 320px;
+    max-height: 320px;
     ${(props) => props.theme.mobile`
   width: 100%;
+
 `}
   `;
   const ExperienceOuterBox = styled.div``;
