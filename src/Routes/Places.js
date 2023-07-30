@@ -74,6 +74,7 @@ const PlaceTitle = styled.h1`
   font-style: italic;
   ${(props) => props.theme.mobile`
     padding-top: 24px;
+    font-size:13.5px;
 `}
 `;
 const PlaceDistance = styled.span`
@@ -81,6 +82,10 @@ const PlaceDistance = styled.span`
   font-size: 14px;
   opacity: 0.9;
   display: block;
+  ${(props) => props.theme.mobile`
+
+    font-size:12px;
+`}
 `;
 
 const PlaceTotalBox = styled.div`
@@ -126,8 +131,6 @@ function Places() {
                 rel="noopener noreferrer"
               >
                 <KaKaoImg
-                  width="350"
-                  height="220"
                   src="https://map2.daum.net/map/mapservice?FORMAT=PNG&SCALE=2.5&MX=492310&MY=977&S=0&IW=504&IH=310&LANG=0&COORDSTM=WCONGNAMUL&logo=kakao_logo"
                   style={{ border: "1px solid #ccc" }}
                   alt="카카오맵"
@@ -156,8 +159,6 @@ function Places() {
                 rel="noopener noreferrer"
               >
                 <KaKaoImg
-                  width="350"
-                  height="220"
                   src="https://map2.daum.net/map/mapservice?FORMAT=PNG&SCALE=5&MX=492687&MY=5687&S=0&IW=504&IH=310&LANG=0&COORDSTM=WCONGNAMUL&logo=kakao_logo"
                   style={{ border: "1px solid #ccc" }}
                   alt="카카오맵"
@@ -184,8 +185,6 @@ function Places() {
                 rel="noopener noreferrer"
               >
                 <KaKaoImg
-                  width="350"
-                  height="220"
                   src="https://map2.daum.net/map/mapservice?FORMAT=PNG&SCALE=2.5&MX=486770&MY=2430&S=0&IW=504&IH=310&LANG=0&COORDSTM=WCONGNAMUL&logo=kakao_logo"
                   style={{ border: "1px solid #ccc" }}
                   alt="카카오맵"
@@ -213,8 +212,6 @@ function Places() {
                 rel="noopener noreferrer"
               >
                 <KaKaoImg
-                  width="350"
-                  height="220"
                   src="https://map2.daum.net/map/mapservice?FORMAT=PNG&SCALE=1.25&MX=490137&MY=5572&S=0&IW=504&IH=310&LANG=0&COORDSTM=WCONGNAMUL&logo=kakao_logo"
                   style={{ border: "1px solid #ccc" }}
                   alt="카카오맵"
@@ -241,8 +238,6 @@ function Places() {
                 rel="noopener noreferrer"
               >
                 <KaKaoImg
-                  width="350"
-                  height="220"
                   src="https://map2.daum.net/map/mapservice?FORMAT=PNG&SCALE=2.5&MX=490171&MY=-357&S=0&IW=504&IH=310&LANG=0&COORDSTM=WCONGNAMUL&logo=kakao_logo"
                   style={{ border: "1px solid #ccc" }}
                   alt="카카오맵"

@@ -1,7 +1,7 @@
-import img1 from "../Image/Home/home1.jpg";
+import img1 from "../Image/Home/home4.jpg";
 import img2 from "../Image/Home/home2.jpg";
 import img3 from "../Image/Home/home3.jpg";
-import img4 from "../Image/Home/home4.jpg";
+import img4 from "../Image/Home/home1.jpg";
 import img5 from "../Image/Home/home5.jpg";
 import img6 from "../Image/Home/home6.jpg";
 import React from "react";
@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 // import logo from "../Images/logo.png";
 import styled, { keyframes } from "styled-components";
-
+import { useMediaQueries } from "../MediaQuery";
 const fadeInAnimation = keyframes`
   from {
     opacity: 0;
@@ -61,19 +61,46 @@ const HomeFooterBox = styled.div`
 const HomeTitle = styled.div`
   font-size: 16px;
   font-family: "MaruBuri";
+  ${(props) => props.theme.mobile`
+    font-size:13px;    
+    margin-bottom: 18px;
+`}
 `;
 const HomeInfo = styled.div`
   margin: 36px 0px 24px 0px;
   font-size: 14px;
   font-family: "MaruBuriLight";
+  ${(props) => props.theme.mobile`
+    font-size:12px;  
+    margin: 24px 0px 48px 0px;
+`}
 `;
 
 const ToPageBtn = styled.p`
   padding: 12px 22px;
   border: 0.1px solid white;
+  ${(props) => props.theme.mobile`
+    padding: 6px 12px;
+    font-size:14px;
+`}
 `;
-
+const ToPageBtnBox = styled.div`
+  ${(props) => props.theme.mobile`
+    margin-bottom : 36px;
+`}
+`;
+const PageSquareBtn = styled.button`
+  height: 18px;
+  width: 18px;
+  margin: 0px 6px;
+  /* ${(props) => props.theme.mobile`
+    width:12px;
+    height: 12px;
+    margin: 0px 6px;
+`} */
+`;
 function Home() {
+  const { isMobile } = useMediaQueries();
   useEffect(() => {
     const images = [img1, img2, img3, img4, img5, img6];
 
@@ -82,6 +109,12 @@ function Home() {
       img.src = image;
     });
   }, []);
+  const dynamicStyles = {
+    height: isMobile ? "12px" : "18px",
+    width: isMobile ? "12px" : "18px",
+    margin: "0px 6px",
+  };
+
   return (
     <>
       <TotalBox>
@@ -94,11 +127,11 @@ function Home() {
               기행 紀行 : 여행하는 동안에 보고, 듣고, 느끼고, 겪은 것을 적은 것.
             </HomeTitle>
             <HomeInfo>우도의 자연을 담은 공간</HomeInfo>
-            <div>
+            <ToPageBtnBox>
               <Link to="/prologue">
                 <ToPageBtn>우도 기행</ToPageBtn>
               </Link>
-            </div>
+            </ToPageBtnBox>
           </HomeFooterBox>
         </HomeDiv>
         <CarouselExampleIndicators
@@ -109,54 +142,50 @@ function Home() {
           data-bs-interval="3000"
         >
           <div class="carousel-indicators">
-            <button
+            <PageSquareBtn
+              style={dynamicStyles}
               type="button"
               data-bs-target="#carouselExampleIndicators"
               data-bs-slide-to="0"
-              class="active"
+              className="active"
               aria-current="true"
               aria-label="Slide 1"
-              style={{
-                height: "18px",
-                width: "18px",
-                margin: "0px 6px",
-              }}
-            ></button>
-            <button
+            ></PageSquareBtn>
+            <PageSquareBtn
+              style={dynamicStyles}
               type="button"
               data-bs-target="#carouselExampleIndicators"
               data-bs-slide-to="1"
               aria-label="Slide 2"
-              style={{ height: "18px", width: "18px", margin: "0px 6px" }}
-            ></button>
-            <button
+            ></PageSquareBtn>
+            <PageSquareBtn
+              style={dynamicStyles}
               type="button"
               data-bs-target="#carouselExampleIndicators"
               data-bs-slide-to="2"
               aria-label="Slide 3"
-              style={{ height: "18px", width: "18px", margin: "0px 6px" }}
-            ></button>
-            <button
+            ></PageSquareBtn>
+            <PageSquareBtn
+              style={dynamicStyles}
               type="button"
               data-bs-target="#carouselExampleIndicators"
               data-bs-slide-to="3"
               aria-label="Slide 4"
-              style={{ height: "18px", width: "18px", margin: "0px 6px" }}
-            ></button>
-            <button
+            ></PageSquareBtn>
+            <PageSquareBtn
+              style={dynamicStyles}
               type="button"
               data-bs-target="#carouselExampleIndicators"
               data-bs-slide-to="4"
               aria-label="Slide 5"
-              style={{ height: "18px", width: "18px", margin: "0px 6px" }}
-            ></button>
-            <button
+            ></PageSquareBtn>
+            <PageSquareBtn
+              style={dynamicStyles}
               type="button"
               data-bs-target="#carouselExampleIndicators"
               data-bs-slide-to="5"
               aria-label="Slide 6"
-              style={{ height: "18px", width: "18px", margin: "0px 6px" }}
-            ></button>
+            ></PageSquareBtn>
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">

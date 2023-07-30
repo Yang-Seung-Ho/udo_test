@@ -52,7 +52,7 @@ const ToggleBtn = styled.a`
   display: block;
   padding: 12px 0px;
   ${(props) => props.theme.mobile`
-    font-size:15px;
+    font-size:13.5px;
 `}
 `;
 const AgreeTitle = styled.span`
@@ -128,7 +128,7 @@ const StyledCheckbox = styled.div`
 const CheckboxLabel = styled.label`
   cursor: pointer;
   ${(props) => props.theme.mobile`
-    font-size:13px;
+    font-size:12px;
 `}
 `;
 const CheckMark = styled.i`
@@ -149,7 +149,7 @@ const ReservationBtn = styled.button`
     background-color: rgba(200, 199, 197, 255); /* Removed quotation marks */
   }
   ${(props) => props.theme.mobile`
-  font-size:13px;  
+  font-size:12px;  
 `}
 `;
 const ModalContent = styled.div`

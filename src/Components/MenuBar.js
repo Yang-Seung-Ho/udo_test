@@ -160,10 +160,11 @@ function MenuBar() {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
+    height: 80px;
     div {
       padding: 20px;
     }
+    font-size: 14px;
   `;
 
   const MOffCanvasBody = styled.div`
@@ -174,13 +175,14 @@ function MenuBar() {
   `;
   const MOffCanvasMenuBox = styled.div`
     width: 100%;
-    padding: 24px;
+    padding: 20px 24px;
     display: flex;
     justify-content: space-between;
+    font-size: 14px;
   `;
   const MOffCanvasMenuInnerBox = styled.div`
     width: 100%;
-    font-size: 14px;
+    font-size: 12px;
     padding: 16px 0 16px 38px;
   `;
   const MOffCanvasMenuTotalBox = styled.div`
@@ -376,9 +378,10 @@ function MenuBar() {
             style={{ width: "70%" }}
           >
             <MOffCanvasHeader>
-              <div>StayUdoGihang</div>
+              <div>우도기행</div>
+
               <div
-                style={{ padding: "14px" }}
+                style={{ padding: "18px 26px 18px 18px" }}
                 type="button"
                 data-bs-dismiss="offcanvas"
                 aria-label="Close"
@@ -394,7 +397,11 @@ function MenuBar() {
                   <p
                     data-bs-dismiss="offcanvas"
                     aria-label="Close"
-                    style={{ paddingLeft: "24px", width: "100%" }}
+                    style={{
+                      paddingLeft: "24px",
+                      width: "100%",
+                      fontSize: "14px",
+                    }}
                   >
                     Prologue
                   </p>
@@ -414,6 +421,7 @@ function MenuBar() {
                       height: "13px",
                       width: "13px",
                       paddingRight: "27px",
+                      fontSize: "12px",
                     }}
                     className="fa-solid fa-chevron-down"
                   ></div>
@@ -501,7 +509,7 @@ function MenuBar() {
                 >
                   Tour
                   <div
-                    style={{ fontSize: "small" }}
+                    style={{ fontSize: "12px" }}
                     className="fa-solid fa-chevron-down"
                   ></div>
                 </MOffCanvasMenuBox>

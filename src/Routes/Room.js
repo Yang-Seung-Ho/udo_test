@@ -9,10 +9,10 @@ import img8 from "../Image/RoomPart1/8.jpg";
 import img9 from "../Image/RoomPart1/9.jpg";
 import img10 from "../Image/RoomPart1/10.jpg";
 import img11 from "../Image/RoomPart1/11.jpg";
-import img12 from "../Image/RoomPart1/12.jpg";
-import img13 from "../Image/RoomPart1/13.jpg";
-import img14 from "../Image/RoomPart1/14.jpg";
-import img15 from "../Image/RoomPart1/15.jpg";
+// import img12 from "../Image/RoomPart1/12.jpg";
+// import img13 from "../Image/RoomPart1/13.jpg";
+// import img14 from "../Image/RoomPart1/14.jpg";
+// import img15 from "../Image/RoomPart1/15.jpg";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
@@ -20,6 +20,23 @@ import styled, { keyframes } from "styled-components";
 
 function Room() {
   useEffect(() => {
+    // const images = [
+    //   img1,
+    //   img2,
+    //   img3,
+    //   img4,
+    //   img5,
+    //   img6,
+    //   img7,
+    //   img8,
+    //   img9,
+    //   img10,
+    //   img11,
+    //   img12,
+    //   img13,
+    //   img14,
+    //   img15,
+    // ];
     const images = [
       img1,
       img2,
@@ -32,10 +49,6 @@ function Room() {
       img9,
       img10,
       img11,
-      img12,
-      img13,
-      img14,
-      img15,
     ];
 
     images.forEach((image) => {
@@ -330,7 +343,7 @@ function Room() {
                 <div class="carousel-item">
                   <LeftImg src={img11} class="d-block w-100" alt="..." />
                 </div>
-                <div class="carousel-item">
+                {/* <div class="carousel-item">
                   <LeftImg src={img12} class="d-block w-100" alt="..." />
                 </div>
                 <div class="carousel-item">
@@ -341,7 +354,7 @@ function Room() {
                 </div>
                 <div class="carousel-item">
                   <LeftImg src={img15} class="d-block w-100" alt="..." />
-                </div>
+                </div> */}
               </div>
               <button
                 class="carousel-control-prev"

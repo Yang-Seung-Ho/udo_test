@@ -2,7 +2,7 @@ import React from "react";
 import img1 from "../Image/Create Motivation/create1.jpg";
 import img3 from "../Image/Create Motivation/create3.jpg";
 import img4 from "../Image/Create Motivation/create4.jpg";
-import img5 from "../Image/Create Motivation/create5.jpg";
+// import img5 from "../Image/Create Motivation/create5.jpg";
 import con1 from "../Image/Conv/con1.jpg";
 import con2 from "../Image/Conv/con2.jpg";
 import emb1 from "../Image/Embrace the Unspoiled Beauty/embrace1.jpg";
@@ -16,8 +16,8 @@ import { useMediaQueries } from "../MediaQuery";
 function Story() {
   const { isMobile } = useMediaQueries();
   useEffect(() => {
-    const images = [img1, img3, img4, img5, con1, con2, emb1, emb2];
-
+    // const images = [img1, img3, img4, img5, con1, con2, emb1, emb2];
+    const images = [img1, img3, img4, con1, con2, emb1, emb2];
     images.forEach((image) => {
       const img = new Image();
       img.src = image;
@@ -183,9 +183,9 @@ function Story() {
                   <div class="carousel-item">
                     <LeftImg src={img4} class="d-block w-100" alt="..." />
                   </div>
-                  <div class="carousel-item">
+                  {/* <div class="carousel-item">
                     <LeftImg src={img5} class="d-block w-100" alt="..." />
-                  </div>
+                  </div> */}
                 </div>
                 <button
                   class="carousel-control-prev"
