@@ -83,6 +83,7 @@ function Room() {
         position: relative;
         margin : 0;
         width:100%;
+        top:50px;
   `}
   `;
   const RoomTitle = styled.h1`
@@ -199,12 +200,21 @@ function Room() {
   const ModalInfoTitle = styled.h1`
     font-family: "MaruBuriSemiBold";
     margin-bottom: 28px;
+    ${(props) => props.theme.mobile`
+    font-size:13px;
+    margin-bottom: 14px;
+`}
   `;
   const ModalInfoLi = styled.li`
     margin-bottom: 10px;
     font-size: 14px;
     opacity: 1;
     font-family: "MaruBuri";
+    ${(props) => props.theme.mobile`
+    font-size:12px;
+    margin-bottom: 8px;
+
+`}
   `;
   const ReservationBtn = styled.button`
     margin-top: 12px;
@@ -217,8 +227,7 @@ function Room() {
   `;
   const ModalOuterBox = styled.div`
     ${(props) => props.theme.mobile`
-    
-      
+    font-size:14px;
 `}
   `;
   const EquipmentBox = styled.div`
@@ -237,6 +246,11 @@ function Room() {
     width:90%;
     top:40px;
     margin: 0 auto;
+`}
+  `;
+  const ModalTitle = styled.h1`
+    ${(props) => props.theme.mobile`
+    font-size:14px  
 `}
   `;
   return (
@@ -410,9 +424,7 @@ function Room() {
         >
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">
-                비품 및 구성
-              </h1>
+              <ModalTitle id="staticBackdropLabel">비품 및 구성</ModalTitle>
             </div>
             <ModalBody
               className="modal-body"

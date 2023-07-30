@@ -65,6 +65,7 @@ function Location() {
         padding: 0px 14px;
         position: relative;
         margin : 0;
+        top:50px;
   `}
   `;
   const LocationBox = styled.div``;

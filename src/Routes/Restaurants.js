@@ -28,6 +28,7 @@ const TotalBox = styled.div`
         position: relative;
         margin : 0;
         width:100%;
+        top:50px;
   `}
 `;
 

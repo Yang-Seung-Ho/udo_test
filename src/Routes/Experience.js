@@ -64,6 +64,7 @@ function Experience() {
         position: relative;
         margin : 0;
         width:100%;
+        top:50px;
   `}
   `;
   const OrderList = styled.div`

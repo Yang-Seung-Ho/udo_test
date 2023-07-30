@@ -146,6 +146,9 @@ function MenuBar() {
     width: 100%;
     height: 50px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    position: fixed;
+    background-color: var(--backgroundColor);
+    z-index: 100;
   `;
   const MMenuIndividualBox = styled.div`
     display: flex;
