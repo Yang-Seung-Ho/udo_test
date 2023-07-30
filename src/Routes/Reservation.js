@@ -6,6 +6,10 @@ import Footer from "../Components/Footer";
 const Title = styled.h1`
   font-size: 18px;
   margin-bottom: 32px;
+  ${(props) => props.theme.mobile`
+  padding:24px 0;
+  margin:0;  
+`}
 `;
 const HeadTitle = styled.div`
   display: flex;
@@ -31,14 +35,25 @@ const TotalBox = styled.div`
   min-height: 100%;
   padding-bottom: 200px;
   width: 50%;
-  /* background-color: wheat; */
+  ${(props) => props.theme.mobile`
+        animation: ${fadeInAnimation} 0.5s ease-in;
+        z-index: 1;
+        min-height: 100%;
+        padding: 0px 14px;
+        position: relative;
+        margin : 0;
+        width:100%;
+  `}
 `;
 const ToggleBtn = styled.a`
   background-color: rgba(0, 0, 0, 0);
   width: 100%;
-  opacity: 0.9;
+  opacity: 1;
   display: block;
   padding: 12px 0px;
+  ${(props) => props.theme.mobile`
+    font-size:15px;
+`}
 `;
 const AgreeTitle = styled.span`
   display: block;
@@ -46,6 +61,10 @@ const AgreeTitle = styled.span`
   font-size: 15px;
   opacity: 1;
   margin-top: 24px;
+  ${(props) => props.theme.mobile`
+  font-size:13px;  
+  margin-left:2px;
+`}
 `;
 const ToggleCardBox = styled.div`
   background-color: rgba(0, 0, 0, 0);
@@ -59,7 +78,7 @@ const ToggleTotalBox = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.8);
 `;
 const ToggleIcon = styled(motion.i)`
-  opacity: 0.8;
+  opacity: 1;
   font-size: 12px;
   display: flex;
   justify-content: center;
@@ -72,7 +91,12 @@ const AgreeInfo = styled.p`
   margin-left: 16px;
   font-size: 14px;
   padding: 4px 0px;
-  opacity: 0.8;
+  opacity: 0.9;
+  ${(props) => props.theme.mobile`
+  font-size:12px;  
+  line-height: 22px;
+  margin-left: 4px;
+`}
 `;
 const CheckboxContainer = styled.div`
   margin: 48px 0px 32px 0;
@@ -103,10 +127,13 @@ const StyledCheckbox = styled.div`
 
 const CheckboxLabel = styled.label`
   cursor: pointer;
+  ${(props) => props.theme.mobile`
+    font-size:13px;
+`}
 `;
 const CheckMark = styled.i`
   font-size: 12px;
-  opacity: 0.8;
+  opacity: 1;
 `;
 const ReservationBox = styled.div`
   display: flex;
@@ -121,6 +148,9 @@ const ReservationBtn = styled.button`
   &:hover {
     background-color: rgba(200, 199, 197, 255); /* Removed quotation marks */
   }
+  ${(props) => props.theme.mobile`
+  font-size:13px;  
+`}
 `;
 const ModalContent = styled.div`
   position: absolute;
@@ -137,12 +167,20 @@ const ModalBody = styled.div`
 const AgreeTable = styled.table`
   width: 50%;
   text-align: center;
+  ${(props) => props.theme.mobile`
+    margin-top:6px;
+    width: 80%;
+    
+`}
 `;
 const AgreeTr = styled.tr``;
 const AgreeTd = styled.td`
   border: 1px solid rgba(0, 0, 0, 0.5);
   font-size: 14px;
   padding: 4px;
+  ${(props) => props.theme.mobile`
+    font-size: 13px;
+`}
 `;
 const AgreeRefundBox = styled.div`
   width: 100%;

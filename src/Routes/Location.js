@@ -1,49 +1,7 @@
 import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import Footer from "../Components/Footer";
-const fadeInAnimation = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
 
-const TotalBox = styled.div`
-  animation: ${fadeInAnimation} 0.5s ease-in;
-  position: absolute;
-  z-index: -1;
-  margin-top: 175px;
-  margin-left: 38%;
-  margin-right: 12%;
-  height: auto;
-  min-height: 100%;
-  padding-bottom: 200px;
-  /* background-color: wheat; */
-`;
-const LocationBox = styled.div``;
-const LocationH1 = styled.h1`
-  font-size: 20px;
-  font-weight: 600;
-`;
-const AddressKor = styled.p`
-  font-size: 14px;
-  opacity: 0.8;
-  margin-bottom: 8px;
-`;
-const AddressEng = styled.span`
-  font-size: 13px;
-  opacity: 0.7;
-`;
-const AddressBox = styled.div`
-  margin: 24px 0;
-`;
-const MapContainer = styled.div`
-  position: relative;
-  height: 400px;
-  width: 800px;
-`;
 function Location() {
   useEffect(() => {
     // 카카오 지도 API 스크립트 동적으로 추가
@@ -81,7 +39,66 @@ function Location() {
       document.head.removeChild(script);
     };
   }, []);
+  const fadeInAnimation = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
+  const TotalBox = styled.div`
+    animation: ${fadeInAnimation} 0.5s ease-in;
+    position: absolute;
+    z-index: -1;
+    margin-top: 175px;
+    margin-left: 38%;
+    margin-right: 12%;
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 200px;
+    ${(props) => props.theme.mobile`
+        animation: ${fadeInAnimation} 0.5s ease-in;
+        z-index: 1;
+        min-height: 100%;
+        padding: 0px 14px;
+        position: relative;
+        margin : 0;
+  `}
+  `;
+  const LocationBox = styled.div``;
+  const LocationH1 = styled.h1`
+    font-size: 20px;
+    font-weight: 600;
+    ${(props) => props.theme.mobile`
+        padding:24px 0px;
+        font-size:18px;
+  `}
+  `;
+  const AddressKor = styled.p`
+    font-size: 14px;
+    margin-bottom: 8px;
+  `;
+  const AddressEng = styled.span`
+    font-size: 13px;
+    opacity: 0.9;
+  `;
+  const AddressBox = styled.div`
+    margin: 24px 0;
+    ${(props) => props.theme.mobile`
+        margin: 0 0 24px 0;
+    `}
+  `;
+  const MapContainer = styled.div`
+    position: relative;
+    height: 400px;
+    width: 800px;
+    ${(props) => props.theme.mobile`
+      width:100%;
+      
+  `}
+  `;
   return (
     <>
       <TotalBox>

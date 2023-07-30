@@ -17,122 +17,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
 import styled, { keyframes } from "styled-components";
-const fadeInAnimation = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
 
-const TotalBox = styled.div`
-  animation: ${fadeInAnimation} 0.5s ease-in;
-  position: absolute;
-  z-index: -1;
-  margin-top: 175px;
-  margin-left: 36%;
-  margin-right: 8%;
-  height: auto;
-  min-height: 100%;
-  width: 52%;
-`;
-const RoomTitle = styled.h1`
-  margin-bottom: 48px;
-  font-size: 24px;
-`;
-const RoomTitleSpan = styled.span`
-  font-size: 20px;
-`;
-const RoomTotalBox = styled.div`
-  display: flex;
-  width: 105%;
-`;
-
-const RoomInfoBox = styled.div`
-  width: 70%;
-`;
-const CarouselTotalBox = styled.div`
-  width: 100%;
-`;
-// 이미지 사이즈 조정
-const LeftImg = styled.img`
-  width: 100%;
-  height: 100%;
-`;
-const CarouselTotalOuterBox = styled.div`
-  width: 130%;
-`;
-const RoomInfoP = styled.p`
-  opacity: 0.8;
-  font-size: 13px;
-  margin-bottom: 6px;
-`;
-const RoomInfoDiv = styled.div`
-  padding-bottom: 32px;
-  font-family: "MaruBuri";
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 14px;
-  & ${RoomInfoP}:last-child {
-    margin: 0;
-  }
-  & ${RoomInfoP}:first-child {
-    margin-top: 8px;
-  }
-`;
-const RoomInfoSpan = styled.span`
-  opacity: 0.8;
-  font-size: 13px;
-`;
-const ModalBtn = styled.div`
-  border-radius: 8px;
-  margin-top: 12px;
-  border: 1px solid;
-  width: 100px;
-  padding: 5px 7px;
-  text-align: center;
-`;
-const ModalBody = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 12px;
-`;
-const ModalInfoBox = styled.div`
-  width: 45%;
-  padding-top: 24px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid;
-  &:first-child,
-  &:nth-child(2) {
-    padding-top: 0px;
-  }
-  &:last-child,
-  &:nth-last-child(2) {
-    border: none;
-  }
-`;
-const ModalInfoTitle = styled.h1`
-  font-family: "MaruBuriSemiBold";
-  margin-bottom: 28px;
-`;
-const ModalInfoLi = styled.li`
-  margin-bottom: 10px;
-  font-size: 14px;
-  opacity: 0.8;
-  font-family: "MaruBuri";
-`;
-const ReservationBtn = styled.button`
-  margin-top: 12px;
-  border: 1px solid;
-  width: 100px;
-  padding: 5px 7px;
-  border-radius: 8px;
-  background-color: var(--backgroundColor);
-  margin-left: 30%;
-`;
 function Room() {
   useEffect(() => {
     const images = [
@@ -158,6 +43,189 @@ function Room() {
       img.src = image;
     });
   }, []);
+  const fadeInAnimation = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+  const TotalBox = styled.div`
+    animation: ${fadeInAnimation} 0.5s ease-in;
+    position: absolute;
+    z-index: -1;
+    margin-top: 175px;
+    margin-left: 36%;
+    margin-right: 8%;
+    height: auto;
+    min-height: 100%;
+    width: 52%;
+    ${(props) => props.theme.mobile`
+        animation: ${fadeInAnimation} 0.5s ease-in;
+        z-index: 1;
+        min-height: 100%;
+        padding: 0px 14px;
+        position: relative;
+        margin : 0;
+        width:100%;
+  `}
+  `;
+  const RoomTitle = styled.h1`
+    margin-bottom: 48px;
+    font-size: 24px;
+    ${(props) => props.theme.mobile`
+    font-size:18px;
+    padding:24px 0;
+    margin-bottom:0;
+`}
+  `;
+  const RoomTitleSpan = styled.span`
+    font-size: 20px;
+    ${(props) => props.theme.mobile`
+    font-size: 16px;  
+`}
+  `;
+  const RoomTotalBox = styled.div`
+    display: flex;
+    width: 105%;
+
+    ${(props) => props.theme.mobile`
+    width:100%;
+    flex-direction: column;
+`}
+  `;
+
+  const RoomInfoBox = styled.div`
+    width: 70%;
+    ${(props) => props.theme.mobile`
+    width:100%;
+    
+`}
+    div {
+      ${(props) => props.theme.mobile`
+    font-size:12px;  
+    
+`}
+    }
+    p {
+      ${(props) => props.theme.mobile`
+    font-size:12px  
+`}
+    }
+  `;
+  const CarouselTotalBox = styled.div`
+    width: 100%;
+  `;
+  // 이미지 사이즈 조정
+  const LeftImg = styled.img`
+    width: 100%;
+    height: 100%;
+  `;
+  const CarouselTotalOuterBox = styled.div`
+    width: 130%;
+    ${(props) => props.theme.mobile`
+    width:100%;  
+`}
+  `;
+  const RoomInfoP = styled.p`
+    opacity: 1;
+    font-size: 13px;
+    margin-bottom: 6px;
+  `;
+  const RoomInfoDiv = styled.div`
+    padding-bottom: 32px;
+    font-family: "MaruBuri";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 14px;
+    & ${RoomInfoP}:last-child {
+      margin: 0;
+    }
+    & ${RoomInfoP}:first-child {
+      margin-top: 8px;
+    }
+  `;
+  const RoomInfoSpan = styled.p`
+    opacity: 1;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  `;
+  const ModalBtn = styled.div`
+    border-radius: 8px;
+    margin-top: 12px;
+    border: 1px solid;
+    width: 100px;
+    padding: 5px 7px;
+    text-align: center;
+  `;
+  const ModalBody = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 12px;
+  `;
+  const ModalInfoBox = styled.div`
+    width: 45%;
+    padding-top: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid;
+    &:first-child,
+    &:nth-child(2) {
+      padding-top: 0px;
+    }
+    &:last-child,
+    &:nth-last-child(2) {
+      border: none;
+    }
+  `;
+  const ModalInfoTitle = styled.h1`
+    font-family: "MaruBuriSemiBold";
+    margin-bottom: 28px;
+  `;
+  const ModalInfoLi = styled.li`
+    margin-bottom: 10px;
+    font-size: 14px;
+    opacity: 1;
+    font-family: "MaruBuri";
+  `;
+  const ReservationBtn = styled.button`
+    margin-top: 12px;
+    border: 1px solid;
+    width: 100px;
+    padding: 5px 7px;
+    border-radius: 8px;
+    background-color: var(--backgroundColor);
+    margin-left: 30%;
+  `;
+  const ModalOuterBox = styled.div`
+    ${(props) => props.theme.mobile`
+    
+      
+`}
+  `;
+  const EquipmentBox = styled.div`
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    ${(props) => props.theme.mobile`
+      
+    `}
+  `;
+  const ModalInnerBox = styled.div`
+    max-width: 45%;
+    ${(props) => props.theme.mobile`
+    max-width:none;
+    width:90%;
+    top:40px;
+    margin: 0 auto;
+`}
+  `;
   return (
     <>
       <TotalBox>
@@ -209,13 +277,7 @@ function Room() {
             </RoomInfoDiv>
             <RoomInfoDiv>
               비품 및 구성
-              <div
-                style={{
-                  display: "flex",
-                  width: "100%",
-                  alignItems: "center",
-                }}
-              >
+              <EquipmentBox>
                 <ModalBtn
                   type="button"
                   data-bs-toggle="modal"
@@ -226,7 +288,7 @@ function Room() {
                 <Link to="/reservation">
                   <ReservationBtn>예약하기</ReservationBtn>
                 </Link>
-              </div>
+              </EquipmentBox>
             </RoomInfoDiv>
           </RoomInfoBox>
           <CarouselTotalOuterBox>
@@ -286,7 +348,7 @@ function Room() {
                 type="button"
                 data-bs-target="#carouselExampleInterval3"
                 data-bs-slide="prev"
-                style={{ color: "white", opacity: "0.8" }}
+                style={{ color: "white", opacity: "1" }}
               >
                 <span
                   class="fa-solid fa-chevron-left"
@@ -300,10 +362,10 @@ function Room() {
                 type="button"
                 data-bs-target="#carouselExampleInterval3"
                 data-bs-slide="next"
-                style={{ color: "white", opacity: "0.8" }}
+                style={{ color: "white", opacity: "1" }}
               >
                 <span
-                  style={{ color: "white", opacity: "1" }}
+                  // style={{ color: "white", opacity: "1" }}
                   class="fa-solid fa-chevron-right"
                   aria-hidden="true"
                 ></span>
@@ -316,8 +378,8 @@ function Room() {
       </TotalBox>
 
       {/* 모달 박스 */}
-      <div
-        class="modal fade"
+      <ModalOuterBox
+        className="modal fade"
         id="staticBackdrop"
         data-bs-backdrop="static"
         data-bs-keyboard="false"
@@ -327,12 +389,11 @@ function Room() {
         aria-labelledby="staticBackdropLabel"
         aria-hidden="true"
       >
-        <div
-          class="modal-dialog"
+        <ModalInnerBox
+          className="modal-dialog"
           data-bs-dismiss="modal"
           aria-label="Close"
           tabindex="1"
-          style={{ maxWidth: "45%" }}
         >
           <div class="modal-content">
             <div class="modal-header">
@@ -403,8 +464,8 @@ function Room() {
               <ModalInfoBox></ModalInfoBox>
             </ModalBody>
           </div>
-        </div>
-      </div>
+        </ModalInnerBox>
+      </ModalOuterBox>
     </>
   );
 }

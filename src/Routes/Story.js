@@ -7,82 +7,14 @@ import con1 from "../Image/Conv/con1.jpg";
 import con2 from "../Image/Conv/con2.jpg";
 import emb1 from "../Image/Embrace the Unspoiled Beauty/embrace1.jpg";
 import emb2 from "../Image/Embrace the Unspoiled Beauty/embrace2.jpg";
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { useEffect } from "react";
 import Footer from "../Components/Footer";
-const fadeInAnimation = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
 
-const TotalBox = styled.div`
-  animation: ${fadeInAnimation} 0.5s ease-in;
-  position: absolute;
-  z-index: -1;
-  margin-top: 175px;
-  margin-left: 36%;
-  margin-right: 12%;
-  height: auto;
-  min-height: 100%;
-`;
-const NarrativeBox = styled.div`
-  width: 100%;
-  border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
-`;
-const NarrativeTitle = styled.h1`
-  font-size: 18px;
-  opacity: 0.8;
-  font-weight: 500;
-  padding-bottom: 24px;
-  padding-top: 24px;
-`;
-const NarrativeSubTitle = styled.span`
-  margin: 12px 0px 24px 0px;
-  font-size: 14px;
-  font-style: italic;
-  border-bottom: 1px solid;
-`;
-const NarrativeImgInfoBox = styled.div`
-  padding-top: 24px;
-  padding-bottom: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-const NarrativeInfo = styled.p`
-  width: 57%;
-  padding-right: 12px;
-  font-size: 14px;
-  line-height: 24px;
-  opacity: 0.8;
-  text-align: justify;
-  height: 100%;
-`;
-const NarrativeInfoMiddle = styled.p`
-  width: 100%;
-  padding-right: 12px;
-  font-size: 14px;
-  line-height: 24px;
-  opacity: 0.8;
-  text-align: justify;
-`;
-const CarouselTotalBox = styled.div`
-  width: 100%;
-`;
-// 이미지 사이즈 조정
-const LeftImg = styled.img`
-  width: 100%;
-  height: 100%;
-`;
-const CarouselTotalOuterBox = styled.div`
-  width: 40%;
-`;
+import { useMediaQueries } from "../MediaQuery";
 
 function Story() {
+  const { isMobile } = useMediaQueries();
   useEffect(() => {
     const images = [img1, img3, img4, img5, con1, con2, emb1, emb2];
 
@@ -91,6 +23,130 @@ function Story() {
       img.src = image;
     });
   }, []);
+  const fadeInAnimation = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+  const TotalBox = styled.div`
+    animation: ${fadeInAnimation} 0.5s ease-in;
+    position: absolute;
+    z-index: -1;
+    margin-top: 175px;
+    margin-left: 36%;
+    margin-right: 12%;
+    height: auto;
+    min-height: 100%;
+    ${(props) => props.theme.mobile`
+        animation: ${fadeInAnimation} 0.5s ease-in;
+        z-index: 1;
+        min-height: 100%;
+        padding: 0px 14px;
+        position: relative;
+        margin : 0;
+  `}
+  `;
+  const NarrativeBox = styled.div`
+    width: 100%;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+  `;
+  const NarrativeTitle = styled.h1`
+    font-size: 18px;
+    opacity: 1;
+    font-weight: 500;
+    padding-bottom: 24px;
+    padding-top: 24px;
+  `;
+  const NarrativeSubTitle = styled.span`
+    margin: 12px 0px 24px 0px;
+    font-size: 14px;
+    font-style: italic;
+    border-bottom: 1px solid;
+  `;
+  const NarrativeImgInfoBox = styled.div`
+    padding-top: 24px;
+    padding-bottom: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ${(props) => props.theme.mobile`
+    flex-direction: column;
+  `}
+  `;
+  const NarrativeInfo = styled.p`
+    width: 57%;
+    padding-right: 12px;
+    font-size: 14px;
+    line-height: 24px;
+    opacity: 1;
+    text-align: justify;
+    height: 100%;
+    /* mobile 디바이스에서만 적용될 스타일 */
+    ${(props) => props.theme.mobile`
+    font-size: 12px;
+    width:100%;
+    margin-bottom:24px;
+  `}
+    &:last-child {
+      width: 50%;
+      ${(props) => props.theme.mobile`
+      width:100%;
+      
+  `}
+    }
+  `;
+  const NarrativeInfoMiddle = styled.p`
+    width: 100%;
+    padding-right: 12px;
+    font-size: 14px;
+    line-height: 24px;
+    opacity: 1;
+    text-align: justify;
+    margin-bottom: 32px;
+    ${(props) => props.theme.mobile`
+    font-size: 12px;
+    width:100%;
+    margin-bottom:24px;
+  `}
+  `;
+  const CarouselTotalBox = styled.div`
+    width: 100%;
+    ${(props) => props.theme.mobile`
+      // width: 300px; /* 이미지 컨테이너의 너비를 원하는 크기로 설정 */
+      // height: 200px; /* 이미지 컨테이너의 높이를 원하는 크기로 설정 */
+      // overflow: hidden; /* 이미지를 컨테이너 내부로 잘리도록 설정 */
+  `}
+  `;
+  // 이미지 사이즈 조정
+  const LeftImg = styled.img`
+    width: 100%;
+    height: 100%;
+
+    ${(props) => props.theme.mobile`
+      // object-fit: cover; 
+      
+  `}
+  `;
+  const CarouselTotalOuterBox = styled.div`
+    width: 40%;
+
+    /* 모바일 디바이스에서만 적용되는 스타일 */
+    ${(props) => props.theme.mobile`
+    width: 100%;
+  `}
+
+    &:nth-child(1) {
+      width: 90%;
+      /* 모바일 디바이스에서만 적용되는 스타일 */
+      ${(props) => props.theme.mobile`
+      width: 100%;
+    `}
+    }
+  `;
   return (
     <>
       <TotalBox>
@@ -165,13 +221,13 @@ function Story() {
           <NarrativeImgInfoBox
             style={{ display: "flex", flexDirection: "column" }}
           >
-            <NarrativeInfoMiddle style={{ marginBottom: "32px" }}>
+            <NarrativeInfoMiddle>
               저희 스테이는 하고수동 1분거리에 위치해 있습니다. 하고수동은
               우도에서 몇 안되는 밤에도 불이 켜져있는 가게들이 몰려있는
               곳입니다. 근처에 편의점도 2개나 있어 접근성이 매우 좋답니다.
               바닷가 앞 스테이에서 편안한 휴식을 취해보세요.
             </NarrativeInfoMiddle>
-            <CarouselTotalOuterBox style={{ width: "90%" }}>
+            <CarouselTotalOuterBox style={{ width: isMobile ? "100%" : "90%" }}>
               <CarouselTotalBox
                 id="carouselExampleInterval2"
                 className="carousel slide carousel-fade"
@@ -217,7 +273,7 @@ function Story() {
           <NarrativeTitle>Embrace the Unspoiled Beauty</NarrativeTitle>
           <NarrativeSubTitle>우도를 표현하기 위한 노력들</NarrativeSubTitle>
           <NarrativeImgInfoBox>
-            <NarrativeInfo style={{ width: "55%" }}>
+            <NarrativeInfo>
               저희 스테이는 자연 그대로를 가져오기 위해 최대한 노력했습니다.
               테이블 또한 우도슬랩이라는 자재들을 사용해 가공이 많이 되지 않은
               자른 그대로의 형태를 띄는 나무들을 사용하였고 스테이 앞 하고수동의
@@ -227,7 +283,7 @@ function Story() {
               하루동일 직접 우도를 돌며 찾아다녔답니다. 그 시간이 헛되지 않게
               예쁜 커튼봉이 나와서 너무 만족스럽습니다.
             </NarrativeInfo>
-            <CarouselTotalOuterBox style={{ width: "40%" }}>
+            <CarouselTotalOuterBox>
               <CarouselTotalBox
                 id="carouselExampleInterval3"
                 className="carousel slide carousel-fade"

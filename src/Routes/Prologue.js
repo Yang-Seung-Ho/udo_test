@@ -22,7 +22,15 @@ const TotalBox = styled.div`
   height: auto;
   min-height: 100%;
   padding-bottom: 200px;
-  /* background-color: wheat; */
+  ${(props) => props.theme.mobile`
+        animation: ${fadeInAnimation} 0.5s ease-in;
+        z-index: 1;
+        min-height: 100%;
+        padding: 0px 14px;
+        position: relative;
+        margin : 0;
+        width:100%;
+  `}/* background-color: wheat; */
 `;
 const HeaderBox = styled.div`
   width: 100%;
@@ -32,6 +40,10 @@ const HeaderBox = styled.div`
 const Title = styled.h1`
   font-size: 22px;
   font-weight: 700;
+  ${(props) => props.theme.mobile`
+  font-size:18px;  
+  padding: 24px 0;
+`}
 `;
 const TitleSpan = styled.span`
   margin-left: 4px;
@@ -39,6 +51,12 @@ const TitleSpan = styled.span`
   margin-bottom: 32px;
   font-size: 14px;
   font-style: italic;
+  ${(props) => props.theme.mobile`
+  margin-top: 12px;
+  margin-bottom: 24px;
+  font-size: 13px;
+      
+`}
 `;
 const TitleP = styled.p`
   margin-left: 4px;
@@ -46,6 +64,11 @@ const TitleP = styled.p`
   font-size: 14px;
   line-height: 28px;
   width: 80%;
+  ${(props) => props.theme.mobile`
+    width: 100%;
+    font-size: 12px;
+    margin-bottom: 12px;
+`}
 `;
 const PresentImgBox = styled.div`
   margin-top: 12px;
@@ -65,6 +88,9 @@ const TitleBox = styled.div`
 const TitleHanja = styled.span`
   font-family: sans-serif;
   font-size: 18px;
+  ${(props) => props.theme.mobile`
+  font-size:16px;  
+`}
 `;
 function Prologue() {
   useEffect(() => {

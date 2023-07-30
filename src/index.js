@@ -3,6 +3,9 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { createGlobalStyle } from "styled-components";
 import "./root.css";
+import { ThemeProvider } from "styled-components";
+import { mediaQuery } from "./Theme";
+
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
 
@@ -34,7 +37,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	background: var(--backgroundColor);
-	font-family: 'MaruBuriExtraLight';
+	font-family: 'MaruBuri';
 	
 }
 ol, ul {
@@ -61,7 +64,9 @@ a {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-    <GlobalStyle />
-    <App />
+    <ThemeProvider theme={{ ...mediaQuery }}>
+      <GlobalStyle />
+      <App />
+    </ThemeProvider>
   </>
 );

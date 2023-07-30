@@ -4,7 +4,6 @@ import Home from "./Routes/Home";
 import Prologue from "./Routes/Prologue";
 import Reservation from "./Routes/Reservation";
 import Room from "./Routes/Room";
-
 import Story from "./Routes/Story";
 import Location from "./Routes/Location";
 // import Tour from "./Routes/Tour";

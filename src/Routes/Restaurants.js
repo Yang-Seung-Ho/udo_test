@@ -20,10 +20,22 @@ const TotalBox = styled.div`
   min-height: 100%;
   padding-bottom: 200px;
   width: 52%;
+  ${(props) => props.theme.mobile`
+        animation: ${fadeInAnimation} 0.5s ease-in;
+        z-index: 1;
+        min-height: 100%;
+        padding: 0px 14px;
+        position: relative;
+        margin : 0;
+        width:100%;
+  `}
 `;
 
 const Title = styled.h1`
   font-size: 18px;
+  ${(props) => props.theme.mobile`
+    padding: 24px 0;  
+`}
 `;
 const PlaceFlexBox = styled.div`
   display: flex;
@@ -58,12 +70,18 @@ const PlaceInfoUl = styled.ul`
   li {
     margin-bottom: 6px;
     text-align: center;
+    ${(props) => props.theme.mobile`
+    font-size: 13px;  
+`}
   }
 `;
 const AttachBox = styled.div`
   margin-top: 36px;
   text-align: center;
   margin-bottom: 36px;
+  ${(props) => props.theme.mobile`
+    font-size: 14px;  
+`}
 `;
 const AttachSpan = styled.span`
   cursor: pointer;

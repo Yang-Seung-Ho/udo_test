@@ -2,6 +2,7 @@ import styled, { keyframes } from "styled-components";
 import React from "react";
 
 import Footer from "../Components/Footer";
+
 const fadeInAnimation = keyframes`
   from {
     opacity: 0;
@@ -20,11 +21,23 @@ const TotalBox = styled.div`
   height: auto;
   min-height: 100%;
   padding-bottom: 200px;
-  /* background-color: wheat; */
+  ${(props) => props.theme.mobile`
+        animation: ${fadeInAnimation} 0.5s ease-in;
+        z-index: 1;
+        min-height: 100%;
+        padding: 0px 14px;
+        position: relative;
+        margin : 0;
+        width:100%;
+  `}/* background-color: wheat; */
 `;
 const Title = styled.h1`
   font-size: 18px;
   margin-bottom: 16px;
+  ${(props) => props.theme.mobile`
+    padding: 24px 0 0 0 ;
+    margin: 0;
+`}
 `;
 const PlaceFlexBox = styled.div`
   width: 130%;
@@ -32,6 +45,12 @@ const PlaceFlexBox = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 32px;
+
+  ${(props) => props.theme.mobile`
+  flex-direction: column;  
+  width: 100%;
+  margin-bottom: 18px;
+`}
 `;
 const MapBox = styled.div`
   margin-top: 24px;
@@ -41,6 +60,10 @@ const PlaceInfo = styled.p`
   text-align: justify;
   line-height: 30px;
   font-size: 15px;
+  ${(props) => props.theme.mobile`
+    font-size: 12px;
+    line-height: 24px;
+`}
 `;
 const PlaceInfoBox = styled.div`
   width: 100%;
@@ -49,11 +72,14 @@ const PlaceInfoBox = styled.div`
 const PlaceTitle = styled.h1`
   padding: 22px 0px 12px 0px;
   font-style: italic;
+  ${(props) => props.theme.mobile`
+    padding-top: 24px;
+`}
 `;
 const PlaceDistance = styled.span`
   padding: 6px 0px 12px 0px;
   font-size: 14px;
-  opacity: 0.8;
+  opacity: 0.9;
   display: block;
 `;
 
@@ -66,6 +92,15 @@ const PlaceTotalBox = styled.div`
     border: none;
     padding-bottom: 150px;
   }
+  ${(props) => props.theme.mobile`
+    margin-bottom: 0;
+`}
+`;
+const KaKaoImg = styled.img`
+  ${(props) => props.theme.mobile`
+  width: 100%;
+  height: 100%;  
+    `}
 `;
 function Places() {
   return (
@@ -90,7 +125,7 @@ function Places() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
+                <KaKaoImg
                   width="350"
                   height="220"
                   src="https://map2.daum.net/map/mapservice?FORMAT=PNG&SCALE=2.5&MX=492310&MY=977&S=0&IW=504&IH=310&LANG=0&COORDSTM=WCONGNAMUL&logo=kakao_logo"
@@ -120,7 +155,7 @@ function Places() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
+                <KaKaoImg
                   width="350"
                   height="220"
                   src="https://map2.daum.net/map/mapservice?FORMAT=PNG&SCALE=5&MX=492687&MY=5687&S=0&IW=504&IH=310&LANG=0&COORDSTM=WCONGNAMUL&logo=kakao_logo"
@@ -148,7 +183,7 @@ function Places() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
+                <KaKaoImg
                   width="350"
                   height="220"
                   src="https://map2.daum.net/map/mapservice?FORMAT=PNG&SCALE=2.5&MX=486770&MY=2430&S=0&IW=504&IH=310&LANG=0&COORDSTM=WCONGNAMUL&logo=kakao_logo"
@@ -177,7 +212,7 @@ function Places() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
+                <KaKaoImg
                   width="350"
                   height="220"
                   src="https://map2.daum.net/map/mapservice?FORMAT=PNG&SCALE=1.25&MX=490137&MY=5572&S=0&IW=504&IH=310&LANG=0&COORDSTM=WCONGNAMUL&logo=kakao_logo"
@@ -205,7 +240,7 @@ function Places() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img
+                <KaKaoImg
                   width="350"
                   height="220"
                   src="https://map2.daum.net/map/mapservice?FORMAT=PNG&SCALE=2.5&MX=490171&MY=-357&S=0&IW=504&IH=310&LANG=0&COORDSTM=WCONGNAMUL&logo=kakao_logo"
