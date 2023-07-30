@@ -7,7 +7,7 @@ import con1 from "../Image/Conv/con1.jpg";
 import con2 from "../Image/Conv/con2.jpg";
 import emb1 from "../Image/Embrace the Unspoiled Beauty/embrace1.jpg";
 import emb2 from "../Image/Embrace the Unspoiled Beauty/embrace2.jpg";
-import styled, { css, keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useEffect } from "react";
 import Footer from "../Components/Footer";
 
