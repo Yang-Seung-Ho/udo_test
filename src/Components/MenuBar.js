@@ -417,7 +417,6 @@ function MenuBar() {
                   <div
                     style={{
                       textAlign: "right",
-                      fontSize: "small",
                       height: "13px",
                       width: "13px",
                       paddingRight: "27px",
