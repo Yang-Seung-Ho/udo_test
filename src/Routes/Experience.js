@@ -10,7 +10,7 @@ import turn1 from "../Image/Experience/turntable1.jpg";
 import turn2 from "../Image/Experience/turntable2.jpg";
 import turn3 from "../Image/Experience/turntable3.jpg";
 import styled, { keyframes } from "styled-components";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import Footer from "../Components/Footer";
 import { useMediaQueries } from "../MediaQuery";
 
