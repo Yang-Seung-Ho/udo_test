@@ -9,10 +9,6 @@ import img8 from "../Image/RoomPart1/8.jpg";
 import img9 from "../Image/RoomPart1/9.jpg";
 import img10 from "../Image/RoomPart1/10.jpg";
 import img11 from "../Image/RoomPart1/11.jpg";
-// import img12 from "../Image/RoomPart1/12.jpg";
-// import img13 from "../Image/RoomPart1/13.jpg";
-// import img14 from "../Image/RoomPart1/14.jpg";
-// import img15 from "../Image/RoomPart1/15.jpg";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
@@ -20,23 +16,6 @@ import styled, { keyframes } from "styled-components";
 
 function Room() {
   useEffect(() => {
-    // const images = [
-    //   img1,
-    //   img2,
-    //   img3,
-    //   img4,
-    //   img5,
-    //   img6,
-    //   img7,
-    //   img8,
-    //   img9,
-    //   img10,
-    //   img11,
-    //   img12,
-    //   img13,
-    //   img14,
-    //   img15,
-    // ];
     const images = [
       img1,
       img2,
@@ -220,7 +199,8 @@ function Room() {
   `;
   const ReservationBtn = styled.button`
     margin-top: 12px;
-    border: 1px solid;
+    color: black;
+    border: 1px solid black;
     width: 100px;
     padding: 5px 7px;
     border-radius: 8px;

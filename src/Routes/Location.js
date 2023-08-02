@@ -28,7 +28,7 @@ function Location() {
 
         const infowindow = new window.kakao.maps.InfoWindow({
           content:
-            '<div style="padding:10px; font-size:13px; white-space: nowrap;">제주 제주시 우도면 우도해안길 816 뒷집 2층</div>',
+            '<div style="padding:10px; font-size:11px; white-space: nowrap;">제주 제주시 우도면 우도해안길 816 뒷집 2층</div>',
         });
         infowindow.open(map, marker);
       });
@@ -80,10 +80,14 @@ function Location() {
   const AddressKor = styled.p`
     font-size: 14px;
     margin-bottom: 8px;
+    ${(props) => props.theme.mobile`
+font-size: 13px;  `}
   `;
   const AddressEng = styled.span`
     font-size: 13px;
     opacity: 0.9;
+    ${(props) => props.theme.mobile`
+font-size: 12px;  `}
   `;
   const AddressBox = styled.div`
     margin: 24px 0;

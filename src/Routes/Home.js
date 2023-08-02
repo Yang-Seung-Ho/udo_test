@@ -4,10 +4,10 @@ import img3 from "../Image/Home/home3.jpg";
 import img4 from "../Image/Home/home1.jpg";
 import img5 from "../Image/Home/home5.jpg";
 import img6 from "../Image/Home/home6.jpg";
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-// import logo from "../Images/logo.png";
 import styled, { keyframes } from "styled-components";
 import { useMediaQueries } from "../MediaQuery";
 const fadeInAnimation = keyframes`
@@ -84,6 +84,15 @@ const ToPageBtn = styled.p`
     font-size:14px;
 `}
 `;
+const ToPageImgBtn = styled.img`
+  padding: 12px 22px;
+  border: 0.1px solid white;
+  ${(props) => props.theme.mobile`
+    padding: 6px 12px;
+    font-size:14px;
+`}
+`;
+
 const ToPageBtnBox = styled.div`
   ${(props) => props.theme.mobile`
     margin-bottom : 36px;

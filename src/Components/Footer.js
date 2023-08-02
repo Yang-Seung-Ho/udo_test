@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { useMediaQueries } from "../MediaQuery";
 function Footer() {
   const TotalFooterBox = styled.div`
     padding: 80px 0 60px 0px;
@@ -67,6 +67,7 @@ function Footer() {
   const handleButtonClick = () => {
     window.open("https://www.instagram.com/stay_udo.gihang/", "_blank");
   };
+  const { isMobile } = useMediaQueries();
   return (
     // 푸터바 위치를 전체 스크롤 길이에 1.3배 아래 위치
     <TotalFooterBox>
@@ -93,7 +94,14 @@ function Footer() {
           <FooterUnderSpan>사업자번호: 667-37-01036</FooterUnderSpan>
           <FooterUnderSpan>통신판매신고번호: 2023-23-23</FooterUnderSpan>
           <FooterUnderSpan>Tel. 010-6475-8409</FooterUnderSpan>
-          <FooterUnderSpan>문의시간: 10:00 - 18:00</FooterUnderSpan>
+          {isMobile ? (
+            <FooterUnderSpan>
+              <br />
+              문의시간: 10:00 - 18:00
+            </FooterUnderSpan>
+          ) : (
+            <FooterUnderSpan>문의시간: 10:00 - 18:00</FooterUnderSpan>
+          )}
         </FooterUnderDiv>
         <RawBox>
           <RawSpan>이용약관</RawSpan>

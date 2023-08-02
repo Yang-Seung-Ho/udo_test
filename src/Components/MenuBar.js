@@ -3,6 +3,9 @@ import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useMediaQueries } from "../MediaQuery";
 
+// 로고
+import Logo_Text from "../Image/logo/text.png";
+
 function MenuBar() {
   const { isMobile, isDesktop } = useMediaQueries();
   const location = useLocation();
@@ -49,23 +52,28 @@ function MenuBar() {
     height: 175px;
     background-color: rgba(245, 241, 232, 255, 0.9);
   `;
-
   const MenuHeaderInBox = styled.div`
     cursor: pointer;
-    background-color: white;
+    /* background-color: white; */
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     height: 100vh;
     justify-content: center;
-    width: 143px;
-    height: 143px;
-    margin-top: 30px;
+    width: 200px;
+    height: auto;
+    margin-top: 40px;
     margin-left: 8%;
   `;
+  const MenuHeaderInBoxImg = styled.img`
+    border-radius: 3px;
+    width: 100%;
+    height: 100%;
+  `;
+
   const SideMenuHeaderBox = styled.div`
     position: fixed;
-    padding-top: 225px;
+    padding-top: 175px;
     margin-left: 20%;
   `;
   const SideMenuUl = styled.ul``;
@@ -194,7 +202,9 @@ function MenuBar() {
     justify-content: center;
     align-items: center;
   `;
-
+  const MLogo = styled.img`
+    width: 130%;
+  `;
   return (
     <>
       {isDesktop && (
@@ -202,7 +212,7 @@ function MenuBar() {
           <MenuHeader>
             <MenuHeaderInBox>
               <Link to="/">
-                {/* <MenuHeaderInBoxImg src={Logo}></MenuHeaderInBoxImg> */}
+                <MenuHeaderInBoxImg src={Logo_Text}></MenuHeaderInBoxImg>
               </Link>
             </MenuHeaderInBox>
           </MenuHeader>
@@ -364,7 +374,7 @@ function MenuBar() {
             </MMenuIndividualBox>
             <Link to="/prologue">
               <MMenuIndividualBox style={{ width: "100px" }}>
-                우도기행
+                <MLogo src={Logo_Text}></MLogo>
               </MMenuIndividualBox>
             </Link>
             <MMenuIndividualBox>

@@ -144,6 +144,7 @@ const ReservationBox = styled.div`
 const ReservationBtn = styled.button`
   border: none;
   padding: 12px 6px;
+  color: black;
   background-color: rgba(233, 232, 230, 255);
   transition: background-color 0.3s ease-in-out;
   &:hover {
@@ -247,7 +248,7 @@ function Reservation() {
     if (!isChecked) {
     } else {
       window.open(
-        "https://map.naver.com/v5/entry/place/1405584950?lng=126.9577602&lat=33.5131314&placePath=%2Froom%3Fac=0%26adm_lat=33.5203991%26adm_long=126.5654278%26bizId=1405584950%26debug=0%26deviceType=pc%26lgl_lat=33.5191224%26lgl_long=126.5645173%26lgl_rcode=14110111%26ngn_country=KR%26nlu_query=%7B%22pension%22:%7B%22source%22:%22semantic_learning%22,%22sid%22:%221405584950%22,%22q%22:%22%EC%9A%B0%EB%8F%84%EA%B8%B0%ED%96%89%22%7D,%22nluQuery%22:%22%EC%9A%B0%EB%8F%84%EA%B8%B0%ED%96%89%22%7D%26nqx_theme=%7B%22theme%22:%7B%22main%22:%7B%22name%22:%22accommodation%22%7D%7D%7D%26r1=%EC%A0%9C%EC%A3%BC%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%98%EB%8F%84%26r2=%EC%A0%9C%EC%A3%BC%EC%8B%9C%26r3=%ED%99%94%EB%B6%81%EB%8F%99%26rcode=14110600%26rev=44%26sm=top_hty%26spq=0%26ssc=tab.nx.all%26target=pc%26where=nexearch%26x=126.5654278%26y=33.5203991&entry=plt&c=15,0,0,0,dh",
+        "https://m.booking.naver.com/booking/3/bizes/878349/items/4980364?area=plt&theme=place",
         "_blank"
       );
     }
