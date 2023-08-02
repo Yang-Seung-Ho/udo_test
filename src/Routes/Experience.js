@@ -10,12 +10,28 @@ import turn1 from "../Image/Experience/turntable1.jpg";
 import turn2 from "../Image/Experience/turntable2.jpg";
 import turn3 from "../Image/Experience/turntable3.jpg";
 import styled, { keyframes } from "styled-components";
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "../Components/Footer";
 import { useMediaQueries } from "../MediaQuery";
 
 function Experience() {
   const { isMobile, isDesktop } = useMediaQueries();
+
+  const imagesToPreload = [
+    barbeque1,
+    beam1,
+    pool1,
+    turn1,
+    // Add more images as needed
+  ];
+
+  useEffect(() => {
+    // Preload images
+    imagesToPreload.forEach((imageUrl) => {
+      const img = new Image();
+      img.src = imageUrl;
+    });
+  }, []);
 
   const fadeInAnimation = keyframes`
     from {
