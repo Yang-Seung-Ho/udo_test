@@ -84,14 +84,6 @@ const ToPageBtn = styled.p`
     font-size:14px;
 `}
 `;
-const ToPageImgBtn = styled.img`
-  padding: 12px 22px;
-  border: 0.1px solid white;
-  ${(props) => props.theme.mobile`
-    padding: 6px 12px;
-    font-size:14px;
-`}
-`;
 
 const ToPageBtnBox = styled.div`
   ${(props) => props.theme.mobile`
@@ -129,9 +121,6 @@ function Home() {
       <TotalBox>
         <HomeDiv>
           <HomeFooterBox>
-            {/* <HomeUpperBox>
-              <HomeLogo src={logo}></HomeLogo>
-            </HomeUpperBox> */}
             <HomeTitle>
               기행 紀行 : 여행하는 동안에 보고, 듣고, 느끼고, 겪은 것을 적은 것.
             </HomeTitle>
