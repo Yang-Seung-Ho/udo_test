@@ -13,9 +13,24 @@ import styled, { keyframes } from "styled-components";
 import React, { useEffect } from "react";
 import Footer from "../Components/Footer";
 import { useMediaQueries } from "../MediaQuery";
+const imagesToPreload = [
+  barbeque1,
+  beam1,
+  pool1,
+  turn1,
+  // Add more images as needed
+];
 
 function Experience() {
   const { isMobile, isDesktop } = useMediaQueries();
+
+  useEffect(() => {
+    // Preload images
+    imagesToPreload.forEach((imageUrl) => {
+      const img = new Image();
+      img.src = imageUrl;
+    });
+  }, []);
 
   const fadeInAnimation = keyframes`
     from {
@@ -170,20 +185,6 @@ function Experience() {
 `}
   `;
   const ExperienceOuterBox = styled.div``;
-  const imagesToPreload = [
-    barbeque1,
-    beam1,
-    pool1,
-    turn1,
-    // Add more images as needed
-  ];
-  useEffect(() => {
-    // Preload images
-    imagesToPreload.forEach((imageUrl) => {
-      const img = new Image();
-      img.src = imageUrl;
-    });
-  }, [imagesToPreload]);
   return (
     <>
       {isDesktop && (
