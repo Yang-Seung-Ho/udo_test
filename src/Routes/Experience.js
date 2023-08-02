@@ -31,7 +31,7 @@ function Experience() {
       const img = new Image();
       img.src = imageUrl;
     });
-  }, []);
+  }, [imagesToPreload]);
 
   const fadeInAnimation = keyframes`
     from {
