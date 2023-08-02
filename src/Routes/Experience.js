@@ -15,6 +15,11 @@ import Footer from "../Components/Footer";
 import { useMediaQueries } from "../MediaQuery";
 
 function Experience() {
+  const [loaded, setLoaded] = useState(0);
+
+  const handleImageLoad = () => {
+    setLoaded((prev) => prev + 1);
+  };
   const { isMobile, isDesktop } = useMediaQueries();
   useEffect(() => {
     const images = [
@@ -220,10 +225,20 @@ function Experience() {
                 >
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <LeftImg src={pool1} class="d-block w-100" alt="..." />
+                      <LeftImg
+                        onLoad={handleImageLoad}
+                        src={pool1}
+                        class="d-block w-100"
+                        alt="..."
+                      />
                     </div>
                     <div class="carousel-item">
-                      <LeftImg src={pool2} class="d-block w-100" alt="..." />
+                      <LeftImg
+                        onLoad={handleImageLoad}
+                        src={pool2}
+                        class="d-block w-100"
+                        alt="..."
+                      />
                     </div>
                   </div>
                   <button
@@ -266,13 +281,28 @@ function Experience() {
                 >
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <LeftImg src={turn1} class="d-block w-100" alt="..." />
+                      <LeftImg
+                        onLoad={handleImageLoad}
+                        src={turn1}
+                        class="d-block w-100"
+                        alt="..."
+                      />
                     </div>
                     <div class="carousel-item">
-                      <LeftImg src={turn2} class="d-block w-100" alt="..." />
+                      <LeftImg
+                        onLoad={handleImageLoad}
+                        src={turn2}
+                        class="d-block w-100"
+                        alt="..."
+                      />
                     </div>
                     <div class="carousel-item">
-                      <LeftImg src={turn3} class="d-block w-100" alt="..." />
+                      <LeftImg
+                        onLoad={handleImageLoad}
+                        src={turn3}
+                        class="d-block w-100"
+                        alt="..."
+                      />
                     </div>
                   </div>
                   <button
@@ -341,13 +371,28 @@ function Experience() {
                 >
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <LeftImg src={beam1} class="d-block w-100" alt="..." />
+                      <LeftImg
+                        onLoad={handleImageLoad}
+                        src={beam1}
+                        class="d-block w-100"
+                        alt="..."
+                      />
                     </div>
                     <div class="carousel-item">
-                      <LeftImg src={beam2} class="d-block w-100" alt="..." />
+                      <LeftImg
+                        onLoad={handleImageLoad}
+                        src={beam2}
+                        class="d-block w-100"
+                        alt="..."
+                      />
                     </div>
                     <div class="carousel-item">
-                      <LeftImg src={beam3} class="d-block w-100" alt="..." />
+                      <LeftImg
+                        onLoad={handleImageLoad}
+                        src={beam3}
+                        class="d-block w-100"
+                        alt="..."
+                      />
                     </div>
                   </div>
                   <button
@@ -391,6 +436,7 @@ function Experience() {
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                       <LeftImg
+                        onLoad={handleImageLoad}
                         src={barbeque1}
                         class="d-block w-100"
                         alt="..."
@@ -398,6 +444,7 @@ function Experience() {
                     </div>
                     <div class="carousel-item">
                       <LeftImg
+                        onLoad={handleImageLoad}
                         src={barbeque2}
                         class="d-block w-100"
                         alt="..."
@@ -405,6 +452,7 @@ function Experience() {
                     </div>
                     <div class="carousel-item">
                       <LeftImg
+                        onLoad={handleImageLoad}
                         src={barbeque3}
                         class="d-block w-100"
                         alt="..."
