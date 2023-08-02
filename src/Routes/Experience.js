@@ -17,22 +17,6 @@ import { useMediaQueries } from "../MediaQuery";
 function Experience() {
   const { isMobile, isDesktop } = useMediaQueries();
 
-  const imagesToPreload = [
-    barbeque1,
-    beam1,
-    pool1,
-    turn1,
-    // Add more images as needed
-  ];
-
-  useEffect(() => {
-    // Preload images
-    imagesToPreload.forEach((imageUrl) => {
-      const img = new Image();
-      img.src = imageUrl;
-    });
-  }, [imagesToPreload]);
-
   const fadeInAnimation = keyframes`
     from {
       opacity: 0;
@@ -186,6 +170,20 @@ function Experience() {
 `}
   `;
   const ExperienceOuterBox = styled.div``;
+  const imagesToPreload = [
+    barbeque1,
+    beam1,
+    pool1,
+    turn1,
+    // Add more images as needed
+  ];
+  useEffect(() => {
+    // Preload images
+    imagesToPreload.forEach((imageUrl) => {
+      const img = new Image();
+      img.src = imageUrl;
+    });
+  }, [imagesToPreload]);
   return (
     <>
       {isDesktop && (
