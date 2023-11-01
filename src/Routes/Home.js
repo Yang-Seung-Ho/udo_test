@@ -90,7 +90,7 @@ const HomeInfo = styled.div`
   ${(props) => props.theme.fullscreen`
     font-size:16px;  
     margin: 24px 0px 36px 0px;
-    font-family: "NanumSquare";
+    font-family: "NanumSquareNeo";
 
 `}
 `;
@@ -98,7 +98,7 @@ const HomeInfo = styled.div`
 const ToPageBtn = styled.p`
   padding: 12px 22px;
   border: 0.1px solid white;
-  font-family: "NanumSquare";
+  font-family: "NanumSquareNeo";
 
   ${(props) => props.theme.mobile`
     padding: 6px 12px;

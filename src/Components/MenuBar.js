@@ -45,6 +45,12 @@ function MenuBar() {
   const MenuBarBox = styled.div`
     position: fixed;
     font-family: "NanumSquareNeo";
+    ${(props) => props.theme.fullscreen`
+    font-size:16px;  
+    margin: 24px 0px 36px 0px;
+    font-family: "NanumSquareNeoBold";
+
+`}
   `;
   const MenuHeader = styled.div`
     position: fixed;
