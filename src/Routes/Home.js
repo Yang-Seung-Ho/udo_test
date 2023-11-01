@@ -27,6 +27,9 @@ const CarouselExampleIndicators = styled.div`
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  ${(props) => props.theme.fullscreen`
+  height: auto;
+`}
 `;
 
 const CarouselImg = styled.img`
