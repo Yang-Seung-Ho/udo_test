@@ -73,7 +73,7 @@ const HomeTitle = styled.div`
     margin-bottom: 18px;
 `}
   ${(props) => props.theme.fullscreen`
-    font-family: "MaruBuriSemiBold";
+    font-family: "MaruBuri";
     font-size:20px;    
     margin-bottom: 16px;
     
@@ -90,7 +90,7 @@ const HomeInfo = styled.div`
   ${(props) => props.theme.fullscreen`
     font-size:16px;  
     margin: 24px 0px 36px 0px;
-    font-family: "MaruBuri";
+    font-family: "NanumSquare";
 
 `}
 `;
