@@ -39,7 +39,7 @@ body {
 	background: var(--backgroundColor);
 	font-family: 'NanumSquareNeo';
 	${(props) => props.theme.fullscreen`
-	font-family: 'NanumSquareNeo';
+	font-family: 'NanumSquareNeoBold';
 `}
 	
 }
