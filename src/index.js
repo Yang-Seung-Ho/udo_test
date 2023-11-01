@@ -63,6 +63,13 @@ a {
 	color: inherit;
 }
 
+p, a, h1, h2, h3 ,h4, h5, h6 {
+	${(props) => props.theme.fullscreen`
+	transform : skew(-0.1deg)
+`}
+
+	
+}
 
 `;
 
