@@ -67,13 +67,13 @@ const HomeFooterBox = styled.div`
 `;
 const HomeTitle = styled.div`
   font-size: 16px;
-  font-family: "NanumSquare";
+  font-family: "MaruBuri";
   ${(props) => props.theme.mobile`
     font-size:13px;    
     margin-bottom: 18px;
 `}
   ${(props) => props.theme.fullscreen`
-    font-family: "NanumSquareBold";
+    font-family: "MaruBuriSemiBold";
     font-size:20px;    
     margin-bottom: 16px;
     
@@ -82,7 +82,7 @@ const HomeTitle = styled.div`
 const HomeInfo = styled.div`
   margin: 36px 0px 24px 0px;
   font-size: 14px;
-  font-family: "NanumSquareLight";
+  font-family: "MaruBuri";
   ${(props) => props.theme.mobile`
     font-size:12px;  
     margin: 24px 0px 48px 0px;
@@ -90,7 +90,7 @@ const HomeInfo = styled.div`
   ${(props) => props.theme.fullscreen`
     font-size:16px;  
     margin: 24px 0px 36px 0px;
-    font-family: "NanumSquare";
+    font-family: "MaruBuri";
 
 `}
 `;
