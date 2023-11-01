@@ -126,7 +126,7 @@ const PageSquareBtn = styled.button`
 `} */
 `;
 function Home() {
-  const { isMobile, isFullScreen } = useMediaQueries();
+  const { isMobile } = useMediaQueries();
   useEffect(() => {
     const images = [img1, img2, img3, img4, img5, img6];
 
