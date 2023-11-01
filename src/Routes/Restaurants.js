@@ -17,7 +17,6 @@ const TotalBox = styled.div`
   margin-left: 36%;
   margin-right: 12%;
   height: auto;
-  min-height: 100%;
   padding-bottom: 200px;
   width: 52%;
   ${(props) => props.theme.mobile`
@@ -36,6 +35,9 @@ const Title = styled.h1`
   font-size: 18px;
   ${(props) => props.theme.mobile`
     padding: 24px 0;  
+`}
+  ${(props) => props.theme.fullscreen`
+  font-size: 20px;
 `}
 `;
 const PlaceFlexBox = styled.div`
@@ -56,6 +58,12 @@ const PlaceTitle = styled.h1`
   font-style: italic;
   text-align: center;
   font-family: "MaruBuri";
+  ${(props) => props.theme.fullscreen`
+  padding: 22px 0px 32px 0px;
+  font-family: "MaruBuriSemiBold";
+  font-size: 18px;
+  
+`}
 `;
 
 const PlaceTotalBox = styled.div`
@@ -73,6 +81,10 @@ const PlaceInfoUl = styled.ul`
     text-align: center;
     ${(props) => props.theme.mobile`
     font-size: 13px;  
+`}
+    ${(props) => props.theme.fullscreen`
+  font-size: 15px;  
+  margin-bottom: 8px;
 `}
   }
 `;

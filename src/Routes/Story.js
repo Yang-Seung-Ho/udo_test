@@ -50,10 +50,16 @@ function Story() {
         margin : 0;
         top:50px;
   `}
+    ${(props) => props.theme.fullscreen`
+    margin-top: 200px;
+  `}
   `;
   const NarrativeBox = styled.div`
     width: 100%;
     border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+    ${(props) => props.theme.fullscreen`
+  width: 90%;
+`}
   `;
   const NarrativeTitle = styled.h1`
     font-size: 18px;
@@ -61,12 +67,18 @@ function Story() {
     font-weight: 500;
     padding-bottom: 24px;
     padding-top: 24px;
+    ${(props) => props.theme.fullscreen`
+  font-size: 20px;
+`}
   `;
   const NarrativeSubTitle = styled.span`
     margin: 12px 0px 24px 0px;
     font-size: 14px;
     font-style: italic;
     border-bottom: 1px solid;
+    ${(props) => props.theme.fullscreen`
+  font-size: 16px;
+`}
   `;
   const NarrativeImgInfoBox = styled.div`
     padding-top: 24px;
@@ -92,6 +104,13 @@ function Story() {
     width:100%;
     margin-bottom:24px;
   `}
+    ${(props) => props.theme.fullscreen`
+  font-size: 15px;
+  line-height: 28px;
+  width: 57%;
+  padding-right: 0px;
+`}
+
     &:last-child {
       width: 50%;
       ${(props) => props.theme.mobile`
@@ -113,6 +132,10 @@ function Story() {
     width:100%;
     margin-bottom:24px;
   `}
+    ${(props) => props.theme.fullscreen`
+    font-size: 15px; 
+    line-height: 28px;
+`}
   `;
   const CarouselTotalBox = styled.div`
     width: 100%;
@@ -139,6 +162,10 @@ function Story() {
     ${(props) => props.theme.mobile`
     width: 100%;
   `}
+    ${(props) => props.theme.fullscreen`
+    margin-right: 24px;
+  width: 35%;
+`}
 
     &:nth-child(1) {
       width: 90%;

@@ -57,6 +57,10 @@ const HomeFooterBox = styled.div`
   height: 100vh;
   max-width: 100%;
   max-height: 100%;
+  ${(props) => props.theme.fullscreen`
+      padding-bottom: 2.5%;
+
+`}
 `;
 const HomeTitle = styled.div`
   font-size: 16px;
@@ -64,6 +68,12 @@ const HomeTitle = styled.div`
   ${(props) => props.theme.mobile`
     font-size:13px;    
     margin-bottom: 18px;
+`}
+  ${(props) => props.theme.fullscreen`
+    font-family: "MaruBuriSemiBold";
+    font-size:20px;    
+    margin-bottom: 16px;
+    
 `}
 `;
 const HomeInfo = styled.div`
@@ -74,20 +84,35 @@ const HomeInfo = styled.div`
     font-size:12px;  
     margin: 24px 0px 48px 0px;
 `}
+  ${(props) => props.theme.fullscreen`
+    font-size:16px;  
+    margin: 24px 0px 36px 0px;
+    font-family: "MaruBuri";
+
+`}
 `;
 
 const ToPageBtn = styled.p`
   padding: 12px 22px;
   border: 0.1px solid white;
+  font-family: "MaruBuri";
+
   ${(props) => props.theme.mobile`
     padding: 6px 12px;
     font-size:14px;
+`}
+  ${(props) => props.theme.fullscreen`
+    font-size:17px;  
+    margin: 24px 0px 36px 0px;
 `}
 `;
 
 const ToPageBtnBox = styled.div`
   ${(props) => props.theme.mobile`
     margin-bottom : 36px;
+`}
+  ${(props) => props.theme.fullscreen`
+    margin-bottom : 18px;
 `}
 `;
 const PageSquareBtn = styled.button`
@@ -101,7 +126,7 @@ const PageSquareBtn = styled.button`
 `} */
 `;
 function Home() {
-  const { isMobile } = useMediaQueries();
+  const { isMobile, isFullScreen } = useMediaQueries();
   useEffect(() => {
     const images = [img1, img2, img3, img4, img5, img6];
 

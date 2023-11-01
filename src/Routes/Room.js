@@ -52,7 +52,6 @@ function Room() {
     margin-left: 36%;
     margin-right: 8%;
     height: auto;
-    min-height: 100%;
     width: 52%;
     ${(props) => props.theme.mobile`
         animation: ${fadeInAnimation} 0.5s ease-in;
@@ -64,6 +63,9 @@ function Room() {
         width:100%;
         top:50px;
   `}
+    ${(props) => props.theme.fullscreen`
+    margin-top: 200px;
+  `}
   `;
   const RoomTitle = styled.h1`
     margin-bottom: 48px;
@@ -72,6 +74,9 @@ function Room() {
     font-size:18px;
     padding:24px 0;
     margin-bottom:0;
+`}
+    ${(props) => props.theme.fullscreen`
+  font-size: 26px;
 `}
   `;
   const RoomTitleSpan = styled.span`
@@ -128,6 +133,10 @@ function Room() {
     opacity: 1;
     font-size: 13px;
     margin-bottom: 6px;
+    ${(props) => props.theme.fullscreen`
+  font-size: 14px;
+  margin-bottom: 10px;
+`}
   `;
   const RoomInfoDiv = styled.div`
     padding-bottom: 32px;
@@ -142,6 +151,10 @@ function Room() {
     & ${RoomInfoP}:first-child {
       margin-top: 8px;
     }
+    ${(props) => props.theme.fullscreen`
+  font-size: 15px;
+  font-family: "MaruBuriSemiBold";
+`}
   `;
   const RoomInfoSpan = styled.p`
     opacity: 1;
@@ -149,6 +162,9 @@ function Room() {
     display: flex;
     justify-content: center;
     align-self: center;
+    ${(props) => props.theme.fullscreen`
+  font-size: 15px;
+`}
   `;
   const ModalBtn = styled.div`
     border-radius: 8px;
@@ -185,6 +201,9 @@ function Room() {
     font-size:13px;
     margin-bottom: 14px;
 `}
+    ${(props) => props.theme.fullscreen`
+  font-size:16px;
+`}
   `;
   const ModalInfoLi = styled.li`
     margin-bottom: 10px;
@@ -195,6 +214,9 @@ function Room() {
     font-size:12px;
     margin-bottom: 8px;
 
+`}
+    ${(props) => props.theme.fullscreen`
+  font-size:15px;
 `}
   `;
   const ReservationBtn = styled.button`
@@ -233,6 +255,9 @@ function Room() {
   const ModalTitle = styled.h1`
     ${(props) => props.theme.mobile`
     font-size:14px  
+    ${(props) => props.theme.fullscreen`
+  font-size: 24px;
+`}
 `}
   `;
   return (

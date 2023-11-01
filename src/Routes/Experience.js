@@ -62,6 +62,10 @@ function Experience() {
         width:100%;
         top:50px;
   `}
+    ${(props) => props.theme.fullscreen`
+      margin-right: 12%;
+      width: 40%;
+`}
   `;
   const OrderList = styled.div`
     text-align: left;
@@ -92,10 +96,13 @@ function Experience() {
     padding: 24px 0;
     text-align:left;
 `}
+    ${(props) => props.theme.fullscreen`
+  font-size: 20px;
+`}
   `;
   const LeftImg = styled.img`
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    height: 300px;
   `;
 
   const RightImgBox = styled.div`
@@ -110,9 +117,9 @@ function Experience() {
     height: 100%;
     justify-content: center;
     align-items: center;
-  
-
-`}
+  `}/* ${(props) => props.theme.fullscreen`
+  justify-content: center;
+`} */
   `;
   const RightImgBox2 = styled.div`
     flex: 1; /* 추가 */
@@ -140,7 +147,8 @@ function Experience() {
     align-items: none;
     justify-content: none;
     width:100%;
-    
+`}
+    ${(props) => props.theme.fullscreen`
 `}
   `;
   const InfoBox = styled.div`
@@ -173,6 +181,9 @@ function Experience() {
     ${(props) => props.theme.mobile`
   font-size:12px;  
   line-height: 24px;
+`}
+    ${(props) => props.theme.fullscreen`
+      font-size:15px;  
 `}
   `;
   const CarouselTotalBox = styled.div`

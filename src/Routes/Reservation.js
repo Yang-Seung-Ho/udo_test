@@ -10,6 +10,9 @@ const Title = styled.h1`
   padding:24px 0;
   margin:0;  
 `}
+  ${(props) => props.theme.fullscreen`
+  font-size:20px;
+`}
 `;
 const HeadTitle = styled.div`
   display: flex;
@@ -32,7 +35,6 @@ const TotalBox = styled.div`
   margin-left: 38%;
   margin-right: 12%;
   height: auto;
-  min-height: 100%;
   padding-bottom: 200px;
   width: 50%;
   ${(props) => props.theme.mobile`
@@ -45,6 +47,9 @@ const TotalBox = styled.div`
         width:100%;
         top:50px;
   `}
+  ${(props) => props.theme.fullscreen`
+    margin-top: 200px;
+  `}
 `;
 const ToggleBtn = styled.a`
   background-color: rgba(0, 0, 0, 0);
@@ -54,6 +59,9 @@ const ToggleBtn = styled.a`
   padding: 12px 0px;
   ${(props) => props.theme.mobile`
     font-size:13.5px;
+`}
+  ${(props) => props.theme.fullscreen`
+  font-size:17px;
 `}
 `;
 const AgreeTitle = styled.span`
@@ -65,6 +73,9 @@ const AgreeTitle = styled.span`
   ${(props) => props.theme.mobile`
   font-size:13px;  
   margin-left:2px;
+`}
+  ${(props) => props.theme.fullscreen`
+  font-size:16px;
 `}
 `;
 const ToggleCardBox = styled.div`
@@ -86,6 +97,9 @@ const ToggleIcon = styled(motion.i)`
   align-items: center;
   /* Icon styles */
   transform-origin: center; /* 중심을 기준으로 회전 */
+  ${(props) => props.theme.fullscreen`
+  font-size:14px;
+`}
 `;
 
 const AgreeInfo = styled.p`
@@ -97,6 +111,10 @@ const AgreeInfo = styled.p`
   font-size:12px;  
   line-height: 22px;
   margin-left: 4px;
+`}
+  ${(props) => props.theme.fullscreen`
+  font-size:15px;
+  padding: 6px 0px;
 `}
 `;
 const CheckboxContainer = styled.div`
@@ -182,6 +200,9 @@ const AgreeTd = styled.td`
   padding: 4px;
   ${(props) => props.theme.mobile`
     font-size: 13px;
+`}
+  ${(props) => props.theme.fullscreen`
+  font-size: 15px;
 `}
 `;
 const AgreeRefundBox = styled.div`

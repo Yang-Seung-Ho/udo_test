@@ -40,6 +40,12 @@ const Title = styled.h1`
     padding: 24px 0 0 0 ;
     margin: 0;
 `}
+  ${(props) => props.theme.fullscreen`
+    margin-bottom: 0px;
+  `}
+  ${(props) => props.theme.fullscreen`
+  font-size: 20px;
+`}
 `;
 const PlaceFlexBox = styled.div`
   width: 130%;
@@ -52,6 +58,9 @@ const PlaceFlexBox = styled.div`
   flex-direction: column;  
   width: 100%;
   margin-bottom: 18px;
+`}
+  ${(props) => props.theme.fullscreen`
+  width: 111%;
 `}
 `;
 const MapBox = styled.div`
@@ -69,6 +78,9 @@ const PlaceInfo = styled.p`
     font-size: 12px;
     line-height: 24px;
 `}
+  ${(props) => props.theme.fullscreen`
+  font-size:15px;
+`}
 `;
 const PlaceInfoBox = styled.div`
   width: 100%;
@@ -81,6 +93,9 @@ const PlaceTitle = styled.h1`
     padding-top: 24px;
     font-size:13.5px;
 `}
+  ${(props) => props.theme.fullscreen`
+  font-size:17px;
+`}
 `;
 const PlaceDistance = styled.span`
   padding: 6px 0px 12px 0px;
@@ -88,8 +103,10 @@ const PlaceDistance = styled.span`
   opacity: 0.9;
   display: block;
   ${(props) => props.theme.mobile`
-
     font-size:12px;
+`}
+  ${(props) => props.theme.fullscreen`
+  font-size:15px;
 `}
 `;
 

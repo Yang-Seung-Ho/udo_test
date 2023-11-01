@@ -38,6 +38,9 @@ body {
 	line-height: 1;
 	background: var(--backgroundColor);
 	font-family: 'MaruBuri';
+	${(props) => props.theme.fullscreen`
+	font-family: 'MaruBuriSemiBold';
+`}
 	
 }
 ol, ul {
@@ -59,8 +62,11 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
+
+
 `;
 
+/* 이전 스타일 내용 */
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>

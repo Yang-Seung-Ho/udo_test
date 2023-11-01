@@ -26,10 +26,16 @@ function Footer() {
     cursor: pointer;
     font-size: 18px;
     padding-bottom: 4px;
+    ${(props) => props.theme.fullscreen`
+  font-size: 22px;
+`}
   `;
   const InstaId = styled.span`
     cursor: pointer;
     font-size: 12px;
+    ${(props) => props.theme.fullscreen`
+  font-size: 13px;
+`}
   `;
   const FooterUnderBox = styled.div`
     display: flex;
@@ -41,6 +47,9 @@ function Footer() {
     opacity: 0.8;
     border-right: 1px solid rgb(0, 0, 0, 0.8);
     padding: 0 6px;
+    ${(props) => props.theme.fullscreen`
+  font-size: 13px;
+`}
   `;
   const FooterUnderDiv = styled.div`
     margin: 2px 0;
@@ -59,9 +68,12 @@ function Footer() {
     justify-content: center;
   `;
   const RawSpan = styled.span`
-    margin: 0 24px;
+    margin: 0 32px;
     font-size: 12px;
     opacity: 0.8;
+    ${(props) => props.theme.fullscreen`
+  font-size: 13px;
+`}
   `;
 
   const handleButtonClick = () => {

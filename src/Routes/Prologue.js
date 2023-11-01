@@ -31,7 +31,11 @@ const TotalBox = styled.div`
         margin : 0;
         width:100%;
         top:50px;
-  `}/* background-color: wheat; */
+  `} /* background-color: wheat; */
+  ${(props) => props.theme.fullscreen`
+    margin-top: 220px;
+
+`}
 `;
 const HeaderBox = styled.div`
   width: 100%;
@@ -45,6 +49,9 @@ const Title = styled.h1`
   font-size:18px;  
   padding: 24px 0;
 `}
+  ${(props) => props.theme.fullscreen`
+  font-size: 26px;
+`}
 `;
 const TitleSpan = styled.span`
   margin-left: 4px;
@@ -55,8 +62,10 @@ const TitleSpan = styled.span`
   ${(props) => props.theme.mobile`
   margin-top: 12px;
   margin-bottom: 24px;
-  font-size: 13px;
-      
+  font-size: 13px;      
+`}
+  ${(props) => props.theme.fullscreen`
+  font-size: 16px;
 `}
 `;
 const TitleP = styled.p`
@@ -69,6 +78,9 @@ const TitleP = styled.p`
     width: 100%;
     font-size: 12px;
     margin-bottom: 12px;
+`}
+  ${(props) => props.theme.fullscreen`
+  font-size: 15px;
 `}
 `;
 const PresentImgBox = styled.div`
@@ -91,6 +103,9 @@ const TitleHanja = styled.span`
   font-size: 18px;
   ${(props) => props.theme.mobile`
   font-size:16px;  
+`}
+  ${(props) => props.theme.fullscreen`
+  font-size: 22px;
 `}
 `;
 function Prologue() {

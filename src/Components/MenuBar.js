@@ -75,6 +75,9 @@ function MenuBar() {
     position: fixed;
     padding-top: 175px;
     margin-left: 20%;
+    ${(props) => props.theme.fullscreen`
+    padding-top: 220px;
+`}
   `;
   const SideMenuUl = styled.ul``;
   const SideMenuOuterDiv = styled.div`
@@ -92,6 +95,11 @@ function MenuBar() {
     &:hover {
       opacity: 1;
     }
+    ${(props) => props.theme.fullscreen`
+    font-size:20px;  
+    opacity: 0.75;
+    height : 34px;
+`}
   `;
   const SideMenuInnerUl1 = styled.ul`
     pointer-events: none;
@@ -145,6 +153,10 @@ function MenuBar() {
     &:hover {
       opacity: 1;
     }
+    ${(props) => props.theme.fullscreen`
+    font-size:17px;  
+    opacity: 0.75;
+`}
   `;
   const MOffCanvasTotalBox = styled.div``;
   const MMenuUpperBarBox = styled.div`
