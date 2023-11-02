@@ -37,10 +37,10 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	background: var(--backgroundColor);
-	font-family: 'NanumSquareNeo';
+	font-family: 'Hahmlet', serif;
 	
 	${(props) => props.theme.fullscreen`
-	font-family: 'NanumSquareNeoBold';
+	font-family: 'Hahmlet', serif;
 `}
 	
 }
