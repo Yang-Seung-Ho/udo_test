@@ -44,7 +44,7 @@ const HeaderBox = styled.div`
 `;
 const Title = styled.h1`
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 500;
   ${(props) => props.theme.mobile`
   font-size:18px;  
   padding: 24px 0;

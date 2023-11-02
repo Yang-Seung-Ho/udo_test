@@ -70,7 +70,7 @@ function Location() {
   const LocationBox = styled.div``;
   const LocationH1 = styled.h1`
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
     ${(props) => props.theme.mobile`
         padding:24px 0px;
         font-size:18px;

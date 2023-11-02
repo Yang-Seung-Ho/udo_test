@@ -191,9 +191,14 @@ function Experience() {
 `}
   `;
   const CarouselTotalBox = styled.div`
+    width: 100%;
+    max-width: 300px;
+    max-height: 300px;
+    ${(props) => props.theme.fullscreen`
     width: 80%;
-    max-width: 320px;
-    max-height: 320px;
+
+`}
+
     ${(props) => props.theme.mobile`
   width: 100%;
   max-width: 300px;
