@@ -146,8 +146,7 @@ function Room() {
     flex-direction: column;
     justify-content: center;
     font-size: 14px;
-    font-weight: 600;
-
+    font-weight: 500;
     & ${RoomInfoP}:last-child {
       margin: 0;
     }
