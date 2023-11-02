@@ -136,7 +136,7 @@ function Prologue() {
             <TitleHanja>紀行</TitleHanja>
           </TitleBox>
           <TitleSpan>
-            "여행하는 동안에 보고, 듣고, 느끼고, 겪은 것을 적은 것""
+            "여행하는 동안에 보고, 듣고, 느끼고, 겪은 것을 적은 것"
           </TitleSpan>
           <TitleP>
             우도의 자연을 보고 영감을 얻어 하나하나 정성들여 직접 공간을 만들게

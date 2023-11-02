@@ -192,6 +192,8 @@ function Experience() {
     max-height: 320px;
     ${(props) => props.theme.mobile`
   width: 100%;
+  max-width: 300px;
+  max-height: 300px;
 
 `}
   `;

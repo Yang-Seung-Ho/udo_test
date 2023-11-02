@@ -133,6 +133,7 @@ function Room() {
     opacity: 1;
     font-size: 13px;
     margin-bottom: 6px;
+    font-weight: 500;
     ${(props) => props.theme.fullscreen`
   font-size: 14px;
   margin-bottom: 10px;
@@ -140,11 +141,13 @@ function Room() {
   `;
   const RoomInfoDiv = styled.div`
     padding-bottom: 32px;
-    font-family: "NanumSquareNeo";
+    /* font-family: "NanumSquareNeo"; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     font-size: 14px;
+    font-weight: 600;
+
     & ${RoomInfoP}:last-child {
       margin: 0;
     }
@@ -153,7 +156,6 @@ function Room() {
     }
     ${(props) => props.theme.fullscreen`
   font-size: 15px;
-  font-family: "NanumSquareNeoBold";
 `}
   `;
   const RoomInfoSpan = styled.p`
@@ -162,6 +164,7 @@ function Room() {
     display: flex;
     justify-content: center;
     align-self: center;
+    font-weight: 500;
     ${(props) => props.theme.fullscreen`
   font-size: 15px;
 `}
@@ -195,8 +198,9 @@ function Room() {
     }
   `;
   const ModalInfoTitle = styled.h1`
-    font-family: "NanumSquareNeoBold";
+    /* font-family: "NanumSquareNeoSemiBold"; */
     margin-bottom: 28px;
+    font-weight: 600;
     ${(props) => props.theme.mobile`
     font-size:13px;
     margin-bottom: 14px;
@@ -209,7 +213,8 @@ function Room() {
     margin-bottom: 10px;
     font-size: 14px;
     opacity: 1;
-    font-family: "NanumSquareNeo";
+    font-weight: 500;
+    /* font-family: "NanumSquareNeo"; */
     ${(props) => props.theme.mobile`
     font-size:12px;
     margin-bottom: 8px;
