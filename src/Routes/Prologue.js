@@ -51,6 +51,7 @@ const Title = styled.h1`
 `}
   ${(props) => props.theme.fullscreen`
   font-size: 26px;
+  font-weight: 600;
 `}
 `;
 const TitleSpan = styled.span`
