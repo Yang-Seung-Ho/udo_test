@@ -38,12 +38,12 @@ body {
 	line-height: 1;
 	background: var(--backgroundColor);
 	/* font-family: 'NanumSquareNeo'; */
-	font-family: 'Noto Serif KR', serif;
+	font-family: 'Hahmlet', serif;
 	/* ${(props) => props.theme.fullscreen`
 	font-family: 'NanumSquareNeoBold';
 `} */
 ${(props) => props.theme.fullscreen`
-	font-family: 'Noto Serif KR', serif;
+	font-family: 'Hahmlet', serif;
 `}
 	
 }
