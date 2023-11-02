@@ -83,7 +83,7 @@ const PlaceInfoUl = styled.ul`
     font-size: 13px;  
 `}
     ${(props) => props.theme.fullscreen`
-  font-size: 15px;  
+  font-size: 16px;  
   margin-bottom: 8px;
 `}
   }

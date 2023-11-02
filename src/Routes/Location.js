@@ -82,7 +82,7 @@ function Location() {
     ${(props) => props.theme.mobile`
       font-size: 13px;  `}
     ${(props) => props.theme.fullscreen`
-      font-size: 15px;
+      font-size: 16px;
     `}
   `;
   const AddressEng = styled.span`
@@ -91,7 +91,7 @@ function Location() {
     ${(props) => props.theme.mobile`
 font-size: 12px;  `}
     ${(props) => props.theme.fullscreen`
-      font-size: 14px;
+      font-size: 15px;
     `}
   `;
   const AddressBox = styled.div`

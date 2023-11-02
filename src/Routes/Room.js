@@ -135,7 +135,7 @@ function Room() {
     margin-bottom: 6px;
 
     ${(props) => props.theme.fullscreen`
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 10px;
 `}
   `;
@@ -154,7 +154,7 @@ function Room() {
       margin-top: 8px;
     }
     ${(props) => props.theme.fullscreen`
-  font-size: 15px;
+  font-size: 16px;
 `}
   `;
   const RoomInfoSpan = styled.p`
@@ -165,7 +165,7 @@ function Room() {
     align-self: center;
 
     ${(props) => props.theme.fullscreen`
-  font-size: 15px;
+  font-size: 16px;
 `}
   `;
   const ModalBtn = styled.div`
@@ -204,7 +204,9 @@ function Room() {
     margin-bottom: 14px;
 `}
     ${(props) => props.theme.fullscreen`
-  font-size:16px;
+  font-size:17px;
+  margin-bottom: 22px;
+
 `}
   `;
   const ModalInfoLi = styled.li`
@@ -219,7 +221,9 @@ function Room() {
 
 `}
     ${(props) => props.theme.fullscreen`
-  font-size:15px;
+  font-size:16px;
+  margin-bottom: 11px;
+
 `}
   `;
   const ReservationBtn = styled.button`

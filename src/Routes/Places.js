@@ -79,7 +79,7 @@ const PlaceInfo = styled.p`
     line-height: 24px;
 `}
   ${(props) => props.theme.fullscreen`
-  font-size:15px;
+  font-size:16px;
 `}
 `;
 const PlaceInfoBox = styled.div`

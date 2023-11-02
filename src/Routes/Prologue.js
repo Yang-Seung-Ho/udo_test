@@ -81,7 +81,7 @@ const TitleP = styled.p`
     margin-bottom: 12px;
 `}
   ${(props) => props.theme.fullscreen`
-  font-size: 15px;
+  font-size: 16px;
 `}
 `;
 const PresentImgBox = styled.div`

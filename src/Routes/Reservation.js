@@ -61,7 +61,7 @@ const ToggleBtn = styled.a`
     font-size:13.5px;
 `}
   ${(props) => props.theme.fullscreen`
-  font-size:17px;
+  font-size:18px;
 `}
 `;
 const AgreeTitle = styled.span`
@@ -75,7 +75,7 @@ const AgreeTitle = styled.span`
   margin-left:2px;
 `}
   ${(props) => props.theme.fullscreen`
-  font-size:16px;
+  font-size:17px;
 `}
 `;
 const ToggleCardBox = styled.div`
@@ -113,7 +113,7 @@ const AgreeInfo = styled.p`
   margin-left: 4px;
 `}
   ${(props) => props.theme.fullscreen`
-  font-size:15px;
+  font-size:16px;
   padding: 6px 0px;
 `}
 `;
@@ -202,7 +202,7 @@ const AgreeTd = styled.td`
     font-size: 13px;
 `}
   ${(props) => props.theme.fullscreen`
-  font-size: 15px;
+  font-size: 16px;
 `}
 `;
 const AgreeRefundBox = styled.div`

@@ -105,7 +105,7 @@ function Story() {
     margin-bottom:24px;
   `}
     ${(props) => props.theme.fullscreen`
-  font-size: 15px;
+  font-size: 16px;
   line-height: 28px;
   width: 57%;
   padding-right: 0px;
@@ -133,7 +133,7 @@ function Story() {
     margin-bottom:24px;
   `}
     ${(props) => props.theme.fullscreen`
-    font-size: 15px; 
+    font-size: 16px; 
     line-height: 28px;
 `}
   `;

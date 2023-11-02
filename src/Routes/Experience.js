@@ -162,6 +162,9 @@ function Experience() {
     font-size: 12px;
     font-style: italic;
     opacity: 1;
+    ${(props) => props.theme.fullscreen`
+      font-size:15px;  
+`}
   `;
   const InfoTitle = styled.p`
     padding-top: 8px;
@@ -171,6 +174,7 @@ function Experience() {
     ${(props) => props.theme.mobile`
   font-size:16px;  
   padding-bottom: 10px;
+  opacity: 1;
 `}
   `;
   const InfoDetail = styled.p`
@@ -183,7 +187,7 @@ function Experience() {
   line-height: 24px;
 `}
     ${(props) => props.theme.fullscreen`
-      font-size:15px;  
+      font-size:16px;  
 `}
   `;
   const CarouselTotalBox = styled.div`
