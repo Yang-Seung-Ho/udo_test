@@ -44,11 +44,12 @@ function MenuBar() {
       : null;
   const MenuBarBox = styled.div`
     position: fixed;
-    font-family: "MaruBuri";
+    font-family: "Noto Serif KR", serif;
     ${(props) => props.theme.fullscreen`
     font-size:16px;  
     margin: 24px 0px 36px 0px;
-    font-family: "MaruBuriSemiBold";
+    font-family: 'Noto Serif KR', serif;
+    font-weight:600;
 
 `}
   `;
