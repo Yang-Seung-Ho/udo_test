@@ -62,7 +62,9 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
-
+p, a, h1, h2, h3, h4, h5, h6 {
+    transform: skew(-0.1deg);
+}
 
 `;
 

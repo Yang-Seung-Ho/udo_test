@@ -133,7 +133,7 @@ function Room() {
     opacity: 1;
     font-size: 13px;
     margin-bottom: 6px;
-    font-weight: 500;
+
     ${(props) => props.theme.fullscreen`
   font-size: 14px;
   margin-bottom: 10px;
@@ -164,7 +164,7 @@ function Room() {
     display: flex;
     justify-content: center;
     align-self: center;
-    font-weight: 500;
+
     ${(props) => props.theme.fullscreen`
   font-size: 15px;
 `}
@@ -200,7 +200,6 @@ function Room() {
   const ModalInfoTitle = styled.h1`
     /* font-family: "NanumSquareNeoSemiBold"; */
     margin-bottom: 28px;
-    font-weight: 600;
     ${(props) => props.theme.mobile`
     font-size:13px;
     margin-bottom: 14px;
@@ -213,7 +212,7 @@ function Room() {
     margin-bottom: 10px;
     font-size: 14px;
     opacity: 1;
-    font-weight: 500;
+
     /* font-family: "NanumSquareNeo"; */
     ${(props) => props.theme.mobile`
     font-size:12px;
