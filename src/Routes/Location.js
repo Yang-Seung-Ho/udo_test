@@ -75,6 +75,9 @@ function Location() {
         padding:24px 0px;
         font-size:18px;
   `}
+    ${(props) => props.theme.fullscreen`
+      font-weight: 500;
+    `}
   `;
   const AddressKor = styled.p`
     font-size: 14px;
