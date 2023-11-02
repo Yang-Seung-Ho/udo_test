@@ -50,7 +50,7 @@ const Title = styled.h1`
   padding: 24px 0;
 `}
   ${(props) => props.theme.fullscreen`
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 600;
 `}
 `;

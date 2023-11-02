@@ -49,7 +49,6 @@ function MenuBar() {
     font-size:16px;  
     margin: 24px 0px 36px 0px;
     font-family: 'Noto Serif KR', serif;
-    font-weight:600;
 
 `}
   `;
