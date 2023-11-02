@@ -115,6 +115,13 @@ function Room() {
   `;
   const CarouselTotalBox = styled.div`
     width: 100%;
+    ${(props) => props.theme.fullscreen`
+    width: 100%;
+    height: auto;
+    max-width: 570px;
+    max-height: 371px;
+
+`}
   `;
   // 이미지 사이즈 조정
   const LeftImg = styled.img`
@@ -122,6 +129,10 @@ function Room() {
     height: 100%;
     max-width: 570px;
     max-height: 371px;
+    ${(props) => props.theme.fullscreen`
+    width: 100%;
+    height: auto;
+`}
   `;
   const CarouselTotalOuterBox = styled.div`
     width: 130%;
