@@ -70,14 +70,14 @@ function MenuBar() {
     height: auto;
     margin-top: 40px;
     margin-left: 8%;
+    ${(props) => props.theme.fullscreen`
+    margin-left:20%;
+`}
   `;
   const MenuHeaderInBoxImg = styled.img`
     border-radius: 3px;
     width: 100%;
     height: 100%;
-    ${(props) => props.theme.fullscreen`
-    margin-left : 90%;
-`}
   `;
 
   const SideMenuHeaderBox = styled.div`
@@ -86,6 +86,7 @@ function MenuBar() {
     margin-left: 20%;
     ${(props) => props.theme.fullscreen`
     padding-top: 220px;
+    z-index : -1;
 `}
   `;
   const SideMenuUl = styled.ul``;
