@@ -75,6 +75,9 @@ function MenuBar() {
     border-radius: 3px;
     width: 100%;
     height: 100%;
+    ${(props) => props.theme.fullscreen`
+    margin-left : 90%;
+`}
   `;
 
   const SideMenuHeaderBox = styled.div`
