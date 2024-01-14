@@ -85,5 +85,18 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      // 페이지 로드 시 자동으로 리다이렉트
+      window.onload = function() {
+        // 현재 URL이 https://udogihang.com를 포함하고 있을 경우에만 리다이렉트
+        if (
+          window.location.href.includes('https://udogihang.com') &&
+          window.location.href !== 'https://udogihang.com/prologue' &&
+          !window.location.search.includes('no_redirect=true')
+        ) {
+          window.location.href = 'https://udogihang.com/prologue';
+        }
+      };
+    </script>
   </body>
 </html>
