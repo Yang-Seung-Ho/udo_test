@@ -15,6 +15,10 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
+        <Route path="/">
+          <ScrollToTop />
+          <Home />
+        </Route>
         <Route path="/prologue">
           <MenuBar />
           <ScrollToTop />
@@ -59,10 +63,6 @@ function App() {
           <MenuBar />
           <ScrollToTop />
           <Restaurants />
-        </Route>
-        <Route path="/">
-          <ScrollToTop />
-          <Home />
         </Route>
       </Switch>
     </BrowserRouter>
