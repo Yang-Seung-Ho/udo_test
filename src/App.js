@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Experience from "./Routes/Experience";
-import Home from "./Routes/Home";
+import Main from "./Routes/Main";
 import Prologue from "./Routes/Prologue";
 import Reservation from "./Routes/Reservation";
 import Room from "./Routes/Room";
@@ -15,9 +15,9 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/">
+        <Route path="/main">
           <ScrollToTop />
-          <Home />
+          <Main />
         </Route>
         <Route path="/prologue">
           <MenuBar />
