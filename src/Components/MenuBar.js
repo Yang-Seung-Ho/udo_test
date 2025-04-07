@@ -233,18 +233,18 @@ function MenuBar() {
         <MenuBarBox>
           <MenuHeader>
             <MenuHeaderInBox>
-              <Link to="/main">
+              <Link to="/">
                 <MenuHeaderInBoxImg src={Logo_Text}></MenuHeaderInBoxImg>
               </Link>
             </MenuHeaderInBox>
           </MenuHeader>
           <SideMenuHeaderBox>
             <SideMenuUl>
-              <Link to="/main">
+              <Link to="/">
                 <SideMenuOuterLi
                   style={{
-                    opacity: isLink === "/main" ? "1" : "",
-                    borderLeft: isLink === "/main" ? "1px solid black" : "",
+                    opacity: isLink === "/" ? "1" : "",
+                    borderLeft: isLink === "/" ? "1px solid black" : "",
                   }}
                 >
                   Home

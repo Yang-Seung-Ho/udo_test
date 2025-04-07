@@ -15,7 +15,7 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/main">
+        <Route exact path="/">
           <ScrollToTop />
           <Main />
         </Route>
